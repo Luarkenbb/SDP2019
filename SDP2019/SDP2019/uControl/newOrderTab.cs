@@ -30,6 +30,14 @@ namespace SDP2019.uControl
         {
             lstOrderFrmSpares.Items.Add(item);
         }
+        public void addDealer(string id,string name,string address,string phone)
+        {
+            txtOrderFrmDealerID.Text = id;
+            txtOrderFrmDealerName.Text = name;
+            rtxtOrderFrmInvoiceAddress.Text = address;
+            txtOrderFrmDealerPhone.Text = phone;
+        }
+
 
         private void newOrderTab_Load(object sender, EventArgs e)
         {

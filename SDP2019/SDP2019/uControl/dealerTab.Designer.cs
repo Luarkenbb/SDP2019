@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "5",
             "2",
@@ -106,6 +106,7 @@
             this.btnDealerFrmAddToOrder.TabIndex = 1;
             this.btnDealerFrmAddToOrder.Text = "Add Dealer to Order";
             this.btnDealerFrmAddToOrder.UseVisualStyleBackColor = true;
+            this.btnDealerFrmAddToOrder.Click += new System.EventHandler(this.btnDealerFrmAddToOrder_Click);
             // 
             // lstDealer
             // 
@@ -118,7 +119,7 @@
             this.lstDealer.GridLines = true;
             this.lstDealer.HideSelection = false;
             this.lstDealer.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.lstDealer.Location = new System.Drawing.Point(1, 0);
             this.lstDealer.MultiSelect = false;
             this.lstDealer.Name = "lstDealer";
@@ -156,6 +157,7 @@
             this.Controls.Add(this.lstDealer);
             this.Name = "dealerTab";
             this.Size = new System.Drawing.Size(767, 399);
+            this.Load += new System.EventHandler(this.dealerTab_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);

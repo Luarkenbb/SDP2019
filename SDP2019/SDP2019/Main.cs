@@ -24,7 +24,7 @@ namespace SDP2019
         int tabDealer = 4;
         int tabReport = 5;
         int tabSetting = 6;
-        
+
         public Main()
         {
             InitializeComponent();
@@ -63,6 +63,7 @@ namespace SDP2019
                 {"ToFollow List", new uControl.toFollowOrderTab() },
                 {"Spare", new uControl.spareTab(frmLogonID,tabNewOrder) },
                 {"Dealer", new uControl.dealerTab() },
+                {"Reorder", new uControl.ReOrder() },
                 {"Report", new uControl.reportTab() },
                 {"Setting", new uControl.settingTab() }
             };

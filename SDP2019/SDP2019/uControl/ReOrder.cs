@@ -18,6 +18,11 @@ namespace SDP2019.uControl
             InitializeComponent();
         }
 
+        public void ReOrder_load(object sender, EventArgs e)
+        {
+            setReorderTable(getReorderTable());
+        }
+
         public DataTable getReorderTable()
         {
             conn.OpenConnection();
@@ -26,7 +31,18 @@ namespace SDP2019.uControl
             return rs;
         }
 
-
+        public void setReorderTable(DataTable rs)
+        {
+            foreach (DataRow row in rs.Rows)
+            {
+                ListViewItem item = new ListViewItem(row[0].ToString());
+                for (int i = 1; i < rs.Columns.Count; i++)
+                {
+                    item.SubItems.Add(row[i].ToString());
+                }
+                listViewReOrder.Items.Add(item);
+            }
+        }
 
     }
 

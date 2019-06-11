@@ -33,7 +33,7 @@
             this.tb_quantitySL = new System.Windows.Forms.TextBox();
             this.tb_quantity = new System.Windows.Forms.TextBox();
             this.tb_spareID = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_close = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,14 +87,15 @@
             this.tb_spareID.Size = new System.Drawing.Size(202, 20);
             this.tb_spareID.TabIndex = 33;
             // 
-            // button1
+            // bt_close
             // 
-            this.button1.Location = new System.Drawing.Point(476, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_close.Location = new System.Drawing.Point(476, 205);
+            this.bt_close.Name = "bt_close";
+            this.bt_close.Size = new System.Drawing.Size(75, 23);
+            this.bt_close.TabIndex = 32;
+            this.bt_close.Text = "Close";
+            this.bt_close.UseVisualStyleBackColor = true;
+            this.bt_close.Click += new System.EventHandler(this.bt_close_Click);
             // 
             // label5
             // 
@@ -169,6 +170,7 @@
             // 
             // cb_status
             // 
+            this.cb_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_status.FormattingEnabled = true;
             this.cb_status.Items.AddRange(new object[] {
             "NULL",
@@ -203,7 +205,7 @@
             this.Controls.Add(this.tb_quantitySL);
             this.Controls.Add(this.tb_quantity);
             this.Controls.Add(this.tb_spareID);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bt_close);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -222,7 +224,7 @@
         private System.Windows.Forms.TextBox tb_quantitySL;
         private System.Windows.Forms.TextBox tb_quantity;
         private System.Windows.Forms.TextBox tb_spareID;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_close;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

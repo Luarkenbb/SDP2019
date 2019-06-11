@@ -40,6 +40,12 @@ namespace SDP2019.Dialog
         {
             conn.OpenConnection();
             conn.ExecuteUpdateQuery("update reorder set status='" + cb_status.Text + "' where reOrderID='" + tb_reorderID.Text + "'");
+            Close();
+        }
+
+        private void bt_close_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

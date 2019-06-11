@@ -105,6 +105,12 @@
     <Compile Include="Dialog\ReOrderSearch.Designer.cs">
       <DependentUpon>ReOrderSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\ReOrderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\ReOrderStatus.Designer.cs">
+      <DependentUpon>ReOrderStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\ReOrderDetail.resx">
       <DependentUpon>ReOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\ReOrderStatus.resx">
+      <DependentUpon>ReOrderStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

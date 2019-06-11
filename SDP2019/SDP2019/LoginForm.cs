@@ -28,7 +28,9 @@ namespace SDP2019
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            
+            //方便登入
+            txtLoginName.Text = "1";
+            txtPassword.Text = "123456";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -41,6 +43,7 @@ namespace SDP2019
             if (logonChecking(logonID, logonpassword)) {//Check if input is missing
                 if (logon(logonID, logonpassword))
                 {
+                    this.Hide();
                     lblLogonFail.Hide();
                     MessageBox.Show("Welcome," + frmName);
 

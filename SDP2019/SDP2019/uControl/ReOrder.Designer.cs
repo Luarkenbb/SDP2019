@@ -30,7 +30,7 @@
         {
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.bt_Detail = new System.Windows.Forms.Button();
-            this.bt_Delete = new System.Windows.Forms.Button();
+            this.bt_Status = new System.Windows.Forms.Button();
             this.bt_search = new System.Windows.Forms.Button();
             this.listViewReOrder = new System.Windows.Forms.ListView();
             this.reOrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,7 +43,7 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.bt_Detail);
-            this.groupBox7.Controls.Add(this.bt_Delete);
+            this.groupBox7.Controls.Add(this.bt_Status);
             this.groupBox7.Controls.Add(this.bt_search);
             this.groupBox7.Location = new System.Drawing.Point(576, 9);
             this.groupBox7.Name = "groupBox7";
@@ -63,15 +63,15 @@
             this.bt_Detail.UseVisualStyleBackColor = true;
             this.bt_Detail.Click += new System.EventHandler(this.Bt_Detail_Click);
             // 
-            // bt_Delete
+            // bt_Status
             // 
-            this.bt_Delete.Enabled = false;
-            this.bt_Delete.Location = new System.Drawing.Point(6, 77);
-            this.bt_Delete.Name = "bt_Delete";
-            this.bt_Delete.Size = new System.Drawing.Size(178, 23);
-            this.bt_Delete.TabIndex = 1;
-            this.bt_Delete.Text = "Delete Order";
-            this.bt_Delete.UseVisualStyleBackColor = true;
+            this.bt_Status.Enabled = false;
+            this.bt_Status.Location = new System.Drawing.Point(6, 77);
+            this.bt_Status.Name = "bt_Status";
+            this.bt_Status.Size = new System.Drawing.Size(178, 23);
+            this.bt_Status.TabIndex = 1;
+            this.bt_Status.Text = "Change Status";
+            this.bt_Status.UseVisualStyleBackColor = true;
             // 
             // bt_search
             // 
@@ -93,7 +93,7 @@
             this.listViewReOrder.HideSelection = false;
             this.listViewReOrder.Location = new System.Drawing.Point(3, 3);
             this.listViewReOrder.Name = "listViewReOrder";
-            this.listViewReOrder.Size = new System.Drawing.Size(567, 399);
+            this.listViewReOrder.Size = new System.Drawing.Size(567, 412);
             this.listViewReOrder.TabIndex = 21;
             this.listViewReOrder.UseCompatibleStateImageBehavior = false;
             this.listViewReOrder.View = System.Windows.Forms.View.Details;
@@ -134,7 +134,7 @@
 
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button bt_Detail;
-        private System.Windows.Forms.Button bt_Delete;
+        private System.Windows.Forms.Button bt_Status;
         private System.Windows.Forms.Button bt_search;
         private System.Windows.Forms.ListView listViewReOrder;
         private System.Windows.Forms.ColumnHeader reOrderID;

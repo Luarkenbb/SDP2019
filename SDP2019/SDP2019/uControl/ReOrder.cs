@@ -46,15 +46,22 @@ namespace SDP2019.uControl
 
         private void Bt_Detail_Click(object sender, EventArgs e)
         {
-            new Dialog.ReOrderDetail(int.Parse(listViewReOrder.SelectedItems[0].Text)).Show();
+            new Dialog.ReOrderDetail(int.Parse(listViewReOrder.SelectedItems[0].Text)).ShowDialog();
+
+            listViewReOrder.Items.Clear();
             setReorderTable(getReorderTable());
+            if (listViewReOrder.Items.Count > 0)
+            {
+                listViewReOrder.Items[0].Selected = true;
+                listViewReOrder.Select();
+            }
         }
 
         private void ListViewReOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bt_Detail.Enabled = true;
-            bt_Delete.Enabled = true;
+            bt_Detail.Enabled = bt_Status.Enabled = true;
         }
+
     }
 
     

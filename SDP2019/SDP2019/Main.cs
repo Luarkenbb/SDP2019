@@ -90,7 +90,12 @@ namespace SDP2019
         private void tabTopBar_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-        
 
+
+        //確保關閉main會關閉程序
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

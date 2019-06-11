@@ -32,6 +32,7 @@
             this.txtLogonID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabTopBar = new System.Windows.Forms.TabControl();
+            this.Setting = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listView5 = new System.Windows.Forms.ListView();
@@ -51,7 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
-            this.Setting = new System.Windows.Forms.TabPage();
             this.tabTopBar.SuspendLayout();
             this.Setting.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +82,16 @@
             this.tabTopBar.Size = new System.Drawing.Size(775, 425);
             this.tabTopBar.TabIndex = 0;
             this.tabTopBar.SelectedIndexChanged += new System.EventHandler(this.tabTopBar_SelectedIndexChanged);
+            // 
+            // Setting
+            // 
+            this.Setting.Controls.Add(this.tabControl2);
+            this.Setting.Location = new System.Drawing.Point(4, 22);
+            this.Setting.Name = "Setting";
+            this.Setting.Size = new System.Drawing.Size(767, 399);
+            this.Setting.TabIndex = 4;
+            this.Setting.Text = "Setting";
+            this.Setting.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
@@ -240,16 +250,6 @@
             this.button9.Text = "Update";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // Setting
-            // 
-            this.Setting.Controls.Add(this.tabControl2);
-            this.Setting.Location = new System.Drawing.Point(4, 22);
-            this.Setting.Name = "Setting";
-            this.Setting.Size = new System.Drawing.Size(767, 399);
-            this.Setting.TabIndex = 4;
-            this.Setting.Text = "Setting";
-            this.Setting.UseVisualStyleBackColor = true;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +260,7 @@
             this.Controls.Add(this.tabTopBar);
             this.Name = "Main";
             this.Text = "Main";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabTopBar.ResumeLayout(false);
             this.Setting.ResumeLayout(false);

@@ -35,61 +35,67 @@
             "3",
             "4",
             "5"}, -1);
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.rtxtDeliverAddress = new System.Windows.Forms.RichTextBox();
+            this.rtxtInvoiceAddress = new System.Windows.Forms.RichTextBox();
+            this.txtOrderStaff = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDealerID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.btnUpdateSpareStatus = new System.Windows.Forms.Button();
+            this.btnUpdateOrderStatus = new System.Windows.Forms.Button();
+            this.btnAddSpare = new System.Windows.Forms.Button();
+            this.btnSetQuantity = new System.Windows.Forms.Button();
+            this.btnDelSpare = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.lstSpare = new System.Windows.Forms.ListView();
             this.o_SpareID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_QTY = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_QTYSafeLine = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtOrderID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtStartDate = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEndDate = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtDealerName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtDealerPhone = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtStoremanID = new System.Windows.Forms.TextBox();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // richTextBox2
+            // rtxtDeliverAddress
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(240, 61);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(198, 69);
-            this.richTextBox2.TabIndex = 26;
-            this.richTextBox2.Text = "";
+            this.rtxtDeliverAddress.Location = new System.Drawing.Point(240, 61);
+            this.rtxtDeliverAddress.Name = "rtxtDeliverAddress";
+            this.rtxtDeliverAddress.Size = new System.Drawing.Size(198, 69);
+            this.rtxtDeliverAddress.TabIndex = 26;
+            this.rtxtDeliverAddress.Text = "";
             // 
-            // richTextBox1
+            // rtxtInvoiceAddress
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(15, 61);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(198, 69);
-            this.richTextBox1.TabIndex = 25;
-            this.richTextBox1.Text = "";
+            this.rtxtInvoiceAddress.Location = new System.Drawing.Point(15, 61);
+            this.rtxtInvoiceAddress.Name = "rtxtInvoiceAddress";
+            this.rtxtInvoiceAddress.Size = new System.Drawing.Size(198, 69);
+            this.rtxtInvoiceAddress.TabIndex = 25;
+            this.rtxtInvoiceAddress.Text = "";
             // 
-            // textBox6
+            // txtOrderStaff
             // 
-            this.textBox6.Location = new System.Drawing.Point(688, 12);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 24;
+            this.txtOrderStaff.Location = new System.Drawing.Point(688, 12);
+            this.txtOrderStaff.Name = "txtOrderStaff";
+            this.txtOrderStaff.ReadOnly = true;
+            this.txtOrderStaff.Size = new System.Drawing.Size(100, 20);
+            this.txtOrderStaff.TabIndex = 24;
             // 
             // label6
             // 
@@ -118,13 +124,13 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Invoice Address:";
             // 
-            // textBox3
+            // txtDealerID
             // 
-            this.textBox3.Location = new System.Drawing.Point(113, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 20;
+            this.txtDealerID.Location = new System.Drawing.Point(113, 12);
+            this.txtDealerID.Name = "txtDealerID";
+            this.txtDealerID.ReadOnly = true;
+            this.txtDealerID.Size = new System.Drawing.Size(100, 20);
+            this.txtDealerID.TabIndex = 20;
             // 
             // label3
             // 
@@ -137,11 +143,11 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Controls.Add(this.button1);
-            this.groupBox6.Controls.Add(this.button12);
-            this.groupBox6.Controls.Add(this.button13);
-            this.groupBox6.Controls.Add(this.button14);
+            this.groupBox6.Controls.Add(this.btnUpdateSpareStatus);
+            this.groupBox6.Controls.Add(this.btnUpdateOrderStatus);
+            this.groupBox6.Controls.Add(this.btnAddSpare);
+            this.groupBox6.Controls.Add(this.btnSetQuantity);
+            this.groupBox6.Controls.Add(this.btnDelSpare);
             this.groupBox6.Location = new System.Drawing.Point(600, 155);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(188, 167);
@@ -149,89 +155,89 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Order control";
             // 
-            // button2
+            // btnUpdateSpareStatus
             // 
-            this.button2.Location = new System.Drawing.Point(7, 136);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Update Item Status";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdateSpareStatus.Location = new System.Drawing.Point(7, 136);
+            this.btnUpdateSpareStatus.Name = "btnUpdateSpareStatus";
+            this.btnUpdateSpareStatus.Size = new System.Drawing.Size(176, 23);
+            this.btnUpdateSpareStatus.TabIndex = 4;
+            this.btnUpdateSpareStatus.Text = "Update Item Status";
+            this.btnUpdateSpareStatus.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnUpdateOrderStatus
             // 
-            this.button1.Location = new System.Drawing.Point(7, 107);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Update Order Status";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpdateOrderStatus.Location = new System.Drawing.Point(7, 107);
+            this.btnUpdateOrderStatus.Name = "btnUpdateOrderStatus";
+            this.btnUpdateOrderStatus.Size = new System.Drawing.Size(176, 23);
+            this.btnUpdateOrderStatus.TabIndex = 3;
+            this.btnUpdateOrderStatus.Text = "Update Order Status";
+            this.btnUpdateOrderStatus.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnAddSpare
             // 
-            this.button12.Location = new System.Drawing.Point(7, 20);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(175, 23);
-            this.button12.TabIndex = 2;
-            this.button12.Text = "Add item";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnAddSpare.Location = new System.Drawing.Point(7, 20);
+            this.btnAddSpare.Name = "btnAddSpare";
+            this.btnAddSpare.Size = new System.Drawing.Size(175, 23);
+            this.btnAddSpare.TabIndex = 2;
+            this.btnAddSpare.Text = "Add item";
+            this.btnAddSpare.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // btnSetQuantity
             // 
-            this.button13.Location = new System.Drawing.Point(7, 78);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(176, 23);
-            this.button13.TabIndex = 1;
-            this.button13.Text = "Reset quantity";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnSetQuantity.Location = new System.Drawing.Point(7, 78);
+            this.btnSetQuantity.Name = "btnSetQuantity";
+            this.btnSetQuantity.Size = new System.Drawing.Size(176, 23);
+            this.btnSetQuantity.TabIndex = 1;
+            this.btnSetQuantity.Text = "Reset quantity";
+            this.btnSetQuantity.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // btnDelSpare
             // 
-            this.button14.Location = new System.Drawing.Point(7, 49);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(175, 23);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "Remove item";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnDelSpare.Location = new System.Drawing.Point(7, 49);
+            this.btnDelSpare.Name = "btnDelSpare";
+            this.btnDelSpare.Size = new System.Drawing.Size(175, 23);
+            this.btnDelSpare.TabIndex = 0;
+            this.btnDelSpare.Text = "Remove item";
+            this.btnDelSpare.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnClose
             // 
-            this.button11.Location = new System.Drawing.Point(707, 415);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 17;
-            this.button11.Text = "Close";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(707, 415);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 17;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnUpdate
             // 
-            this.button10.Location = new System.Drawing.Point(626, 415);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "Update";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(626, 415);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // listView3
+            // lstSpare
             // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstSpare.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.o_SpareID,
             this.o_QTY,
             this.o_Price,
             this.o_QTYSafeLine,
             this.o_Description,
             this.o_Status});
-            this.listView3.FullRowSelect = true;
-            this.listView3.GridLines = true;
-            this.listView3.HideSelection = false;
-            this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            this.lstSpare.FullRowSelect = true;
+            this.lstSpare.GridLines = true;
+            this.lstSpare.HideSelection = false;
+            this.lstSpare.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listView3.Location = new System.Drawing.Point(12, 155);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(575, 283);
-            this.listView3.TabIndex = 15;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
+            this.lstSpare.Location = new System.Drawing.Point(12, 155);
+            this.lstSpare.Name = "lstSpare";
+            this.lstSpare.Size = new System.Drawing.Size(575, 283);
+            this.lstSpare.TabIndex = 15;
+            this.lstSpare.UseCompatibleStateImageBehavior = false;
+            this.lstSpare.View = System.Windows.Forms.View.Details;
             // 
             // o_SpareID
             // 
@@ -262,13 +268,13 @@
             // 
             this.o_Status.Text = "Status";
             // 
-            // textBox1
+            // txtOrderID
             // 
-            this.textBox1.Location = new System.Drawing.Point(688, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 28;
+            this.txtOrderID.Location = new System.Drawing.Point(688, 41);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.ReadOnly = true;
+            this.txtOrderID.Size = new System.Drawing.Size(100, 20);
+            this.txtOrderID.TabIndex = 28;
             // 
             // label1
             // 
@@ -279,63 +285,120 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "OrderID:";
             // 
-            // textBox2
+            // txtStartDate
             // 
-            this.textBox2.Location = new System.Drawing.Point(688, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 30;
+            this.txtStartDate.Location = new System.Drawing.Point(688, 67);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.ReadOnly = true;
+            this.txtStartDate.Size = new System.Drawing.Size(100, 20);
+            this.txtStartDate.TabIndex = 30;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(635, 70);
+            this.label2.Location = new System.Drawing.Point(620, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Date:";
+            this.label2.Text = "Created By:";
             // 
-            // textBox4
+            // txtEndDate
             // 
-            this.textBox4.Location = new System.Drawing.Point(688, 93);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 32;
+            this.txtEndDate.Location = new System.Drawing.Point(688, 93);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.ReadOnly = true;
+            this.txtEndDate.Size = new System.Drawing.Size(100, 20);
+            this.txtEndDate.TabIndex = 32;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(635, 96);
+            this.label7.Location = new System.Drawing.Point(597, 96);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.Size = new System.Drawing.Size(86, 13);
             this.label7.TabIndex = 31;
-            this.label7.Text = "Status:";
+            this.label7.Text = "Completed Date:";
+            // 
+            // txtDealerName
+            // 
+            this.txtDealerName.Location = new System.Drawing.Point(278, 12);
+            this.txtDealerName.Name = "txtDealerName";
+            this.txtDealerName.ReadOnly = true;
+            this.txtDealerName.Size = new System.Drawing.Size(100, 20);
+            this.txtDealerName.TabIndex = 33;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(237, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Name:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(439, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Phone:";
+            // 
+            // txtDealerPhone
+            // 
+            this.txtDealerPhone.Location = new System.Drawing.Point(486, 12);
+            this.txtDealerPhone.Name = "txtDealerPhone";
+            this.txtDealerPhone.ReadOnly = true;
+            this.txtDealerPhone.Size = new System.Drawing.Size(100, 20);
+            this.txtDealerPhone.TabIndex = 36;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(614, 120);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 13);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "Storeman ID:";
+            // 
+            // txtStoremanID
+            // 
+            this.txtStoremanID.Location = new System.Drawing.Point(688, 117);
+            this.txtStoremanID.Name = "txtStoremanID";
+            this.txtStoremanID.ReadOnly = true;
+            this.txtStoremanID.Size = new System.Drawing.Size(100, 20);
+            this.txtStoremanID.TabIndex = 38;
             // 
             // OrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtStoremanID);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtDealerPhone);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtDealerName);
+            this.Controls.Add(this.txtEndDate);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtStartDate);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtOrderID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.rtxtDeliverAddress);
+            this.Controls.Add(this.rtxtInvoiceAddress);
+            this.Controls.Add(this.txtOrderStaff);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDealerID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.listView3);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.lstSpare);
             this.Name = "OrderDetail";
             this.Text = "s";
             this.Load += new System.EventHandler(this.OrderDetail_Load);
@@ -347,34 +410,40 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.RichTextBox rtxtDeliverAddress;
+        private System.Windows.Forms.RichTextBox rtxtInvoiceAddress;
+        private System.Windows.Forms.TextBox txtOrderStaff;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDealerID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.Button btnAddSpare;
+        private System.Windows.Forms.Button btnSetQuantity;
+        private System.Windows.Forms.Button btnDelSpare;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.ListView lstSpare;
         private System.Windows.Forms.ColumnHeader o_SpareID;
         private System.Windows.Forms.ColumnHeader o_QTY;
         private System.Windows.Forms.ColumnHeader o_Price;
         private System.Windows.Forms.ColumnHeader o_QTYSafeLine;
         private System.Windows.Forms.ColumnHeader o_Description;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtOrderID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtStartDate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEndDate;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdateOrderStatus;
+        private System.Windows.Forms.Button btnUpdateSpareStatus;
         private System.Windows.Forms.ColumnHeader o_Status;
+        private System.Windows.Forms.TextBox txtDealerName;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtDealerPhone;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtStoremanID;
     }
 }

@@ -12,13 +12,13 @@ namespace SDP2019.uControl
 {
     public partial class ReOrder : UserControl
     {
-        DBConnection conn;
+        DBConnection conn = new DBConnection();
         public ReOrder()
         {
             InitializeComponent();
         }
 
-        public void ReOrder_load(object sender, EventArgs e)
+        public void ReOrder_Load(object sender, EventArgs e)
         {
             setReorderTable(getReorderTable());
         }
@@ -44,6 +44,17 @@ namespace SDP2019.uControl
             }
         }
 
+        private void Bt_Detail_Click(object sender, EventArgs e)
+        {
+            new Dialog.ReOrderDetail(int.Parse(listViewReOrder.SelectedItems[0].Text)).Show();
+            setReorderTable(getReorderTable());
+        }
+
+        private void ListViewReOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bt_Detail.Enabled = true;
+            bt_Delete.Enabled = true;
+        }
     }
 
     

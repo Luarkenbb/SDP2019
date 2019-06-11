@@ -24,7 +24,7 @@ namespace SDP2019
         int tabDealer = 4;
         int tabReport = 5;
         int tabSetting = 6;
-
+        //sdaasd
         public Main()
         {
             InitializeComponent();

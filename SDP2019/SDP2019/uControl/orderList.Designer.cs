@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button15 = new System.Windows.Forms.Button();
+            this.btnOrderDetail = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lstOrder = new System.Windows.Forms.ListView();
             this.oL_OrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oL_OrderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.oL_SpareList = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oL_DealerID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oL_DealerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oL_OrderCompleteDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.oL_SpareList = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button15);
+            this.groupBox7.Controls.Add(this.btnOrderDetail);
             this.groupBox7.Controls.Add(this.button16);
             this.groupBox7.Controls.Add(this.btnSearch);
             this.groupBox7.Location = new System.Drawing.Point(574, 6);
@@ -54,14 +54,15 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Data control";
             // 
-            // button15
+            // btnOrderDetail
             // 
-            this.button15.Location = new System.Drawing.Point(7, 48);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(178, 23);
-            this.button15.TabIndex = 2;
-            this.button15.Text = "Order Modify / Detail";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnOrderDetail.Location = new System.Drawing.Point(7, 48);
+            this.btnOrderDetail.Name = "btnOrderDetail";
+            this.btnOrderDetail.Size = new System.Drawing.Size(178, 23);
+            this.btnOrderDetail.TabIndex = 2;
+            this.btnOrderDetail.Text = "Order Modify / Detail";
+            this.btnOrderDetail.UseVisualStyleBackColor = true;
+            this.btnOrderDetail.Click += new System.EventHandler(this.btnOrderDetail_Click);
             // 
             // button16
             // 
@@ -80,6 +81,7 @@
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lstOrder
             // 
@@ -90,8 +92,10 @@
             this.oL_DealerName,
             this.oL_OrderCompleteDateTime,
             this.oL_SpareList});
+            this.lstOrder.FullRowSelect = true;
             this.lstOrder.HideSelection = false;
             this.lstOrder.Location = new System.Drawing.Point(1, 0);
+            this.lstOrder.MultiSelect = false;
             this.lstOrder.Name = "lstOrder";
             this.lstOrder.Size = new System.Drawing.Size(567, 399);
             this.lstOrder.TabIndex = 19;
@@ -107,11 +111,6 @@
             this.oL_OrderDate.Text = "Order Date";
             this.oL_OrderDate.Width = 130;
             // 
-            // oL_SpareList
-            // 
-            this.oL_SpareList.Text = "Spare List";
-            this.oL_SpareList.Width = 724;
-            // 
             // oL_DealerID
             // 
             this.oL_DealerID.Text = "DealerID";
@@ -125,6 +124,11 @@
             // 
             this.oL_OrderCompleteDateTime.Text = "Complete Date";
             this.oL_OrderCompleteDateTime.Width = 96;
+            // 
+            // oL_SpareList
+            // 
+            this.oL_SpareList.Text = "Spare List";
+            this.oL_SpareList.Width = 724;
             // 
             // orderList
             // 
@@ -143,7 +147,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button btnOrderDetail;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ListView lstOrder;

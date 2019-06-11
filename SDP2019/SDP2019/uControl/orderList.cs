@@ -78,5 +78,24 @@ namespace SDP2019.uControl
 
             return spare;
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOrderDetail_Click(object sender, EventArgs e)
+        {
+            int orderSerial;
+            orderSerial = Convert.ToInt32(lstOrder.SelectedItems[0].SubItems[0].Text);
+
+            using (Dialog.OrderDetail dlg = new Dialog.OrderDetail(orderSerial,frmLogonID))
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    
+                }
+            }
+        }
     }
 }

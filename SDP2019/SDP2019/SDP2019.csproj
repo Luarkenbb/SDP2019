@@ -93,6 +93,12 @@
     <Compile Include="Dialog\EditSpareQuantity.Designer.cs">
       <DependentUpon>EditSpareQuantity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\OrderSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\OrderSearch.Designer.cs">
+      <DependentUpon>OrderSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\ReOrderDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\EditSpareQuantity.resx">
       <DependentUpon>EditSpareQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\OrderSearch.resx">
+      <DependentUpon>OrderSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\ReOrderDetail.resx">
       <DependentUpon>ReOrderDetail.cs</DependentUpon>

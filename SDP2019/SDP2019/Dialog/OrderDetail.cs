@@ -52,6 +52,9 @@ namespace SDP2019.Dialog
             txtDealerID.Text = row[4].ToString();
             txtDealerName.Text = row[5].ToString();
             txtDealerPhone.Text = row[6].ToString();
+            rtxtInvoiceAddress.Text = row[7].ToString();
+            rtxtDeliverAddress.Text = row[8].ToString();
+            txtStoremanID.Text = row[9].ToString();
 
             conn.CloseConnection();
         }

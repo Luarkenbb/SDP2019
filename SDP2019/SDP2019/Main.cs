@@ -22,8 +22,9 @@ namespace SDP2019
         int tabToFollow = 2;
         int tabSpare = 3;
         int tabDealer = 4;
-        int tabReport = 5;
-        int tabSetting = 6;
+        int tabReorder = 5;
+        int tabReport = 6;
+        int tabSetting = 7;
 
         public Main()
         {

@@ -31,13 +31,14 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.listView4 = new System.Windows.Forms.ListView();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lstOrder = new System.Windows.Forms.ListView();
             this.oL_OrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oL_OrderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oL_SpareList = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oL_DealerID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oL_DealerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.oL_OrderCompleteDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             // 
             this.groupBox7.Controls.Add(this.button15);
             this.groupBox7.Controls.Add(this.button16);
-            this.groupBox7.Controls.Add(this.button17);
+            this.groupBox7.Controls.Add(this.btnSearch);
             this.groupBox7.Location = new System.Drawing.Point(574, 6);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(191, 112);
@@ -71,30 +72,31 @@
             this.button16.Text = "Delete Order";
             this.button16.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // btnSearch
             // 
-            this.button17.Location = new System.Drawing.Point(7, 19);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(178, 23);
-            this.button17.TabIndex = 0;
-            this.button17.Text = "Search";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(7, 19);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(178, 23);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // listView4
+            // lstOrder
             // 
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstOrder.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.oL_OrderID,
             this.oL_OrderDate,
-            this.oL_SpareList,
             this.oL_DealerID,
-            this.oL_DealerName});
-            this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(1, 0);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(567, 399);
-            this.listView4.TabIndex = 19;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
+            this.oL_DealerName,
+            this.oL_OrderCompleteDateTime,
+            this.oL_SpareList});
+            this.lstOrder.HideSelection = false;
+            this.lstOrder.Location = new System.Drawing.Point(1, 0);
+            this.lstOrder.Name = "lstOrder";
+            this.lstOrder.Size = new System.Drawing.Size(567, 399);
+            this.lstOrder.TabIndex = 19;
+            this.lstOrder.UseCompatibleStateImageBehavior = false;
+            this.lstOrder.View = System.Windows.Forms.View.Details;
             // 
             // oL_OrderID
             // 
@@ -103,31 +105,36 @@
             // oL_OrderDate
             // 
             this.oL_OrderDate.Text = "Order Date";
-            this.oL_OrderDate.Width = 76;
+            this.oL_OrderDate.Width = 130;
             // 
             // oL_SpareList
             // 
-            this.oL_SpareList.DisplayIndex = 3;
             this.oL_SpareList.Text = "Spare List";
             this.oL_SpareList.Width = 724;
             // 
             // oL_DealerID
             // 
-            this.oL_DealerID.DisplayIndex = 2;
             this.oL_DealerID.Text = "DealerID";
             // 
             // oL_DealerName
             // 
             this.oL_DealerName.Text = "dealerName";
+            this.oL_DealerName.Width = 72;
+            // 
+            // oL_OrderCompleteDateTime
+            // 
+            this.oL_OrderCompleteDateTime.Text = "Complete Date";
+            this.oL_OrderCompleteDateTime.Width = 96;
             // 
             // orderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.listView4);
+            this.Controls.Add(this.lstOrder);
             this.Name = "orderList";
             this.Size = new System.Drawing.Size(767, 399);
+            this.Load += new System.EventHandler(this.orderList_Load);
             this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -138,12 +145,13 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ListView lstOrder;
         private System.Windows.Forms.ColumnHeader oL_OrderID;
         private System.Windows.Forms.ColumnHeader oL_OrderDate;
         private System.Windows.Forms.ColumnHeader oL_SpareList;
         private System.Windows.Forms.ColumnHeader oL_DealerID;
         private System.Windows.Forms.ColumnHeader oL_DealerName;
+        private System.Windows.Forms.ColumnHeader oL_OrderCompleteDateTime;
     }
 }

@@ -31,7 +31,9 @@ namespace SDP2019.Dialog
         private void OrderDetail_Load(object sender, EventArgs e)
         {
             conn = new DBConnection();
+            lstSpare.Items.Clear();
             getOrderInfo();
+            
         }
 
         private void getOrderInfo()
@@ -57,6 +59,18 @@ namespace SDP2019.Dialog
             txtStoremanID.Text = row[9].ToString();
 
             conn.CloseConnection();
+        }
+
+        private void btnAddSpare_Click(object sender, EventArgs e)
+        {
+            using (Dialog.SpareSelect dlg = new Dialog.SpareSelect())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    ListViewItem selectedItem = dlg.getSelectedItem();
+                    lstSpare.Items.Add(selectedItem);
+                }
+            }
         }
     }
 }

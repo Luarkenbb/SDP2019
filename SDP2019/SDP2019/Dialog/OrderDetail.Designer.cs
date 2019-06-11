@@ -181,6 +181,7 @@
             this.btnAddSpare.TabIndex = 2;
             this.btnAddSpare.Text = "Add item";
             this.btnAddSpare.UseVisualStyleBackColor = true;
+            this.btnAddSpare.Click += new System.EventHandler(this.btnAddSpare_Click);
             // 
             // btnSetQuantity
             // 

@@ -50,10 +50,19 @@ namespace SDP2019.Dialog
             this.spareID = spareID;
             
         }
+        private void EditSpareQuantity_Load(object sender, EventArgs e)
+        {
+            conn = new DBConnection();
+            if (spareID != null)
+            {
+                getSpareInfo();
+            }
+        }
 
         private void getSpareInfo()
         {
             conn.OpenConnection();
+
             string sql = "Select SpareID, description, quantity, price from spare Where SpareID = '" + spareID +"'";
             DataTable dt = conn.ExecuteSelectQuery(sql);
             DataRow row = dt.Rows[0];
@@ -70,14 +79,7 @@ namespace SDP2019.Dialog
 
             numQuantity.Value = this.quantity;
         }
-        private void EditSpareQuantity_Load(object sender, EventArgs e)
-        {
-            conn = new DBConnection();
-            if (spareID != null)
-            {
-                getSpareInfo();
-            }
-        }
+        
 
         private void numQuantity_ValueChanged(object sender, EventArgs e)
         {

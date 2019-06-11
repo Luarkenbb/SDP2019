@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SDP2019
+namespace SDP2019.Dialog
 {
     public partial class OrderDetail : Form
     {
         public OrderDetail()
         {
             InitializeComponent();
+        }
+
+        private void OrderDetail_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

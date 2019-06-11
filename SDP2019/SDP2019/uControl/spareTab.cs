@@ -32,10 +32,12 @@ namespace SDP2019.uControl
         {
             conn = new DBConnection();
             tab = (TabControl)this.Parent.Parent;
+            lstSpareGetSpares();
         }
 
         private void lstSpareGetSpares()
         {
+            lstSpare.Items.Clear();
             conn.OpenConnection();
 
             string sql = "Select SpareID, quantity, price, quantitySafeLine, description from spare";

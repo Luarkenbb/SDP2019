@@ -13,17 +13,21 @@ namespace SDP2019.uControl
     public partial class newOrderTab : UserControl
     {
         DBConnection conn;
+        TabControl tab;
         string frmLogonID;
-
+        int tabSpare;
+        int tabDealer;
 
         public newOrderTab()
         {
             InitializeComponent();
         }
-        public newOrderTab(string frmLogonID)
+        public newOrderTab(string frmLogonID,int tabSpare,int tabDealer)
         {
             InitializeComponent();
             this.frmLogonID = frmLogonID;
+            this.tabSpare = tabSpare;
+            this.tabDealer = tabDealer;
         }
 
         public void addNewOrderSpare(ListViewItem item)
@@ -42,20 +46,22 @@ namespace SDP2019.uControl
         private void newOrderTab_Load(object sender, EventArgs e)
         {
             conn = new DBConnection();
+            tab = (TabControl)this.Parent.Parent;
+
         }
         private void btnOrderFrmSelectDealer_Click(object sender, EventArgs e)
         {
-
+            tab.SelectedIndex = tabDealer;
         }
 
         private void btnOrderFrmDelAllSpares_Click(object sender, EventArgs e)
         {
-
+            lstOrderFrmSpares.Items.Clear();
         }
 
         private void btnOrderFrmAddSpare_Click(object sender, EventArgs e)
         {
-
+            tab.SelectedIndex = tabSpare;
         }
 
         private void btnOrderFrmDelSpare_Click(object sender, EventArgs e)
@@ -94,19 +100,42 @@ namespace SDP2019.uControl
             var clickedItem = senderList.HitTest(e.Location).Item;
             if (clickedItem != null)
             {
-                string spareID = clickedItem.SubItems[0].Text;
-                int quantity = Convert.ToInt32(clickedItem.SubItems[1].Text);
+                showEditSpareQuantity(clickedItem);
+            }
+        }
 
-                using (Dialog.EditSpareQuantity dlg = new Dialog.EditSpareQuantity(spareID, quantity))
+        private void btnSetQuantity_Click(object sender, EventArgs e)
+        {
+            var selectedItem = lstOrderFrmSpares.SelectedItems;
+            if (selectedItem.Count == 0)
+            {
+                MessageBox.Show("You have no item selected!");
+            }else if (selectedItem.Count != 1)
+            {
+                MessageBox.Show("You should have one item selected only!");
+            }
+            else
+            {
+                showEditSpareQuantity(selectedItem[0]);
+            }
+
+        }
+        private void showEditSpareQuantity(ListViewItem item)
+        {
+            string spareID = item.SubItems[0].Text;
+            
+            int quantity = Convert.ToInt32(item.SubItems[1].Text);
+            using (Dialog.EditSpareQuantity dlg = new Dialog.EditSpareQuantity(spareID, quantity))
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    if (dlg.ShowDialog() == DialogResult.OK)
-                    {
-                        clickedItem.SubItems[1].Text = dlg.getQuantity().ToString();
-                        clickedItem.SubItems[5].Text = dlg.getTotal().ToString();
-                    }
+                    item.SubItems[1].Text = dlg.getQuantity().ToString();
+                    item.SubItems[5].Text = dlg.getTotal().ToString();
                 }
             }
         }
+
+
         private void btnOrderFrmNewOrder_Click(object sender, EventArgs e)
         {
             if (isValidOrderForm())

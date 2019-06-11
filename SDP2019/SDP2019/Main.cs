@@ -58,7 +58,7 @@ namespace SDP2019
             tabTopBar.TabPages.Clear();
 
             Object[,] uControl = {
-                {"New Order", new uControl.newOrderTab() },
+                {"New Order", new uControl.newOrderTab(frmLogonID,tabSpare,tabDealer) },
                 {"Order List", new uControl.orderList() },
                 {"ToFollow List", new uControl.toFollowOrderTab() },
                 {"Spare", new uControl.spareTab(frmLogonID,tabNewOrder) },

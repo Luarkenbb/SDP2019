@@ -1,4 +1,4 @@
-﻿namespace SDP2019
+﻿namespace SDP2019.Dialog
 {
     partial class OrderDetail
     {
@@ -338,6 +338,7 @@
             this.Controls.Add(this.listView3);
             this.Name = "OrderDetail";
             this.Text = "s";
+            this.Load += new System.EventHandler(this.OrderDetail_Load);
             this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

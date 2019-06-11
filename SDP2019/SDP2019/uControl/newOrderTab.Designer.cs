@@ -43,7 +43,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnOrderFrmDelAllSpares = new System.Windows.Forms.Button();
             this.btnOrderFrmAddSpare = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnSetQuantity = new System.Windows.Forms.Button();
             this.btnOrderFrmDelSpare = new System.Windows.Forms.Button();
             this.btnOrderFrmClear = new System.Windows.Forms.Button();
             this.btnOrderFrmNewOrder = new System.Windows.Forms.Button();
@@ -65,6 +65,7 @@
             this.btnOrderFrmSelectDealer.TabIndex = 34;
             this.btnOrderFrmSelectDealer.Text = "Select Dealer";
             this.btnOrderFrmSelectDealer.UseVisualStyleBackColor = true;
+            this.btnOrderFrmSelectDealer.Click += new System.EventHandler(this.btnOrderFrmSelectDealer_Click);
             // 
             // txtOrderFrmDealerPhone
             // 
@@ -156,7 +157,7 @@
             // 
             this.groupBox6.Controls.Add(this.btnOrderFrmDelAllSpares);
             this.groupBox6.Controls.Add(this.btnOrderFrmAddSpare);
-            this.groupBox6.Controls.Add(this.button13);
+            this.groupBox6.Controls.Add(this.btnSetQuantity);
             this.groupBox6.Controls.Add(this.btnOrderFrmDelSpare);
             this.groupBox6.Location = new System.Drawing.Point(576, 128);
             this.groupBox6.Name = "groupBox6";
@@ -173,6 +174,7 @@
             this.btnOrderFrmDelAllSpares.TabIndex = 3;
             this.btnOrderFrmDelAllSpares.Text = "Remove All item";
             this.btnOrderFrmDelAllSpares.UseVisualStyleBackColor = true;
+            this.btnOrderFrmDelAllSpares.Click += new System.EventHandler(this.btnOrderFrmDelAllSpares_Click);
             // 
             // btnOrderFrmAddSpare
             // 
@@ -182,15 +184,17 @@
             this.btnOrderFrmAddSpare.TabIndex = 2;
             this.btnOrderFrmAddSpare.Text = "Add item";
             this.btnOrderFrmAddSpare.UseVisualStyleBackColor = true;
+            this.btnOrderFrmAddSpare.Click += new System.EventHandler(this.btnOrderFrmAddSpare_Click);
             // 
-            // button13
+            // btnSetQuantity
             // 
-            this.button13.Location = new System.Drawing.Point(6, 107);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(176, 23);
-            this.button13.TabIndex = 1;
-            this.button13.Text = "Reset quantity";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnSetQuantity.Location = new System.Drawing.Point(6, 107);
+            this.btnSetQuantity.Name = "btnSetQuantity";
+            this.btnSetQuantity.Size = new System.Drawing.Size(176, 23);
+            this.btnSetQuantity.TabIndex = 1;
+            this.btnSetQuantity.Text = "Set quantity";
+            this.btnSetQuantity.UseVisualStyleBackColor = true;
+            this.btnSetQuantity.Click += new System.EventHandler(this.btnSetQuantity_Click);
             // 
             // btnOrderFrmDelSpare
             // 
@@ -200,6 +204,7 @@
             this.btnOrderFrmDelSpare.TabIndex = 0;
             this.btnOrderFrmDelSpare.Text = "Remove item";
             this.btnOrderFrmDelSpare.UseVisualStyleBackColor = true;
+            this.btnOrderFrmDelSpare.Click += new System.EventHandler(this.btnOrderFrmDelSpare_Click);
             // 
             // btnOrderFrmClear
             // 
@@ -209,6 +214,7 @@
             this.btnOrderFrmClear.TabIndex = 22;
             this.btnOrderFrmClear.Text = "Clear";
             this.btnOrderFrmClear.UseVisualStyleBackColor = true;
+            this.btnOrderFrmClear.Click += new System.EventHandler(this.btnOrderFrmClear_Click);
             // 
             // btnOrderFrmNewOrder
             // 
@@ -218,6 +224,7 @@
             this.btnOrderFrmNewOrder.TabIndex = 21;
             this.btnOrderFrmNewOrder.Text = "Order";
             this.btnOrderFrmNewOrder.UseVisualStyleBackColor = true;
+            this.btnOrderFrmNewOrder.Click += new System.EventHandler(this.btnOrderFrmNewOrder_Click);
             // 
             // lstOrderFrmSpares
             // 
@@ -313,7 +320,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button btnOrderFrmDelAllSpares;
         private System.Windows.Forms.Button btnOrderFrmAddSpare;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnSetQuantity;
         private System.Windows.Forms.Button btnOrderFrmDelSpare;
         private System.Windows.Forms.Button btnOrderFrmClear;
         private System.Windows.Forms.Button btnOrderFrmNewOrder;

@@ -16,5 +16,10 @@ namespace SDP2019.Dialog
         {
             InitializeComponent();
         }
+
+        private void SpareUpdateStatus_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

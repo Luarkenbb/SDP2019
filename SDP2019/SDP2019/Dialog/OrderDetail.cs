@@ -277,5 +277,20 @@ namespace SDP2019.Dialog
                 }
             }
         }
+
+        private void btnToFollow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateOrderStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateSpareStatus_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

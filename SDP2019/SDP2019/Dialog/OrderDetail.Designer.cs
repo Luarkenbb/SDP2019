@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "AA12345",
             "1",
             "2",
@@ -44,11 +44,11 @@
             this.txtDealerID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.btnUpdateSpareStatus = new System.Windows.Forms.Button();
-            this.btnUpdateOrderStatus = new System.Windows.Forms.Button();
             this.btnAddSpare = new System.Windows.Forms.Button();
             this.btnSetQuantity = new System.Windows.Forms.Button();
             this.btnDelSpare = new System.Windows.Forms.Button();
+            this.btnUpdateSpareStatus = new System.Windows.Forms.Button();
+            this.btnUpdateOrderStatus = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.lstSpare = new System.Windows.Forms.ListView();
@@ -56,8 +56,10 @@
             this.o_QuantityTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_QTYSafeLine = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.o_SpareStock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.o_ToDeliver = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtOrderID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtStartDate = new System.Windows.Forms.TextBox();
@@ -70,9 +72,8 @@
             this.txtDealerPhone = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtStoremanID = new System.Windows.Forms.TextBox();
-            this.o_SpareStock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.o_ToDeliver = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnToFollow = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -157,24 +158,6 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Order control";
             // 
-            // btnUpdateSpareStatus
-            // 
-            this.btnUpdateSpareStatus.Location = new System.Drawing.Point(6, 48);
-            this.btnUpdateSpareStatus.Name = "btnUpdateSpareStatus";
-            this.btnUpdateSpareStatus.Size = new System.Drawing.Size(176, 23);
-            this.btnUpdateSpareStatus.TabIndex = 4;
-            this.btnUpdateSpareStatus.Text = "Update Item Status";
-            this.btnUpdateSpareStatus.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateOrderStatus
-            // 
-            this.btnUpdateOrderStatus.Location = new System.Drawing.Point(6, 19);
-            this.btnUpdateOrderStatus.Name = "btnUpdateOrderStatus";
-            this.btnUpdateOrderStatus.Size = new System.Drawing.Size(176, 23);
-            this.btnUpdateOrderStatus.TabIndex = 3;
-            this.btnUpdateOrderStatus.Text = "Update Order Status";
-            this.btnUpdateOrderStatus.UseVisualStyleBackColor = true;
-            // 
             // btnAddSpare
             // 
             this.btnAddSpare.Location = new System.Drawing.Point(7, 20);
@@ -204,6 +187,26 @@
             this.btnDelSpare.Text = "Remove item";
             this.btnDelSpare.UseVisualStyleBackColor = true;
             this.btnDelSpare.Click += new System.EventHandler(this.btnDelSpare_Click);
+            // 
+            // btnUpdateSpareStatus
+            // 
+            this.btnUpdateSpareStatus.Location = new System.Drawing.Point(6, 48);
+            this.btnUpdateSpareStatus.Name = "btnUpdateSpareStatus";
+            this.btnUpdateSpareStatus.Size = new System.Drawing.Size(176, 23);
+            this.btnUpdateSpareStatus.TabIndex = 4;
+            this.btnUpdateSpareStatus.Text = "Update Item Status";
+            this.btnUpdateSpareStatus.UseVisualStyleBackColor = true;
+            this.btnUpdateSpareStatus.Click += new System.EventHandler(this.btnUpdateSpareStatus_Click);
+            // 
+            // btnUpdateOrderStatus
+            // 
+            this.btnUpdateOrderStatus.Location = new System.Drawing.Point(6, 19);
+            this.btnUpdateOrderStatus.Name = "btnUpdateOrderStatus";
+            this.btnUpdateOrderStatus.Size = new System.Drawing.Size(176, 23);
+            this.btnUpdateOrderStatus.TabIndex = 3;
+            this.btnUpdateOrderStatus.Text = "Update Order Status";
+            this.btnUpdateOrderStatus.UseVisualStyleBackColor = true;
+            this.btnUpdateOrderStatus.Click += new System.EventHandler(this.btnUpdateOrderStatus_Click);
             // 
             // btnClose
             // 
@@ -239,7 +242,7 @@
             this.lstSpare.GridLines = true;
             this.lstSpare.HideSelection = false;
             this.lstSpare.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3});
             this.lstSpare.Location = new System.Drawing.Point(12, 155);
             this.lstSpare.Name = "lstSpare";
             this.lstSpare.Size = new System.Drawing.Size(588, 283);
@@ -267,6 +270,10 @@
             this.o_QTYSafeLine.Text = "QTYSafeLine";
             this.o_QTYSafeLine.Width = 79;
             // 
+            // o_SpareStock
+            // 
+            this.o_SpareStock.Text = "Stock";
+            // 
             // o_Description
             // 
             this.o_Description.Text = "Description";
@@ -275,6 +282,11 @@
             // o_Status
             // 
             this.o_Status.Text = "Status";
+            // 
+            // o_ToDeliver
+            // 
+            this.o_ToDeliver.Text = "Packaged";
+            this.o_ToDeliver.Width = 67;
             // 
             // txtOrderID
             // 
@@ -378,10 +390,6 @@
             this.txtStoremanID.Size = new System.Drawing.Size(100, 20);
             this.txtStoremanID.TabIndex = 38;
             // 
-            // o_SpareStock
-            // 
-            this.o_SpareStock.Text = "Stock";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnUpdateSpareStatus);
@@ -393,16 +401,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Storeman Control";
             // 
-            // o_ToDeliver
+            // btnToFollow
             // 
-            this.o_ToDeliver.Text = "Packaged";
-            this.o_ToDeliver.Width = 67;
+            this.btnToFollow.Location = new System.Drawing.Point(626, 386);
+            this.btnToFollow.Name = "btnToFollow";
+            this.btnToFollow.Size = new System.Drawing.Size(156, 23);
+            this.btnToFollow.TabIndex = 40;
+            this.btnToFollow.Text = "Check To Follow Order";
+            this.btnToFollow.UseVisualStyleBackColor = true;
+            this.btnToFollow.Click += new System.EventHandler(this.btnToFollow_Click);
             // 
             // OrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnToFollow);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtStoremanID);
             this.Controls.Add(this.label10);
@@ -478,5 +492,6 @@
         private System.Windows.Forms.ColumnHeader o_SpareStock;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ColumnHeader o_ToDeliver;
+        private System.Windows.Forms.Button btnToFollow;
     }
 }

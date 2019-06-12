@@ -31,6 +31,14 @@ namespace SDP2019.uControl
             return rs;
         }
 
+        public DataTable getReorderTable(String sql)
+        {
+            conn.OpenConnection();
+            DataTable rs = conn.ExecuteSelectQuery("select * from reorder where " + sql);
+            conn.CloseConnection();
+            return rs;
+        }
+
         public void setReorderTable(DataTable rs)
         {
             foreach (DataRow row in rs.Rows)
@@ -47,7 +55,22 @@ namespace SDP2019.uControl
         private void Bt_Detail_Click(object sender, EventArgs e)
         {
             new Dialog.ReOrderDetail(int.Parse(listViewReOrder.SelectedItems[0].Text)).ShowDialog();
+            waiting_refatsh();
+        }
 
+        private void Bt_Status_Click(object sender, EventArgs e)
+        {
+            new Dialog.ReOrderStatus(listViewReOrder.SelectedItems).ShowDialog();
+            waiting_refatsh();
+        }
+
+        private void ListViewReOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bt_Detail.Enabled = bt_Status.Enabled = true;
+        }
+
+        private void waiting_refatsh()
+        {
             listViewReOrder.Items.Clear();
             setReorderTable(getReorderTable());
             if (listViewReOrder.Items.Count > 0)
@@ -57,11 +80,22 @@ namespace SDP2019.uControl
             }
         }
 
-        private void ListViewReOrder_SelectedIndexChanged(object sender, EventArgs e)
+        private void Bt_search_Click(object sender, EventArgs e)
         {
-            bt_Detail.Enabled = bt_Status.Enabled = true;
+            using (var form = new Dialog.ReOrderSearch())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    listViewReOrder.Items.Clear();
+                    setReorderTable(getReorderTable(form.sql));
+                    if (listViewReOrder.Items.Count > 0)
+                    {
+                        listViewReOrder.Items[0].Selected = true;
+                        listViewReOrder.Select();
+                    }
+                }
+            }
         }
-
     }
 
     

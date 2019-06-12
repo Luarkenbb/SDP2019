@@ -239,6 +239,9 @@
     <EmbeddedResource Include="Dialog\ReOrderDetail.resx">
       <DependentUpon>ReOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\ReOrderSearch.resx">
+      <DependentUpon>ReOrderSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\ReOrderStatus.resx">
       <DependentUpon>ReOrderStatus.cs</DependentUpon>
     </EmbeddedResource>

@@ -17,6 +17,7 @@ namespace SDP2019.Dialog
         private string spareID;
         private int quantity;
         private int total;
+        private int previousPricePerItem = 0;
         //getter setter
         public int getQuantity()
         {
@@ -50,6 +51,14 @@ namespace SDP2019.Dialog
             this.spareID = spareID;
             
         }
+        public EditSpareQuantity(string spareID, int quantity, int previousPricePerItem)
+        {
+            InitializeComponent();
+            setQuantity(quantity);
+            this.spareID = spareID;
+            this.previousPricePerItem = previousPricePerItem;
+        }
+
         private void EditSpareQuantity_Load(object sender, EventArgs e)
         {
             conn = new DBConnection();
@@ -75,8 +84,12 @@ namespace SDP2019.Dialog
             txtSpareID.Text = row[0].ToString();
             txtSpareDesc.Text = row[1].ToString();
             txtSpareStock.Text = row[2].ToString();
-            txtSparePrice.Text = row[3].ToString();
 
+            if (this.previousPricePerItem == 0) {
+                txtSparePrice.Text = row[3].ToString();
+            }else{
+                txtSparePrice.Text = this.previousPricePerItem.ToString();
+            }
             numQuantity.Value = this.quantity;
         }
         
@@ -86,6 +99,12 @@ namespace SDP2019.Dialog
             quantity = Decimal.ToInt32(numQuantity.Value);
             total = Convert.ToInt32(txtSparePrice.Text) * quantity;
             txtTotal.Text = total.ToString();
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

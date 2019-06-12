@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "AA12345",
             "1",
             "2",
@@ -70,7 +70,10 @@
             this.txtDealerPhone = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtStoremanID = new System.Windows.Forms.TextBox();
+            this.o_SpareStock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox6.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtxtDeliverAddress
@@ -143,21 +146,19 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.btnUpdateSpareStatus);
-            this.groupBox6.Controls.Add(this.btnUpdateOrderStatus);
             this.groupBox6.Controls.Add(this.btnAddSpare);
             this.groupBox6.Controls.Add(this.btnSetQuantity);
             this.groupBox6.Controls.Add(this.btnDelSpare);
             this.groupBox6.Location = new System.Drawing.Point(600, 155);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(188, 167);
+            this.groupBox6.Size = new System.Drawing.Size(188, 115);
             this.groupBox6.TabIndex = 18;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Order control";
             // 
             // btnUpdateSpareStatus
             // 
-            this.btnUpdateSpareStatus.Location = new System.Drawing.Point(7, 136);
+            this.btnUpdateSpareStatus.Location = new System.Drawing.Point(6, 48);
             this.btnUpdateSpareStatus.Name = "btnUpdateSpareStatus";
             this.btnUpdateSpareStatus.Size = new System.Drawing.Size(176, 23);
             this.btnUpdateSpareStatus.TabIndex = 4;
@@ -166,7 +167,7 @@
             // 
             // btnUpdateOrderStatus
             // 
-            this.btnUpdateOrderStatus.Location = new System.Drawing.Point(7, 107);
+            this.btnUpdateOrderStatus.Location = new System.Drawing.Point(6, 19);
             this.btnUpdateOrderStatus.Name = "btnUpdateOrderStatus";
             this.btnUpdateOrderStatus.Size = new System.Drawing.Size(176, 23);
             this.btnUpdateOrderStatus.TabIndex = 3;
@@ -189,8 +190,9 @@
             this.btnSetQuantity.Name = "btnSetQuantity";
             this.btnSetQuantity.Size = new System.Drawing.Size(176, 23);
             this.btnSetQuantity.TabIndex = 1;
-            this.btnSetQuantity.Text = "Reset quantity";
+            this.btnSetQuantity.Text = "Set quantity";
             this.btnSetQuantity.UseVisualStyleBackColor = true;
+            this.btnSetQuantity.Click += new System.EventHandler(this.btnSetQuantity_Click);
             // 
             // btnDelSpare
             // 
@@ -200,6 +202,7 @@
             this.btnDelSpare.TabIndex = 0;
             this.btnDelSpare.Text = "Remove item";
             this.btnDelSpare.UseVisualStyleBackColor = true;
+            this.btnDelSpare.Click += new System.EventHandler(this.btnDelSpare_Click);
             // 
             // btnClose
             // 
@@ -218,6 +221,7 @@
             this.btnUpdate.TabIndex = 16;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lstSpare
             // 
@@ -226,13 +230,14 @@
             this.o_QTY,
             this.o_Price,
             this.o_QTYSafeLine,
+            this.o_SpareStock,
             this.o_Description,
             this.o_Status});
             this.lstSpare.FullRowSelect = true;
             this.lstSpare.GridLines = true;
             this.lstSpare.HideSelection = false;
             this.lstSpare.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3});
             this.lstSpare.Location = new System.Drawing.Point(12, 155);
             this.lstSpare.Name = "lstSpare";
             this.lstSpare.Size = new System.Drawing.Size(575, 283);
@@ -371,11 +376,27 @@
             this.txtStoremanID.Size = new System.Drawing.Size(100, 20);
             this.txtStoremanID.TabIndex = 38;
             // 
+            // o_SpareStock
+            // 
+            this.o_SpareStock.Text = "Stock";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnUpdateSpareStatus);
+            this.groupBox1.Controls.Add(this.btnUpdateOrderStatus);
+            this.groupBox1.Location = new System.Drawing.Point(600, 276);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(188, 80);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Storeman Control";
+            // 
             // OrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtStoremanID);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDealerPhone);
@@ -404,6 +425,7 @@
             this.Text = "s";
             this.Load += new System.EventHandler(this.OrderDetail_Load);
             this.groupBox6.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,5 +468,7 @@
         private System.Windows.Forms.TextBox txtDealerPhone;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtStoremanID;
+        private System.Windows.Forms.ColumnHeader o_SpareStock;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

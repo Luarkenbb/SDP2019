@@ -59,7 +59,20 @@ namespace SDP2019.Dialog
             txtStoremanID.Text = row[9].ToString();
 
             conn.CloseConnection();
+
+            getSpareInfo(orderSerial);
         }
+        private void getSpareInfo(int orderSerial)
+        {
+            conn.OpenConnection();
+            string sql = "";
+
+
+
+
+            conn.CloseConnection();
+        }
+    
 
         private void btnAddSpare_Click(object sender, EventArgs e)
         {
@@ -67,8 +80,60 @@ namespace SDP2019.Dialog
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    ListViewItem selectedItem = dlg.getSelectedItem();
-                    lstSpare.Items.Add(selectedItem);
+                    ListViewItem selectedItem = dlg.getSelectedItem(); //spare quantity pricePerItem quantitySafeLine desc
+
+                    ListViewItem addToLst = new ListViewItem(selectedItem.SubItems[0].Text);
+                    addToLst.SubItems.Add("1");
+                    addToLst.SubItems.Add(selectedItem.SubItems[2]);
+                    addToLst.SubItems.Add(selectedItem.SubItems[3]);
+                    addToLst.SubItems.Add(selectedItem.SubItems[1]);
+                    addToLst.SubItems.Add(selectedItem.SubItems[4]);
+                    addToLst.SubItems.Add("awaiting");
+                    lstSpare.Items.Add(addToLst);
+                }
+            }
+        }
+
+        private void btnDelSpare_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure to Remove All Selected spares?", "Clear Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+
+            if (dr == DialogResult.Yes)
+            {
+                foreach (ListViewItem item in lstSpare.SelectedItems)
+                {
+                    lstSpare.Items.Remove(item);
+                }
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSetQuantity_Click(object sender, EventArgs e)
+        {
+            if (lstSpare.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("You should select 1 item only!");
+                return;
+            }else if (lstSpare.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("You dont have item selected");
+                return;
+            }
+
+            ListViewItem item = lstSpare.SelectedItems[0];
+            string spareID = item.SubItems[0].Text;
+            int quantity = Convert.ToInt32(item.SubItems[1].Text);
+            int previousPricePerItem = Convert.ToInt32(item.SubItems[2].Text);
+            using (Dialog.EditSpareQuantity dlg = new Dialog.EditSpareQuantity(spareID,quantity,previousPricePerItem))
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    quantity = dlg.getQuantity();
+                    item.SubItems[1].Text = quantity.ToString();
                 }
             }
         }

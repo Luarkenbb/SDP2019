@@ -34,7 +34,6 @@ namespace SDP2019.Dialog
             {
                     ListViewItem item = lstSpare.SelectedItems[0];
                     ListViewItem clone = (ListViewItem)item.Clone();
-                    clone.SubItems[1].Text = "1";
                     
 
                     selectedItem = clone;

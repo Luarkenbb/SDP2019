@@ -65,14 +65,33 @@ namespace SDP2019.Dialog
         private void getSpareInfo(int orderSerial)
         {
             conn.OpenConnection();
-            string sql = "";
+            string sql = "SELECT orderspare.spareID, orderspare.quantityTotal, orderspare.pricePerItem, spare.quantitySafeLine, spare.quantity, spare.description, orderspare.status,orderspare.toDeliverQuantity FROM orderspare, spare WHERE orderspare.spareID = spare.SpareID AND orderspare.orderSerial = '";
+            sql += orderSerial + "'";
 
-
+            DataTable dt = conn.ExecuteSelectQuery(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                ListViewItem item = new ListViewItem(row[0].ToString());
+                for (int i = 1; i < dt.Columns.Count; i++)
+                {
+                    item.SubItems.Add(row[i].ToString());
+                }
+                lstSpare.Items.Add(item);
+            }
 
 
             conn.CloseConnection();
         }
-    
+        private Boolean isEditableSpare(ListViewItem item)
+        {
+            Boolean isValid = false;
+            if (item.SubItems[6].Text == "awaiting")
+            {
+                isValid = true;
+            }
+
+            return isValid;
+        }
 
         private void btnAddSpare_Click(object sender, EventArgs e)
         {
@@ -102,7 +121,14 @@ namespace SDP2019.Dialog
             {
                 foreach (ListViewItem item in lstSpare.SelectedItems)
                 {
-                    lstSpare.Items.Remove(item);
+                    if (isEditableSpare(item)) {
+                        lstSpare.Items.Remove(item);
+                    }
+                    else
+                    {
+                        string spareID = item.SubItems[0].Text;
+                        MessageBox.Show("This order with spareID:" + spareID + " is already packaged!\nIt cannot be edited or remove!");
+                    }
                 }
             }
         }
@@ -126,6 +152,13 @@ namespace SDP2019.Dialog
 
             ListViewItem item = lstSpare.SelectedItems[0];
             string spareID = item.SubItems[0].Text;
+
+            if (!isEditableSpare(item))
+            {
+                MessageBox.Show("This order with spareID:" + spareID + " is already packaged!\nIt cannot be edited or remove!");
+                return;
+            }
+
             int quantity = Convert.ToInt32(item.SubItems[1].Text);
             int previousPricePerItem = Convert.ToInt32(item.SubItems[2].Text);
             using (Dialog.EditSpareQuantity dlg = new Dialog.EditSpareQuantity(spareID,quantity,previousPricePerItem))

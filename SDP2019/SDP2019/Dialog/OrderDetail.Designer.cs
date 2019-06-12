@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "AA12345",
             "1",
             "2",
@@ -53,7 +53,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.lstSpare = new System.Windows.Forms.ListView();
             this.o_SpareID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.o_QTY = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.o_QuantityTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_QTYSafeLine = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.o_Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -72,6 +72,7 @@
             this.txtStoremanID = new System.Windows.Forms.TextBox();
             this.o_SpareStock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.o_ToDeliver = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -227,20 +228,21 @@
             // 
             this.lstSpare.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.o_SpareID,
-            this.o_QTY,
+            this.o_QuantityTotal,
             this.o_Price,
             this.o_QTYSafeLine,
             this.o_SpareStock,
             this.o_Description,
-            this.o_Status});
+            this.o_Status,
+            this.o_ToDeliver});
             this.lstSpare.FullRowSelect = true;
             this.lstSpare.GridLines = true;
             this.lstSpare.HideSelection = false;
             this.lstSpare.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem1});
             this.lstSpare.Location = new System.Drawing.Point(12, 155);
             this.lstSpare.Name = "lstSpare";
-            this.lstSpare.Size = new System.Drawing.Size(575, 283);
+            this.lstSpare.Size = new System.Drawing.Size(588, 283);
             this.lstSpare.TabIndex = 15;
             this.lstSpare.UseCompatibleStateImageBehavior = false;
             this.lstSpare.View = System.Windows.Forms.View.Details;
@@ -250,10 +252,10 @@
             this.o_SpareID.Text = "SpareID";
             this.o_SpareID.Width = 67;
             // 
-            // o_QTY
+            // o_QuantityTotal
             // 
-            this.o_QTY.Text = "QTY";
-            this.o_QTY.Width = 71;
+            this.o_QuantityTotal.Text = "QuantityTotal";
+            this.o_QuantityTotal.Width = 85;
             // 
             // o_Price
             // 
@@ -391,6 +393,11 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Storeman Control";
             // 
+            // o_ToDeliver
+            // 
+            this.o_ToDeliver.Text = "Packaged";
+            this.o_ToDeliver.Width = 67;
+            // 
             // OrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,7 +456,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.ListView lstSpare;
         private System.Windows.Forms.ColumnHeader o_SpareID;
-        private System.Windows.Forms.ColumnHeader o_QTY;
+        private System.Windows.Forms.ColumnHeader o_QuantityTotal;
         private System.Windows.Forms.ColumnHeader o_Price;
         private System.Windows.Forms.ColumnHeader o_QTYSafeLine;
         private System.Windows.Forms.ColumnHeader o_Description;
@@ -470,5 +477,6 @@
         private System.Windows.Forms.TextBox txtStoremanID;
         private System.Windows.Forms.ColumnHeader o_SpareStock;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ColumnHeader o_ToDeliver;
     }
 }

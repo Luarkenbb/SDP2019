@@ -290,6 +290,32 @@ namespace SDP2019.Dialog
 
         private void btnUpdateSpareStatus_Click(object sender, EventArgs e)
         {
+            if (lstSpare.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("You should select 1 item only!");
+                return;
+            }
+            else if (lstSpare.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("You dont have item selected");
+                return;
+            }
+            ListViewItem item = lstSpare.SelectedItems[0];
+            string spareID = item.SubItems[0].Text;
+
+            if (!isEditableSpare(item))
+            {
+                MessageBox.Show("This order with spareID:" + spareID + " is already packaged!\nIt cannot be edited or remove!");
+                return;
+            }
+
+            using (Dialog.SpareUpdateStatus dlg = new Dialog.SpareUpdateStatus(spareID,orderSerial))
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
 
         }
     }

@@ -45,7 +45,7 @@
             this.txtDeliverQuantity = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtOrderID = new System.Windows.Forms.TextBox();
+            this.txtOrderSerial = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -192,17 +192,17 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(194, 6);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
+            this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 16;
-            this.label7.Text = "OrderID";
+            this.label7.Text = "Order Serial";
             // 
-            // txtOrderID
+            // txtOrderSerial
             // 
-            this.txtOrderID.Location = new System.Drawing.Point(244, 3);
-            this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.ReadOnly = true;
-            this.txtOrderID.Size = new System.Drawing.Size(100, 20);
-            this.txtOrderID.TabIndex = 17;
+            this.txtOrderSerial.Location = new System.Drawing.Point(259, 3);
+            this.txtOrderSerial.Name = "txtOrderSerial";
+            this.txtOrderSerial.ReadOnly = true;
+            this.txtOrderSerial.Size = new System.Drawing.Size(100, 20);
+            this.txtOrderSerial.TabIndex = 17;
             // 
             // btnUpdate
             // 
@@ -229,7 +229,7 @@
             this.ClientSize = new System.Drawing.Size(390, 219);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.txtOrderID);
+            this.Controls.Add(this.txtOrderSerial);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDeliverQuantity);
@@ -274,7 +274,7 @@
         private System.Windows.Forms.TextBox txtDeliverQuantity;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtOrderID;
+        private System.Windows.Forms.TextBox txtOrderSerial;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCancel;
     }

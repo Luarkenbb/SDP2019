@@ -93,7 +93,8 @@ namespace SDP2019.uControl
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    
+                    lstOrder.Items.Clear();
+                    getOrderList();
                 }
             }
         }

@@ -15,8 +15,8 @@ namespace SDP2019.Dialog
         DBConnection conn;
         string frmLogonID;
         int orderSerial;
-        Stack<string> spareIDs = new Stack<string>(); // 一入張Form 原本有既spare! 
-        Stack<string> delSpareIDs = new Stack<string>();
+        LinkedList<string> spareIDs = new LinkedList<string>(); // 一入張Form 原本有既spare! 
+        LinkedList<string> delSpareIDs = new LinkedList<string>();
 
         public OrderDetail()
         {
@@ -88,7 +88,7 @@ namespace SDP2019.Dialog
         {
             foreach (ListViewItem item in lstSpare.Items)
             {
-                spareIDs.Push(item.SubItems[0].Text);
+                spareIDs.AddLast(item.SubItems[0].Text);
             }
         }
 
@@ -119,6 +119,11 @@ namespace SDP2019.Dialog
                     addToLst.SubItems.Add(selectedItem.SubItems[4]);
                     addToLst.SubItems.Add("awaiting");
                     lstSpare.Items.Add(addToLst);
+
+                    if (delSpareIDs.Contains(selectedItem.SubItems[0].Text))
+                    {
+                        delSpareIDs.Remove(selectedItem.SubItems[0].Text);
+                    }
                 }
             }
         }
@@ -132,7 +137,7 @@ namespace SDP2019.Dialog
                 foreach (ListViewItem item in lstSpare.SelectedItems)
                 {
                     if (isEditableSpare(item)) {
-                        delSpareIDs.Push(item.SubItems[0].Text);
+                        delSpareIDs.AddLast(item.SubItems[0].Text);
                         lstSpare.Items.Remove(item);
                     }
                     else
@@ -146,23 +151,99 @@ namespace SDP2019.Dialog
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+            updateOrderInfo();
+            updateOrderSpareInfo();
+            deleteOrderSpareInfo();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
-        
+        private void updateOrderInfo()
+        {
+            conn.OpenConnection();
+
+            string sql = "UPDATE orderlist SET ";
+            sql += "invoiceAddress = '" +rtxtInvoiceAddress.Text + "',";
+            sql += "deliverAddress = '" + rtxtDeliverAddress.Text + "'";
+            sql += " WHERE orderSerial = '" + orderSerial +"'";
+
+            conn.ExecuteUpdateQuery(sql);
+
+            conn.CloseConnection();
+        }
+
+
         private void updateOrderSpareInfo()
         {
+            string sql;
+            string spareID;
+            int quantityTotal;
+            int pricePerItem;
+            string status;
+            string toDeliverQuantity;
+            conn.OpenConnection();
+
             foreach (ListViewItem item in lstSpare.Items)
             {
-                if (spareIDs.Contains(item.SubItems[0].Text))
+                spareID = item.SubItems[0].Text;
+                quantityTotal = Convert.ToInt32(item.SubItems[1].Text);
+                status = item.SubItems[6].Text;
+                pricePerItem = Convert.ToInt32(item.SubItems[2].Text);
+
+                if (item.SubItems.Count < 8)
+                {
+                    toDeliverQuantity = "NULL";
+                }
+                else
+                {
+                    if (item.SubItems[7].Text.Trim() == "")
+                    {
+                        toDeliverQuantity = "NULL";
+                    }
+                    else
+                    {
+                        toDeliverQuantity = item.SubItems[7].Text.Trim();
+                    }
+                }
+              
+                
+
+                if (spareIDs.Contains(spareID))
                 {
                     //update
+                    sql = "UPDATE orderspare SET ";
+                    sql += "quantityTotal = " + quantityTotal + ",";
+                    sql += "status = '" + status + "',";
+                    sql += "toDeliverQuantity = " + toDeliverQuantity;
+                    sql += " WHERE orderSerial = " + orderSerial + " AND spareID = '" + spareID + "'";
+
+                    MessageBox.Show(sql);
+                    conn.ExecuteUpdateQuery(sql);
                 }
                 else
                 {
                     //insert
+                    sql = "Insert into orderspare(orderSerial,spareID,quantityTotal,pricePerItem,status) VAlUES(";
+                    sql += orderSerial + ",'" + spareID + "'," + quantityTotal + "," + pricePerItem + ",'" + status + "'";
+                    sql += ")";
+
+                    conn.ExecuteInsertQuery(sql);
                 }
+
+                sql = "";
             }
+            conn.CloseConnection();
         }
+        private void deleteOrderSpareInfo()
+        {
+            conn.OpenConnection();
+            foreach (string spareID in delSpareIDs)
+            {
+                string sql = "DELETE FROM orderspare WHERE orderSerial = " + orderSerial + " AND spareID = '" + spareID + "'";
+                conn.ExecuteUpdateQuery(sql);
+            }
+            conn.CloseConnection();
+        }
+
 
         private void btnSetQuantity_Click(object sender, EventArgs e)
         {

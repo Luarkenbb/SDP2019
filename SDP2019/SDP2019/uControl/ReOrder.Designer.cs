@@ -45,9 +45,11 @@
             this.groupBox7.Controls.Add(this.bt_Detail);
             this.groupBox7.Controls.Add(this.bt_Status);
             this.groupBox7.Controls.Add(this.bt_search);
-            this.groupBox7.Location = new System.Drawing.Point(576, 9);
+            this.groupBox7.Location = new System.Drawing.Point(864, 14);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(191, 112);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox7.Size = new System.Drawing.Size(286, 172);
             this.groupBox7.TabIndex = 22;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Data control";
@@ -55,9 +57,10 @@
             // bt_Detail
             // 
             this.bt_Detail.Enabled = false;
-            this.bt_Detail.Location = new System.Drawing.Point(7, 48);
+            this.bt_Detail.Location = new System.Drawing.Point(10, 74);
+            this.bt_Detail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Detail.Name = "bt_Detail";
-            this.bt_Detail.Size = new System.Drawing.Size(178, 23);
+            this.bt_Detail.Size = new System.Drawing.Size(267, 35);
             this.bt_Detail.TabIndex = 2;
             this.bt_Detail.Text = "Order Modify / Detail";
             this.bt_Detail.UseVisualStyleBackColor = true;
@@ -66,21 +69,25 @@
             // bt_Status
             // 
             this.bt_Status.Enabled = false;
-            this.bt_Status.Location = new System.Drawing.Point(6, 77);
+            this.bt_Status.Location = new System.Drawing.Point(9, 118);
+            this.bt_Status.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_Status.Name = "bt_Status";
-            this.bt_Status.Size = new System.Drawing.Size(178, 23);
+            this.bt_Status.Size = new System.Drawing.Size(267, 35);
             this.bt_Status.TabIndex = 1;
             this.bt_Status.Text = "Change Status";
             this.bt_Status.UseVisualStyleBackColor = true;
+            this.bt_Status.Click += new System.EventHandler(this.Bt_Status_Click);
             // 
             // bt_search
             // 
-            this.bt_search.Location = new System.Drawing.Point(7, 19);
+            this.bt_search.Location = new System.Drawing.Point(10, 29);
+            this.bt_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bt_search.Name = "bt_search";
-            this.bt_search.Size = new System.Drawing.Size(178, 23);
+            this.bt_search.Size = new System.Drawing.Size(267, 35);
             this.bt_search.TabIndex = 0;
             this.bt_search.Text = "Search";
             this.bt_search.UseVisualStyleBackColor = true;
+            this.bt_search.Click += new System.EventHandler(this.Bt_search_Click);
             // 
             // listViewReOrder
             // 
@@ -91,9 +98,10 @@
             this.status});
             this.listViewReOrder.FullRowSelect = true;
             this.listViewReOrder.HideSelection = false;
-            this.listViewReOrder.Location = new System.Drawing.Point(3, 3);
+            this.listViewReOrder.Location = new System.Drawing.Point(4, 5);
+            this.listViewReOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listViewReOrder.Name = "listViewReOrder";
-            this.listViewReOrder.Size = new System.Drawing.Size(567, 412);
+            this.listViewReOrder.Size = new System.Drawing.Size(848, 632);
             this.listViewReOrder.TabIndex = 21;
             this.listViewReOrder.UseCompatibleStateImageBehavior = false;
             this.listViewReOrder.View = System.Windows.Forms.View.Details;
@@ -118,12 +126,13 @@
             // 
             // ReOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.listViewReOrder);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ReOrder";
-            this.Size = new System.Drawing.Size(781, 418);
+            this.Size = new System.Drawing.Size(1172, 643);
             this.Load += new System.EventHandler(this.ReOrder_Load);
             this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);

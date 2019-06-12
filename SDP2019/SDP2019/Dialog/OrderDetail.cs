@@ -15,6 +15,8 @@ namespace SDP2019.Dialog
         DBConnection conn;
         string frmLogonID;
         int orderSerial;
+        Stack<string> spareIDs = new Stack<string>(); // 一入張Form 原本有既spare! 
+        Stack<string> delSpareIDs = new Stack<string>();
 
         public OrderDetail()
         {
@@ -33,7 +35,7 @@ namespace SDP2019.Dialog
             conn = new DBConnection();
             lstSpare.Items.Clear();
             getOrderInfo();
-            
+            getSpareIDsBeforeEdit();
         }
 
         private void getOrderInfo()
@@ -82,6 +84,14 @@ namespace SDP2019.Dialog
 
             conn.CloseConnection();
         }
+        private void getSpareIDsBeforeEdit()
+        {
+            foreach (ListViewItem item in lstSpare.Items)
+            {
+                spareIDs.Push(item.SubItems[0].Text);
+            }
+        }
+
         private Boolean isEditableSpare(ListViewItem item)
         {
             Boolean isValid = false;
@@ -122,6 +132,7 @@ namespace SDP2019.Dialog
                 foreach (ListViewItem item in lstSpare.SelectedItems)
                 {
                     if (isEditableSpare(item)) {
+                        delSpareIDs.Push(item.SubItems[0].Text);
                         lstSpare.Items.Remove(item);
                     }
                     else
@@ -135,7 +146,22 @@ namespace SDP2019.Dialog
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            
+        }
+        
+        private void updateOrderSpareInfo()
+        {
+            foreach (ListViewItem item in lstSpare.Items)
+            {
+                if (spareIDs.Contains(item.SubItems[0].Text))
+                {
+                    //update
+                }
+                else
+                {
+                    //insert
+                }
+            }
         }
 
         private void btnSetQuantity_Click(object sender, EventArgs e)

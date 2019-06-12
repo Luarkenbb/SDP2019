@@ -32,7 +32,17 @@ namespace SDP2019.uControl
 
         public void addNewOrderSpare(ListViewItem item)
         {
-            lstOrderFrmSpares.Items.Add(item);
+            string spareID = item.SubItems[0].Text;
+            if (!isSelectedSpare(spareID))
+            {
+                lstOrderFrmSpares.Items.Add(item);
+            }
+            else
+            {
+                MessageBox.Show("This item is already selected!");
+            }
+
+            
         }
         public void addDealer(string id,string name,string address,string phone)
         {
@@ -41,7 +51,18 @@ namespace SDP2019.uControl
             rtxtOrderFrmInvoiceAddress.Text = address;
             txtOrderFrmDealerPhone.Text = phone;
         }
-
+        private Boolean isSelectedSpare(string spareID)
+        {
+            Boolean isSelected = false;
+            foreach (ListViewItem item in lstOrderFrmSpares.Items)
+            {
+                if (item.SubItems[0].Text == spareID)
+                {
+                    return true;
+                }
+            }
+            return isSelected;
+        }
 
         private void newOrderTab_Load(object sender, EventArgs e)
         {

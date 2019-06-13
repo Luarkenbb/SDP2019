@@ -12,17 +12,57 @@ namespace SDP2019.uControl
 {
     public partial class ReOrder : UserControl
     {
-        DBConnection conn = new DBConnection();
+        DBConnection conn;
         public ReOrder()
         {
             InitializeComponent();
         }
-
         public void ReOrder_Load(object sender, EventArgs e)
         {
-            setReorderTable(getReorderTable());
+            conn = new DBConnection();
+            refatsh(listViewReOrder, getReorderTable());
+            refatsh(lstSpare, getCanReOrderList());
         }
-
+        private void Bt_Detail_Click(object sender, EventArgs e)
+        {
+            new Dialog.ReOrderDetail(int.Parse(listViewReOrder.SelectedItems[0].Text)).ShowDialog();
+            refatsh(listViewReOrder, getReorderTable());
+        }
+        private void Bt_Status_Click(object sender, EventArgs e)
+        {
+            new Dialog.ReOrderStatus(listViewReOrder.SelectedItems).ShowDialog();
+            refatsh(listViewReOrder, getReorderTable());
+        }
+        private void Bt_search_Click(object sender, EventArgs e)
+        {
+            using (var form = new Dialog.ReOrderSearch())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    refatsh(listViewReOrder, getReorderTable(form.sql));
+                }
+            }
+        }
+        private void Bt_check_Click(object sender, EventArgs e)
+        {
+            refatsh(listViewReOrder, getReorderTable());
+            refatsh(lstSpare, getCanReOrderList());
+        }
+        private void Bt_setting_Click(object sender, EventArgs e)
+        {
+            conn.OpenConnection();
+            foreach(ListViewItem row in lstSpare.SelectedItems)
+            {
+                String sql = "insert into reorder(spareID, quantitySafeLine, status) " +
+                   "value('" +
+                   lstSpare.SelectedItems[0].Text + "','" +
+                   lstSpare.SelectedItems[0].SubItems[2].Text + "','" +
+                   lstSpare.SelectedItems[0].SubItems[4].Text + "')";
+                conn.ExecuteInsertQuery(sql);
+            }
+            conn.CloseConnection();
+            refatsh(listViewReOrder, getReorderTable());
+        }
         public DataTable getReorderTable()
         {
             conn.OpenConnection();
@@ -30,16 +70,14 @@ namespace SDP2019.uControl
             conn.CloseConnection();
             return rs;
         }
-
-        public DataTable getReorderTable(String sql)
+        public DataTable getReorderTable(String sqlWhere)
         {
             conn.OpenConnection();
-            DataTable rs = conn.ExecuteSelectQuery("select * from reorder where " + sql);
+            DataTable rs = conn.ExecuteSelectQuery("select * from reorder where " + sqlWhere);
             conn.CloseConnection();
             return rs;
         }
-
-        public void setReorderTable(DataTable rs)
+        public void setReorderTable(ListView listView, DataTable rs)
         {
             foreach (DataRow row in rs.Rows)
             {
@@ -48,55 +86,51 @@ namespace SDP2019.uControl
                 {
                     item.SubItems.Add(row[i].ToString());
                 }
-                listViewReOrder.Items.Add(item);
+                listView.Items.Add(item);
             }
         }
-
-        private void Bt_Detail_Click(object sender, EventArgs e)
+        public DataTable getCanReOrderList()
         {
-            new Dialog.ReOrderDetail(int.Parse(listViewReOrder.SelectedItems[0].Text)).ShowDialog();
-            waiting_refatsh();
-        }
+            conn.OpenConnection();
+            DataTable rs = conn.ExecuteSelectQuery("select * from spare");
+            conn.CloseConnection();
 
-        private void Bt_Status_Click(object sender, EventArgs e)
-        {
-            new Dialog.ReOrderStatus(listViewReOrder.SelectedItems).ShowDialog();
-            waiting_refatsh();
-        }
+            //add custom column
+            rs.Columns["price"].SetOrdinal(3);
+            rs.Columns.Add("Status", typeof(String));
+            rs.Columns["status"].SetOrdinal(4);
+            rs.Columns.Add("qtyofSL", typeof(int));
+            rs.Columns["qtyofSL"].SetOrdinal(5);
+            rs.Columns["description"].SetOrdinal(6);
 
-        private void ListViewReOrder_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            bt_Detail.Enabled = bt_Status.Enabled = true;
-        }
-
-        private void waiting_refatsh()
-        {
-            listViewReOrder.Items.Clear();
-            setReorderTable(getReorderTable());
-            if (listViewReOrder.Items.Count > 0)
+            //set level
+            foreach (DataRow row in rs.Rows)
             {
-                listViewReOrder.Items[0].Selected = true;
-                listViewReOrder.Select();
-            }
-        }
-
-        private void Bt_search_Click(object sender, EventArgs e)
-        {
-            using (var form = new Dialog.ReOrderSearch())
-            {
-                if (form.ShowDialog() == DialogResult.OK)
+                if (int.Parse(row[1].ToString()) <= int.Parse(row[2].ToString()))
                 {
-                    listViewReOrder.Items.Clear();
-                    setReorderTable(getReorderTable(form.sql));
-                    if (listViewReOrder.Items.Count > 0)
-                    {
-                        listViewReOrder.Items[0].Selected = true;
-                        listViewReOrder.Select();
-                    }
+                    row[4] = "Danger";
                 }
+                else if (int.Parse(row[1].ToString()) == 0)
+                {
+                    row[4] = "Null";
+                }
+                else
+                {
+                    row[4] = "normal";
+                }
+                //count level make sure can order by qty-danger level asc
+                row[5] = int.Parse(row[1].ToString()) - int.Parse(row[2].ToString());
             }
+
+            //order by asc
+            DataView dataView = rs.DefaultView;
+            dataView.Sort = "qtyofSL";
+            return dataView.ToTable();
+        }
+        private void refatsh(ListView listView, DataTable dataTable)
+        {
+            listView.Items.Clear();
+            setReorderTable(listView, dataTable);
         }
     }
-
-    
 }

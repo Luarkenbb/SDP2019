@@ -1,4 +1,4 @@
-﻿namespace SDP2019
+﻿namespace SDP2019.Dialog
 {
     partial class SpareNewItem
     {
@@ -28,45 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.rtxtDesc = new System.Windows.Forms.RichTextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtSpareID = new System.Windows.Forms.TextBox();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // rtxtDesc
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(152, 58);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(202, 69);
-            this.richTextBox1.TabIndex = 23;
-            this.richTextBox1.Text = "";
+            this.rtxtDesc.Location = new System.Drawing.Point(152, 58);
+            this.rtxtDesc.Name = "rtxtDesc";
+            this.rtxtDesc.Size = new System.Drawing.Size(202, 69);
+            this.rtxtDesc.TabIndex = 23;
+            this.rtxtDesc.Text = "";
             // 
-            // textBox4
+            // txtPrice
             // 
-            this.textBox4.Location = new System.Drawing.Point(152, 32);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(202, 20);
-            this.textBox4.TabIndex = 22;
+            this.txtPrice.Location = new System.Drawing.Point(152, 32);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(202, 20);
+            this.txtPrice.TabIndex = 22;
             // 
-            // textBox1
+            // txtSpareID
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 20);
-            this.textBox1.TabIndex = 19;
+            this.txtSpareID.Location = new System.Drawing.Point(152, 6);
+            this.txtSpareID.Name = "txtSpareID";
+            this.txtSpareID.Size = new System.Drawing.Size(202, 20);
+            this.txtSpareID.TabIndex = 19;
             // 
-            // button1
+            // btnCreate
             // 
-            this.button1.Location = new System.Drawing.Point(270, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCreate.Location = new System.Drawing.Point(270, 133);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(84, 23);
+            this.btnCreate.TabIndex = 18;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // label5
             // 
@@ -100,25 +101,26 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(367, 176);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.rtxtDesc);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtSpareID);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "SpareNewItem";
             this.Text = "SpareNewItem";
+            this.Load += new System.EventHandler(this.SpareNewItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox rtxtDesc;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtSpareID;
+        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;

@@ -92,7 +92,10 @@ namespace SDP2019.uControl
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
+                    string sql = dlg.getOrderListSQL();
 
+                    lstOrder.Items.Clear();
+                    getOrderList(sql);
                 }
             }
         }
@@ -100,6 +103,12 @@ namespace SDP2019.uControl
         private void btnOrderDetail_Click(object sender, EventArgs e)
         {
             int orderSerial;
+            if (lstOrder.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("You dont have item selected!");
+                return;
+            }
+
             orderSerial = Convert.ToInt32(lstOrder.SelectedItems[0].SubItems[0].Text);
 
             using (Dialog.OrderDetail dlg = new Dialog.OrderDetail(orderSerial,frmLogonID))

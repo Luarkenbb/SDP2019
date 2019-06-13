@@ -32,15 +32,21 @@ namespace SDP2019.uControl
         {
             conn = new DBConnection();
             tab = (TabControl)this.Parent.Parent;
-            lstSpareGetSpares();
+            lstSpareGetAllSpares();
         }
 
-        private void lstSpareGetSpares()
+        private void lstSpareGetAllSpares()
+        {
+            string sql = "Select SpareID, quantity, price, quantitySafeLine, description from spare";
+            lstSpareGetSpares(sql);
+        }
+
+        private void lstSpareGetSpares(string sql)
         {
             lstSpare.Items.Clear();
             conn.OpenConnection();
 
-            string sql = "Select SpareID, quantity, price, quantitySafeLine, description from spare";
+           
             DataTable dt = conn.ExecuteSelectQuery(sql);
 
             foreach (DataRow row in dt.Rows)
@@ -86,6 +92,40 @@ namespace SDP2019.uControl
             else
             {
                 MessageBox.Show("Please select spare(s)!");
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            using (Dialog.SpareSearch dlg = new Dialog.SpareSearch())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    lstSpareGetSpares(dlg.getSQL());
+                }
+            }
+        }
+
+        private void btnSpareAdd_Click(object sender, EventArgs e)
+        {
+            using (Dialog.SpareNewItem dlg = new Dialog.SpareNewItem())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    lstSpareGetAllSpares();
+                }
+            }
+        }
+
+        private void btnSpareModify_Click(object sender, EventArgs e)
+        {
+            if (lstSpare.SelectedItems.Count == 1)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Please select 1 spare only!");
             }
         }
     }

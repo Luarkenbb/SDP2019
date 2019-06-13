@@ -36,9 +36,9 @@
             "4",
             "5"}, -1);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSpareModify = new System.Windows.Forms.Button();
+            this.btnSpareAdd = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSpareFrmAddToOrder = new System.Windows.Forms.Button();
             this.lstSpare = new System.Windows.Forms.ListView();
@@ -53,9 +53,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.btnSpareModify);
+            this.groupBox2.Controls.Add(this.btnSpareAdd);
+            this.groupBox2.Controls.Add(this.btnSearch);
             this.groupBox2.Location = new System.Drawing.Point(574, 61);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(191, 112);
@@ -63,32 +63,35 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data control";
             // 
-            // button4
+            // btnSpareModify
             // 
-            this.button4.Location = new System.Drawing.Point(6, 78);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(178, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Spare Modify / Detail";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSpareModify.Location = new System.Drawing.Point(6, 78);
+            this.btnSpareModify.Name = "btnSpareModify";
+            this.btnSpareModify.Size = new System.Drawing.Size(178, 23);
+            this.btnSpareModify.TabIndex = 2;
+            this.btnSpareModify.Text = "Spare Modify / Detail";
+            this.btnSpareModify.UseVisualStyleBackColor = true;
+            this.btnSpareModify.Click += new System.EventHandler(this.btnSpareModify_Click);
             // 
-            // button3
+            // btnSpareAdd
             // 
-            this.button3.Location = new System.Drawing.Point(7, 49);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(178, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Add New item";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSpareAdd.Location = new System.Drawing.Point(7, 49);
+            this.btnSpareAdd.Name = "btnSpareAdd";
+            this.btnSpareAdd.Size = new System.Drawing.Size(178, 23);
+            this.btnSpareAdd.TabIndex = 1;
+            this.btnSpareAdd.Text = "Add New item";
+            this.btnSpareAdd.UseVisualStyleBackColor = true;
+            this.btnSpareAdd.Click += new System.EventHandler(this.btnSpareAdd_Click);
             // 
-            // button2
+            // btnSearch
             // 
-            this.button2.Location = new System.Drawing.Point(7, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(7, 19);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(178, 23);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox1
             // 
@@ -174,9 +177,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSpareModify;
+        private System.Windows.Forms.Button btnSpareAdd;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSpareFrmAddToOrder;
         private System.Windows.Forms.ListView lstSpare;

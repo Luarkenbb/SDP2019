@@ -30,7 +30,6 @@
         {
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btnOrderDetail = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lstOrder = new System.Windows.Forms.ListView();
             this.oL_OrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,11 +44,10 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.btnOrderDetail);
-            this.groupBox7.Controls.Add(this.button16);
             this.groupBox7.Controls.Add(this.btnSearch);
             this.groupBox7.Location = new System.Drawing.Point(574, 6);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(191, 112);
+            this.groupBox7.Size = new System.Drawing.Size(191, 83);
             this.groupBox7.TabIndex = 20;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Data control";
@@ -63,15 +61,6 @@
             this.btnOrderDetail.Text = "Order Modify / Detail";
             this.btnOrderDetail.UseVisualStyleBackColor = true;
             this.btnOrderDetail.Click += new System.EventHandler(this.btnOrderDetail_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(6, 77);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(178, 23);
-            this.button16.TabIndex = 1;
-            this.button16.Text = "Delete Order";
-            this.button16.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
@@ -148,7 +137,6 @@
 
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button btnOrderDetail;
-        private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ListView lstOrder;
         private System.Windows.Forms.ColumnHeader oL_OrderID;

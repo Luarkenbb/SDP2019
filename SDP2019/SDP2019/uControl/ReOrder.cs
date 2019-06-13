@@ -144,6 +144,10 @@ namespace SDP2019.uControl
             //set level
             foreach (DataRow row in rs.Rows)
             {
+                if (row[1].ToString() == "" || row[2].ToString() == "")
+                {
+                    continue;
+                }
                 if (int.Parse(row[1].ToString()) <= int.Parse(row[2].ToString()))
                 {
                     row[4] = "Danger";

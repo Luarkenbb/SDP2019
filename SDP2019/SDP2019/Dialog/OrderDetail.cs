@@ -105,26 +105,32 @@ namespace SDP2019.Dialog
 
         private void btnAddSpare_Click(object sender, EventArgs e)
         {
-            using (Dialog.SpareSelect dlg = new Dialog.SpareSelect())
-            {
-                if (dlg.ShowDialog() == DialogResult.OK)
+            if (txtEndDate.Text == "") {
+                using (Dialog.SpareSelect dlg = new Dialog.SpareSelect())
                 {
-                    ListViewItem selectedItem = dlg.getSelectedItem(); //spare quantity pricePerItem quantitySafeLine desc
-
-                    ListViewItem addToLst = new ListViewItem(selectedItem.SubItems[0].Text);
-                    addToLst.SubItems.Add("1");
-                    addToLst.SubItems.Add(selectedItem.SubItems[2]);
-                    addToLst.SubItems.Add(selectedItem.SubItems[3]);
-                    addToLst.SubItems.Add(selectedItem.SubItems[1]);
-                    addToLst.SubItems.Add(selectedItem.SubItems[4]);
-                    addToLst.SubItems.Add("awaiting");
-                    lstSpare.Items.Add(addToLst);
-
-                    if (delSpareIDs.Contains(selectedItem.SubItems[0].Text))
+                    if (dlg.ShowDialog() == DialogResult.OK)
                     {
-                        delSpareIDs.Remove(selectedItem.SubItems[0].Text);
+                        ListViewItem selectedItem = dlg.getSelectedItem(); //spare quantity pricePerItem quantitySafeLine desc
+
+                        ListViewItem addToLst = new ListViewItem(selectedItem.SubItems[0].Text);
+                        addToLst.SubItems.Add("1");
+                        addToLst.SubItems.Add(selectedItem.SubItems[2]);
+                        addToLst.SubItems.Add(selectedItem.SubItems[3]);
+                        addToLst.SubItems.Add(selectedItem.SubItems[1]);
+                        addToLst.SubItems.Add(selectedItem.SubItems[4]);
+                        addToLst.SubItems.Add("awaiting");
+                        lstSpare.Items.Add(addToLst);
+
+                        if (delSpareIDs.Contains(selectedItem.SubItems[0].Text))
+                        {
+                            delSpareIDs.Remove(selectedItem.SubItems[0].Text);
+                        }
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("this is a completed order! You can only view this order");
             }
         }
 

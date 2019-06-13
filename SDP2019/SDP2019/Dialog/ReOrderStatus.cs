@@ -35,8 +35,45 @@ namespace SDP2019.Dialog
         private void Bt_update_Click(object sender, EventArgs e)
         {
             conn.OpenConnection();
-            String sql = "update reorder set status='" + cb_status.Text + "' where ";
-            ListViewItem last = selectedListViewItemCollection[selectedListViewItemCollection.Count-1];
+            Boolean error = false;
+            String sql;
+
+            if (cb_status.Text == "Completed")
+            {
+                foreach (ListViewItem rowchenk in selectedListViewItemCollection)
+                {
+                    if (rowchenk.SubItems[4].Text == "")
+                    {
+                        MessageBox.Show("You have some item has't set quantity, Please deselect or set quantity");
+                        error = true;
+                    }
+
+                }
+                if (error != true)
+                {
+                    foreach (ListViewItem row in selectedListViewItemCollection)
+                    {
+                        sql = "update spare set quantity=quantity+" + row.SubItems[4].Text + " where spareID='" + row.SubItems[1].Text + "'";
+                        conn.ExecuteUpdateQuery(sql);
+                    }
+
+                    update(cb_status.Text);
+                }
+            }
+            else if (cb_status.Text == "Ordered")
+            {
+                update(cb_status.Text);
+            }
+
+            conn.CloseConnection();
+            Close();
+        }
+
+        private void update(String status)
+        {
+            String sql = "update reorder set status='" + status + "' where ";
+            ListViewItem last = selectedListViewItemCollection[selectedListViewItemCollection.Count - 1];
+            object a = selectedListViewItemCollection;
             foreach (ListViewItem row in selectedListViewItemCollection)
             {
                 sql += "reOrderID = '" + row.Text + "'";
@@ -47,8 +84,6 @@ namespace SDP2019.Dialog
 
             }
             conn.ExecuteUpdateQuery(sql);
-            conn.CloseConnection();
-            Close();
         }
     }
 }

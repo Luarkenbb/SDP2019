@@ -99,6 +99,12 @@
     <Compile Include="Dialog\OrderSearch.Designer.cs">
       <DependentUpon>OrderSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\ReOrdercalledQTY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\ReOrdercalledQTY.Designer.cs">
+      <DependentUpon>ReOrdercalledQTY.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\ReOrderDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\OrderSearch.resx">
       <DependentUpon>OrderSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\ReOrdercalledQTY.resx">
+      <DependentUpon>ReOrdercalledQTY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\ReOrderDetail.resx">
       <DependentUpon>ReOrderDetail.cs</DependentUpon>

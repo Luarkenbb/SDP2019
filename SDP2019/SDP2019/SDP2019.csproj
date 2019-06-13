@@ -161,10 +161,10 @@
     <Compile Include="ReportSearch.Designer.cs">
       <DependentUpon>ReportSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpareDetail.cs">
+    <Compile Include="Dialog\SpareDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SpareDetail.Designer.cs">
+    <Compile Include="Dialog\SpareDetail.Designer.cs">
       <DependentUpon>SpareDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialog\SpareNewItem.cs">
@@ -294,7 +294,7 @@
     <EmbeddedResource Include="ReportSearch.resx">
       <DependentUpon>ReportSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SpareDetail.resx">
+    <EmbeddedResource Include="Dialog\SpareDetail.resx">
       <DependentUpon>SpareDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\SpareNewItem.resx">

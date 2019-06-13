@@ -121,7 +121,14 @@ namespace SDP2019.uControl
         {
             if (lstSpare.SelectedItems.Count == 1)
             {
-
+                string spareID = lstSpare.SelectedItems[0].SubItems[0].Text;
+                using (Dialog.SpareDetail dlg = new Dialog.SpareDetail(spareID))
+                {
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        lstSpareGetAllSpares();
+                    }
+                }
             }
             else
             {

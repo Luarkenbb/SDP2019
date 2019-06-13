@@ -38,10 +38,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(108, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(72, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 20);
+            this.label1.Size = new System.Drawing.Size(131, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Change your select Status";
             // 
@@ -50,20 +49,18 @@
             this.cb_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_status.FormattingEnabled = true;
             this.cb_status.Items.AddRange(new object[] {
-            "NULL",
-            "ReOrdered"});
-            this.cb_status.Location = new System.Drawing.Point(120, 151);
-            this.cb_status.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            "Ordered",
+            "Completed"});
+            this.cb_status.Location = new System.Drawing.Point(80, 98);
             this.cb_status.Name = "cb_status";
-            this.cb_status.Size = new System.Drawing.Size(169, 28);
+            this.cb_status.Size = new System.Drawing.Size(114, 21);
             this.cb_status.TabIndex = 44;
             // 
             // bt_update
             // 
-            this.bt_update.Location = new System.Drawing.Point(75, 225);
-            this.bt_update.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bt_update.Location = new System.Drawing.Point(50, 146);
             this.bt_update.Name = "bt_update";
-            this.bt_update.Size = new System.Drawing.Size(112, 35);
+            this.bt_update.Size = new System.Drawing.Size(75, 23);
             this.bt_update.TabIndex = 46;
             this.bt_update.Text = "Update";
             this.bt_update.UseVisualStyleBackColor = true;
@@ -71,10 +68,9 @@
             // 
             // bt_close
             // 
-            this.bt_close.Location = new System.Drawing.Point(214, 225);
-            this.bt_close.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bt_close.Location = new System.Drawing.Point(143, 146);
             this.bt_close.Name = "bt_close";
-            this.bt_close.Size = new System.Drawing.Size(112, 35);
+            this.bt_close.Size = new System.Drawing.Size(75, 23);
             this.bt_close.TabIndex = 45;
             this.bt_close.Text = "Close";
             this.bt_close.UseVisualStyleBackColor = true;
@@ -83,25 +79,23 @@
             // lb_count
             // 
             this.lb_count.AutoSize = true;
-            this.lb_count.Location = new System.Drawing.Point(82, 92);
-            this.lb_count.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_count.Location = new System.Drawing.Point(55, 60);
             this.lb_count.Name = "lb_count";
-            this.lb_count.Size = new System.Drawing.Size(36, 20);
+            this.lb_count.Size = new System.Drawing.Size(24, 13);
             this.lb_count.TabIndex = 47;
             this.lb_count.Text = "test";
             this.lb_count.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ReOrderStatus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 297);
+            this.ClientSize = new System.Drawing.Size(274, 193);
             this.Controls.Add(this.lb_count);
             this.Controls.Add(this.bt_update);
             this.Controls.Add(this.bt_close);
             this.Controls.Add(this.cb_status);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ReOrderStatus";
             this.Text = "ReOrderStatus";
             this.ResumeLayout(false);

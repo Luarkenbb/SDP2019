@@ -35,7 +35,8 @@ namespace SDP2019.uControl
             conn.OpenConnection();
             string sql = "SELECT orderlist.orderSerial, orderlist.createDateTime, orderlist.dealerID, dealer.name, orderlist.completeDateTime ";
             sql += "FROM orderlist, dealer ";
-            sql += "WHERE orderlist.dealerID = dealer.dealerID";
+            sql += "WHERE orderlist.dealerID = dealer.dealerID ";
+            sql += "ORDER BY orderlist.createDateTime ";
             DataTable dt = conn.ExecuteSelectQuery(sql);
             foreach (DataRow row in dt.Rows)
             {

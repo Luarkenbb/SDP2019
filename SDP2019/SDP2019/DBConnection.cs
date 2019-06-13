@@ -43,7 +43,7 @@ namespace SDP2019
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = Query_;
-            return cmd.ExecuteNonQuery();
+           return cmd.ExecuteNonQuery();
         }
 
         public int ExecuteInsertQuery(string Query_)

@@ -231,7 +231,7 @@ namespace SDP2019.uControl
             }
             else
             {
-                
+                 
                 foreach (DataRow row in dt.Rows)
                 {
                     followOrderIDs.AddLast(Convert.ToInt32(row[0].ToString()));

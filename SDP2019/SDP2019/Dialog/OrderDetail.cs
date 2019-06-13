@@ -285,9 +285,56 @@ namespace SDP2019.Dialog
 
         private void btnUpdateOrderStatus_Click(object sender, EventArgs e)
         {
+            string sql;
+            DateTime localDate = DateTime.Now;
+            string format = "yyyy-MM-dd HH:mm:ss";
+            string time = "'" + localDate.ToString(format) + "'";
 
+            if (isAllSparePackaged(orderSerial))
+            {
+                conn.OpenConnection();
+                sql = "UPDATE orderlist SET ";
+                sql += "completeDateTime = " + time + " ";
+                sql += "storemanID = " + frmLogonID + " ";
+                sql += "WHERE orderSerial = " + orderSerial;
+
+                conn.ExecuteUpdateQuery(sql);
+
+                conn.CloseConnection();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("This order have spare awaiting! This is not a completed order!");
+            }
+
+            
         }
+        private Boolean isAllSparePackaged(int orderSerial)
+        {
+            Boolean isPackaged = true;
+            conn.OpenConnection();
+            string sql;
 
+            sql = "SELECT status FROM orderspare WHERE orderSerial = " + orderSerial;
+            DataTable dt = conn.ExecuteSelectQuery(sql);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row[0].ToString() == "awaiting")
+                    {
+                        isPackaged = false;
+                        break;
+                    }
+                }
+            }
+
+
+            conn.CloseConnection();
+            return isPackaged;
+        }
         private void btnUpdateSpareStatus_Click(object sender, EventArgs e)
         {
             if (lstSpare.SelectedItems.Count > 1)

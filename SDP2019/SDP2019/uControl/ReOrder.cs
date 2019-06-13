@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace SDP2019.uControl
 {
-    //
     public partial class ReOrder : UserControl
     {
         DBConnection conn;

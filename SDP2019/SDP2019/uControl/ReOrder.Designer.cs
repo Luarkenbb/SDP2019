@@ -48,18 +48,21 @@
             this.s_Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bt_setting = new System.Windows.Forms.Button();
             this.bt_delete = new System.Windows.Forms.Button();
+            this.calledQty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bt_setcalledQty = new System.Windows.Forms.Button();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.bt_setcalledQty);
             this.groupBox7.Controls.Add(this.bt_delete);
             this.groupBox7.Controls.Add(this.bt_Detail);
             this.groupBox7.Controls.Add(this.bt_Status);
             this.groupBox7.Controls.Add(this.bt_search);
-            this.groupBox7.Location = new System.Drawing.Point(576, 276);
+            this.groupBox7.Location = new System.Drawing.Point(576, 241);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(191, 139);
+            this.groupBox7.Size = new System.Drawing.Size(191, 174);
             this.groupBox7.TabIndex = 22;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Data control";
@@ -102,7 +105,8 @@
             this.reOrderID,
             this.spareID,
             this.quantitySafeLine,
-            this.status});
+            this.status,
+            this.calledQty});
             this.listViewReOrder.FullRowSelect = true;
             this.listViewReOrder.HideSelection = false;
             this.listViewReOrder.Location = new System.Drawing.Point(3, 276);
@@ -206,12 +210,28 @@
             // bt_delete
             // 
             this.bt_delete.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bt_delete.Location = new System.Drawing.Point(6, 106);
+            this.bt_delete.Location = new System.Drawing.Point(6, 135);
             this.bt_delete.Name = "bt_delete";
             this.bt_delete.Size = new System.Drawing.Size(178, 23);
             this.bt_delete.TabIndex = 3;
             this.bt_delete.Text = "Delete";
             this.bt_delete.UseVisualStyleBackColor = true;
+            this.bt_delete.Click += new System.EventHandler(this.Bt_delete_Click);
+            // 
+            // calledQty
+            // 
+            this.calledQty.Text = "calledQty";
+            // 
+            // bt_setcalledQty
+            // 
+            this.bt_setcalledQty.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bt_setcalledQty.Location = new System.Drawing.Point(7, 106);
+            this.bt_setcalledQty.Name = "bt_setcalledQty";
+            this.bt_setcalledQty.Size = new System.Drawing.Size(178, 23);
+            this.bt_setcalledQty.TabIndex = 4;
+            this.bt_setcalledQty.Text = "setcalledQty";
+            this.bt_setcalledQty.UseVisualStyleBackColor = true;
+            this.bt_setcalledQty.Click += new System.EventHandler(this.Bt_setcalledQty_Click);
             // 
             // ReOrder
             // 
@@ -252,5 +272,7 @@
         private System.Windows.Forms.Button bt_setting;
         private System.Windows.Forms.ColumnHeader s_QTYofSL;
         private System.Windows.Forms.Button bt_delete;
+        private System.Windows.Forms.ColumnHeader calledQty;
+        private System.Windows.Forms.Button bt_setcalledQty;
     }
 }

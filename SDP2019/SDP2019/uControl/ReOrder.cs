@@ -63,6 +63,24 @@ namespace SDP2019.uControl
             conn.CloseConnection();
             refatsh(listViewReOrder, getReorderTable());
         }
+        private void Bt_delete_Click(object sender, EventArgs e)
+        {
+            conn.OpenConnection();
+            String sql = "delete from reorder where ";
+            ListViewItem last = listViewReOrder.SelectedItems[listViewReOrder.SelectedItems.Count - 1];
+            foreach (ListViewItem row in listViewReOrder.SelectedItems)
+            {
+                sql += "reOrderID = " + row.Text + "";
+                if (!row.Equals(last))
+                {
+                    sql += " or ";
+                }
+
+            }
+            conn.ExecuteUpdateQuery(sql);
+            conn.CloseConnection();
+            refatsh(listViewReOrder, getReorderTable());
+        }
         public DataTable getReorderTable()
         {
             conn.OpenConnection();
@@ -131,6 +149,12 @@ namespace SDP2019.uControl
         {
             listView.Items.Clear();
             setReorderTable(listView, dataTable);
+        }
+
+        private void Bt_setcalledQty_Click(object sender, EventArgs e)
+        {
+            new Dialog.ReOrdercalledQTY(listViewReOrder.SelectedItems).ShowDialog();
+            refatsh(listViewReOrder, getReorderTable());
         }
     }
 }

@@ -27,16 +27,22 @@ namespace SDP2019.uControl
         private void orderList_Load(object sender, EventArgs e)
         {
             conn = new DBConnection();
-            getOrderList();
+            getAllOrders();
         }
-        private void getOrderList()
+        private void getAllOrders()
         {
-            string spare;
-            conn.OpenConnection();
             string sql = "SELECT orderlist.orderSerial, orderlist.createDateTime, orderlist.dealerID, dealer.name, orderlist.completeDateTime ";
             sql += "FROM orderlist, dealer ";
             sql += "WHERE orderlist.dealerID = dealer.dealerID ";
             sql += "ORDER BY orderlist.completeDateTime,orderlist.createDateTime ";
+            getOrderList(sql);
+        }
+
+        private void getOrderList(string sql)
+        {
+            string spare;
+            conn.OpenConnection();
+            
             DataTable dt = conn.ExecuteSelectQuery(sql);
             foreach (DataRow row in dt.Rows)
             {
@@ -82,7 +88,13 @@ namespace SDP2019.uControl
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            using (Dialog.OrderSearch dlg = new Dialog.OrderSearch())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
 
+                }
+            }
         }
 
         private void btnOrderDetail_Click(object sender, EventArgs e)
@@ -95,7 +107,7 @@ namespace SDP2019.uControl
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     lstOrder.Items.Clear();
-                    getOrderList();
+                    getAllOrders();
                 }
             }
         }

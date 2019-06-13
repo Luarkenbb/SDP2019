@@ -42,8 +42,11 @@ namespace SDP2019.uControl
                 MessageBox.Show("This item is already selected!");
             }
 
-            
         }
+        
+
+
+
         public void addDealer(string id,string name,string address,string phone)
         {
             txtOrderFrmDealerID.Text = id;
@@ -188,19 +191,76 @@ namespace SDP2019.uControl
         private void orderFromCreateOrderSpare(int orderSerial)
         {
             /*require connection existing!!!!*/
+            int orderSpareID;
             foreach (ListViewItem item in lstOrderFrmSpares.Items)
             {
                 string spareID = item.SubItems[0].Text;
+
                 int quantityTotal = Convert.ToInt32(item.SubItems[1].Text);
+
                 int pricePerItem = Convert.ToInt32(item.SubItems[2].Text);
                 string status = "awaiting";
                 string sql = "Insert into orderspare(orderSerial,spareID,quantityTotal,pricePerItem,status) VAlUES(";
                 sql += orderSerial + ",'" + spareID + "'," + quantityTotal + "," + pricePerItem + ",'" + status + "'";
                 sql += ")";
-                conn.ExecuteInsertQuery(sql);
-            }
 
+                orderSpareID = conn.ExecuteInsertQuery(sql);
+                int dealerID = Convert.ToInt32(txtOrderFrmDealerID.Text);
+
+                getToFollowSpareQuantity(spareID, dealerID, orderSpareID);
+            }
         }
+        private void getToFollowSpareQuantity(string spareID,int dealerID,int orderSpareID)
+        {
+            //require connection opened!
+            int quantity = 0;
+            string sql;
+            LinkedList<int> followOrderIDs = new LinkedList<int>();
+            sql = "SELECT tofolloworderspare.followOrderID,orderspare.spareID,tofolloworderspare.quantity,orderlist.dealerID ";
+            sql += "FROM tofolloworderspare,orderlist,orderspare ";
+            sql += "WHERE tofolloworderspare.orderSpareID = orderspare.orderSpareID ";
+            sql += "AND orderspare.orderSerial = orderlist.orderSerial ";
+            sql += "AND tofolloworderspare.status = 'awaiting' ";
+            sql += "AND orderlist.dealerID = " + dealerID + " ";
+            sql += "AND orderspare.spareID = '" + spareID + "'";
+
+            DataTable dt = conn.ExecuteSelectQuery(sql);
+            if (dt.Rows.Count <= 0)
+            {
+                return;
+            }
+            else
+            {
+                
+                foreach (DataRow row in dt.Rows)
+                {
+                    followOrderIDs.AddLast(Convert.ToInt32(row[0].ToString()));
+                    quantity += Convert.ToInt32(row[2].ToString());
+                }
+                DialogResult dr = MessageBox.Show(spareID + ":Do you want to add " + quantity + " from the last order(s)?", "ToFollowSpare Detected", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                if (dr == DialogResult.Yes)
+                {
+                    foreach (int followOrderID in followOrderIDs)
+                    {
+                        sql = "UPDATE tofolloworderspare ";
+                        sql += "SET followBy = " + orderSpareID + ",";
+                        sql += "status = 'followed'";
+                        sql += "WHERE followOrderID = " + followOrderID;
+                        conn.ExecuteUpdateQuery(sql);
+                    }
+
+                    sql = "UPDATE orderspare ";
+                    sql += "SET quantityTotal = quantityTotal + " + quantity + " ";
+                    sql += "WHERE orderSpareID = " + orderSpareID;
+                    conn.ExecuteUpdateQuery(sql);
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
+
         private Boolean isValidOrderForm()
         {
             Boolean isValid = true;

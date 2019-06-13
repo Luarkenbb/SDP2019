@@ -19,6 +19,9 @@ namespace SDP2019.Dialog
         int stockBefore;
         int stockSafeLine;
         int orderQuantity;
+        int deliverQuantity;
+        int toFollowQuantity;
+        int stockAfter;
 
         public SpareUpdateStatus(string spareID, int orderSerial)
         {
@@ -78,10 +81,6 @@ namespace SDP2019.Dialog
 
         private void setPackagedQuantity()
         {
-            int deliverQuantity;
-            int toFollowQuantity;
-            int stockAfter;
-
             if (stockBefore >= orderQuantity)
             {
                 stockAfter = stockBefore - orderQuantity;
@@ -98,6 +97,68 @@ namespace SDP2019.Dialog
             txtDeliverQuantity.Text = deliverQuantity.ToString();
             txtToFollowQuantity.Text = toFollowQuantity.ToString();
             txtSpareStockAfter.Text = stockAfter.ToString();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            updateOrderSpare();
+            updateSpareStock();
+            insertToFollowOrderSpare();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+        private void updateOrderSpare()
+        {
+            if (deliverQuantity > 0)
+            {
+                conn.OpenConnection();
+                string sql = "UPDATE orderspare SET ";
+                sql += "toDeliverQuantity = " + deliverQuantity;
+                sql += ",status = 'packaged'";
+
+                sql += " WHERE orderSerial = " + orderSerial + " AND spareID = '" + spareID + "'";
+                conn.ExecuteUpdateQuery(sql);
+                conn.CloseConnection();
+            }
+        }
+        private void updateSpareStock()
+        {
+            conn.OpenConnection();
+            string sql = "UPDATE spare SET ";
+            sql += "quantity = " + stockAfter;
+            sql += " WHERE SpareID = '" + spareID + "'";
+            conn.ExecuteUpdateQuery(sql);
+            conn.CloseConnection();
+        }
+        private void insertToFollowOrderSpare()
+        {
+            string sql;
+
+            if (toFollowQuantity > 0)
+            {
+                DateTime localDate = DateTime.Now;
+                string format = "yyyy-MM-dd HH:mm:ss";
+                string time = "'" + localDate.ToString(format) + "'";
+
+                conn.OpenConnection();
+                sql = "SELECT orderSpareID FROM orderspare ";
+                sql += "WHERE orderSerial = " + orderSerial + " AND spareID = '" + spareID +"'";
+                DataTable dt = conn.ExecuteSelectQuery(sql);
+                DataRow row = dt.Rows[0];
+                int orderSpareID = Convert.ToInt32(row[0].ToString());
+                sql = "INSERT INTO tofolloworderspare (orderSpareID,quantity,status,createdDate)";
+                sql += " VALUES(" + orderSpareID + "," + toFollowQuantity + "," + "'awaiting'" + "," + time + ")";
+                conn.ExecuteInsertQuery(sql);
+
+
+                conn.CloseConnection();
+            }
+        }
+
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

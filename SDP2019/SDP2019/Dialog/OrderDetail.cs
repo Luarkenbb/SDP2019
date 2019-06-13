@@ -313,7 +313,8 @@ namespace SDP2019.Dialog
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-
+                    lstSpare.Items.Clear();
+                    getSpareInfo(orderSerial);
                 }
             }
 

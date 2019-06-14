@@ -41,9 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tb_reorderID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.bt_update = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.cb_status = new System.Windows.Forms.ComboBox();
-            this.bt_update = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tb_desc
@@ -159,6 +159,17 @@
             this.label7.TabIndex = 38;
             this.label7.Text = "reOrderID:";
             // 
+            // bt_update
+            // 
+            this.bt_update.Location = new System.Drawing.Point(383, 205);
+            this.bt_update.Name = "bt_update";
+            this.bt_update.Size = new System.Drawing.Size(75, 23);
+            this.bt_update.TabIndex = 44;
+            this.bt_update.Text = "Update";
+            this.bt_update.UseVisualStyleBackColor = true;
+            this.bt_update.Visible = false;
+            this.bt_update.Click += new System.EventHandler(this.Bt_update_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -167,6 +178,7 @@
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 42;
             this.label8.Text = "Status: ";
+            this.label8.Visible = false;
             // 
             // cb_status
             // 
@@ -179,16 +191,7 @@
             this.cb_status.Name = "cb_status";
             this.cb_status.Size = new System.Drawing.Size(114, 21);
             this.cb_status.TabIndex = 43;
-            // 
-            // bt_update
-            // 
-            this.bt_update.Location = new System.Drawing.Point(383, 205);
-            this.bt_update.Name = "bt_update";
-            this.bt_update.Size = new System.Drawing.Size(75, 23);
-            this.bt_update.TabIndex = 44;
-            this.bt_update.Text = "Update";
-            this.bt_update.UseVisualStyleBackColor = true;
-            this.bt_update.Click += new System.EventHandler(this.Bt_update_Click);
+            this.cb_status.Visible = false;
             // 
             // ReOrderDetail
             // 
@@ -232,8 +235,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_reorderID;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button bt_update;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cb_status;
-        private System.Windows.Forms.Button bt_update;
     }
 }

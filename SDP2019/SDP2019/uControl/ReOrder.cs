@@ -25,11 +25,21 @@ namespace SDP2019.uControl
         }
         private void Bt_Detail_Click(object sender, EventArgs e)
         {
+            if (listViewReOrder.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("You dont have item selected!");
+                return;
+            }
             new Dialog.ReOrderDetail(int.Parse(listViewReOrder.SelectedItems[0].Text)).ShowDialog();
             refatsh(listViewReOrder, getReorderTable());
         }
         private void Bt_Status_Click(object sender, EventArgs e)
         {
+            if (listViewReOrder.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("You dont have item selected!");
+                return;
+            }
             new Dialog.ReOrderStatus(listViewReOrder.SelectedItems).ShowDialog();
             refatsh(listViewReOrder, getReorderTable());
         }
@@ -50,6 +60,11 @@ namespace SDP2019.uControl
         }
         private void Bt_setting_Click(object sender, EventArgs e)
         {
+            if (lstSpare.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("You dont have item selected!");
+                return;
+            }
             conn.OpenConnection();
             foreach(ListViewItem row in lstSpare.SelectedItems)
             {
@@ -65,6 +80,11 @@ namespace SDP2019.uControl
         }
         private void Bt_delete_Click(object sender, EventArgs e)
         {
+            if (listViewReOrder.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("You dont have item selected!");
+                return;
+            }
             conn.OpenConnection();
             String sql = "delete from reorder where ";
             ListViewItem last = listViewReOrder.SelectedItems[listViewReOrder.SelectedItems.Count - 1];
@@ -157,6 +177,11 @@ namespace SDP2019.uControl
 
         private void Bt_setcalledQty_Click(object sender, EventArgs e)
         {
+            if (listViewReOrder.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("You dont have item selected!");
+                return;
+            }
             new Dialog.ReOrdercalledQTY(listViewReOrder.SelectedItems).ShowDialog();
             refatsh(listViewReOrder, getReorderTable());
         }

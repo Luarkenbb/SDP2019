@@ -60,7 +60,7 @@ namespace SDP2019
 
             Object[,] uControl = {
                 {"New Order", new uControl.newOrderTab(frmLogonID,tabSpare,tabDealer) },
-                {"Order List", new uControl.orderList() },
+                {"Order List", new uControl.orderList(frmLogonID) },
                 {"ToFollow List", new uControl.toFollowOrderTab() },
                 {"Spare", new uControl.spareTab(frmLogonID,tabNewOrder) },
                 {"Dealer", new uControl.dealerTab() },

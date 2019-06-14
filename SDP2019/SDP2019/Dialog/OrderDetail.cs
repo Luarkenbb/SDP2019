@@ -300,7 +300,7 @@ namespace SDP2019.Dialog
             {
                 conn.OpenConnection();
                 sql = "UPDATE orderlist SET ";
-                sql += "completeDateTime = " + time + " ";
+                sql += "completeDateTime = " + time + ", ";
                 sql += "storemanID = " + frmLogonID + " ";
                 sql += "WHERE orderSerial = " + orderSerial;
 

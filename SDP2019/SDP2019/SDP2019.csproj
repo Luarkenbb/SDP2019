@@ -156,6 +156,7 @@
     <Compile Include="Dialog\OrderDetail.Designer.cs">
       <DependentUpon>OrderDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="pdfGenerate\invoice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportSearch.cs">

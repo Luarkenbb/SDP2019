@@ -179,12 +179,6 @@
     <Compile Include="Dialog\SpareSearch.Designer.cs">
       <DependentUpon>SpareSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
-    </Compile>
     <Compile Include="ToFollowSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,9 +296,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\SpareSearch.resx">
       <DependentUpon>SpareSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="test.resx">
-      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToFollowSearch.resx">
       <DependentUpon>ToFollowSearch.cs</DependentUpon>

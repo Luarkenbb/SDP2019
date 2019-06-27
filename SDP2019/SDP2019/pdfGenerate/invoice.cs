@@ -18,6 +18,9 @@ namespace SDP2019.pdfGenerate
         string orderSerial, path;
         DBConnection conn;
         string companyAddress , telephone, grams;
+
+        string invoiceAddress, deliveryAddress;
+
         public Invoice()
         {
             setDefaultInfomration();

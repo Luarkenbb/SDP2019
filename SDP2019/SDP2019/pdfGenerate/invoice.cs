@@ -15,7 +15,8 @@ namespace SDP2019.pdfGenerate
 {
     class Invoice
     {
-        string orderSerial, path;
+        int orderSerial;
+        string path;
         DBConnection conn;
         string companyAddress , telephone, grams;
 
@@ -23,12 +24,19 @@ namespace SDP2019.pdfGenerate
 
         public Invoice()
         {
+            this.path = "invoice/test.pdf";
             setDefaultInfomration();
         }
-
-        public Invoice(string orderSerial , string path)
+        public Invoice(int orderSerial)
         {
-            DBConnection conn = new DBConnection();
+            
+            this.orderSerial = orderSerial;
+            this.path = "invoice/" + orderSerial + ".pdf";
+            setDefaultInfomration();
+        }
+        public Invoice(int orderSerial , string path)
+        {
+            
             this.orderSerial = orderSerial;
             this.path = path;
 
@@ -38,7 +46,7 @@ namespace SDP2019.pdfGenerate
         public void generate()
         {
             Document document = new Document(PageSize.LETTER, 40f, 40f, 60f, 60f);
-            PdfWriter.GetInstance(document, new FileStream("invoice/test2.pdf", FileMode.Create));
+            PdfWriter.GetInstance(document, new FileStream(path, FileMode.Create));
             document.Open();
 
             generateLogo(document);
@@ -49,6 +57,7 @@ namespace SDP2019.pdfGenerate
 
         private void setDefaultInfomration()
         {
+            DBConnection conn = new DBConnection();
             companyAddress = "SMLC District, Tienhou, Guangzhou.";
             telephone = "133 808 12345";
             grams = "SmartLuxuryMC";

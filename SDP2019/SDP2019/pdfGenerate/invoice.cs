@@ -24,7 +24,7 @@ namespace SDP2019.pdfGenerate
         string invoiceAddress, deliveryAddress;
         string dateOrder, dateSend;
         string dealerID;
-
+        DataTable orderSpare;
         private Font fontBigBold = FontFactory.GetFont("Arial", 16, Font.BOLD, BaseColor.BLACK);
         private Font fontNormalBold = FontFactory.GetFont("Arial", 13, Font.BOLD, BaseColor.BLACK);
         private Font fontTinyBold = FontFactory.GetFont("Arial", 13, Font.BOLD, BaseColor.BLACK);
@@ -67,6 +67,7 @@ namespace SDP2019.pdfGenerate
             generateLogo(document);
             generateHeaderTable(document);
             generateInvoiceInfoTable(document);
+            generateOrderSpare(document);
             document.Close();
         }
 
@@ -126,10 +127,10 @@ namespace SDP2019.pdfGenerate
         {
             generateInvoiceAddressTable(doc);
             generateInvoiceDealerTable(doc);
+            generateSpacing(doc);
             
-
             //end for address
-           
+
         }
         private void generateInvoiceAddressTable(Document doc)
         {
@@ -181,6 +182,41 @@ namespace SDP2019.pdfGenerate
             doc.Add(spacer);
         }
 
+        private void generateOrderSpare(Document doc)
+        {
+            var table = new PdfPTable(new[] {1f,1.25f,1.5f,1.25f,1f,.75f,1f })
+            {
+                WidthPercentage = 100,
+                HorizontalAlignment = 2,
+                DefaultCell = { MinimumHeight = 22f,HorizontalAlignment = 2}
+            };
+            
+
+            var cell = new PdfPCell(new Phrase("Summary",fontBigBold))
+            {
+                Colspan = 7,
+                HorizontalAlignment = 1,
+                MinimumHeight = 30f
+            };
+            table.AddCell(cell);
+
+            table.AddCell(new Paragraph("Total ordered", fontTinyBold));
+            table.AddCell(new Paragraph("Spare No.", fontTinyBold));
+            table.AddCell(new Paragraph("Prev. Qty. under delivered", fontTinyBold));
+            table.AddCell(new Paragraph("Qty. \nto follow", fontTinyBold));
+            table.AddCell(new Paragraph("Qty. \ndelivered", fontTinyBold));
+            table.AddCell(new Paragraph("Price", fontTinyBold));
+            table.AddCell(new Paragraph("Value", fontTinyBold));
+
+            foreach(DataRow row in orderSpare.Rows)
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    table.AddCell(new Paragraph(row[i].ToString(), fontNormal));
+                }
+            }
+            doc.Add(table);
+        }
 
         //for getting invoice information!
 
@@ -209,16 +245,19 @@ namespace SDP2019.pdfGenerate
         {
             DBConnection conn = new DBConnection();
             conn.OpenConnection();
-            string sql = "SELECT orderspare.spareID, orderspare.quantityTotal, orderspare.pricePerItem, spare.quantitySafeLine, spare.quantity, spare.description, orderspare.status,orderspare.toDeliverQuantity FROM orderspare, spare WHERE orderspare.spareID = spare.SpareID AND orderspare.orderSerial = '";
-            sql += orderSerial + "'";
+            string sql = "SELECT orderspare.quantityTotal,";
+            sql += "orderspare.spareID,";
+            sql += "IFNULL(tofolloworderspare.quantity, 0),";
+            sql += "(orderspare.quantityTotal - orderspare.toDeliverQuantity) AS ToFollow,";
+            sql += "orderspare.toDeliverQuantity,";
+            sql += "orderspare.pricePerItem,";
+            sql += "(orderspare.pricePerItem * orderspare.toDeliverQuantity) AS Total";
+            sql += " FROM orderspare";
+            sql += " LEFT JOIN tofolloworderspare ON tofolloworderspare.followBy = orderspare.orderSpareID";
+            sql += " WHERE orderspare.orderSerial = "+orderSerial;
 
-            DataTable dt = conn.ExecuteSelectQuery(sql);
-            /*foreach (DataRow row in dt.Rows)
-            {
-               
-            }*/
-
-
+            orderSpare = conn.ExecuteSelectQuery(sql);
+           
             conn.CloseConnection();
         }
     }

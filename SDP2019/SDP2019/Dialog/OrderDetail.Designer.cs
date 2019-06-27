@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "AA12345",
             "1",
             "2",
@@ -74,6 +74,7 @@
             this.txtStoremanID = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnToFollow = new System.Windows.Forms.Button();
+            this.btnPrintInvoice = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -242,7 +243,7 @@
             this.lstSpare.GridLines = true;
             this.lstSpare.HideSelection = false;
             this.lstSpare.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem1});
             this.lstSpare.Location = new System.Drawing.Point(12, 155);
             this.lstSpare.Name = "lstSpare";
             this.lstSpare.Size = new System.Drawing.Size(588, 283);
@@ -392,11 +393,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnPrintInvoice);
             this.groupBox1.Controls.Add(this.btnUpdateSpareStatus);
             this.groupBox1.Controls.Add(this.btnUpdateOrderStatus);
             this.groupBox1.Location = new System.Drawing.Point(600, 276);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(188, 80);
+            this.groupBox1.Size = new System.Drawing.Size(188, 104);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Storeman Control";
@@ -411,11 +413,21 @@
             this.btnToFollow.UseVisualStyleBackColor = true;
             this.btnToFollow.Click += new System.EventHandler(this.btnToFollow_Click);
             // 
+            // btnPrintInvoice
+            // 
+            this.btnPrintInvoice.Location = new System.Drawing.Point(7, 75);
+            this.btnPrintInvoice.Name = "btnPrintInvoice";
+            this.btnPrintInvoice.Size = new System.Drawing.Size(176, 23);
+            this.btnPrintInvoice.TabIndex = 5;
+            this.btnPrintInvoice.Text = "Print Invoice";
+            this.btnPrintInvoice.UseVisualStyleBackColor = true;
+            this.btnPrintInvoice.Click += new System.EventHandler(this.btnPrintInvoice_Click);
+            // 
             // OrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 482);
             this.Controls.Add(this.btnToFollow);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtStoremanID);
@@ -493,5 +505,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ColumnHeader o_ToDeliver;
         private System.Windows.Forms.Button btnToFollow;
+        private System.Windows.Forms.Button btnPrintInvoice;
     }
 }

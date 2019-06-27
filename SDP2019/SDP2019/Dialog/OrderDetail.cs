@@ -372,5 +372,11 @@ namespace SDP2019.Dialog
             }
 
         }
+
+        private void btnPrintInvoice_Click(object sender, EventArgs e)
+        {
+            pdfGenerate.Invoice invoice = new pdfGenerate.Invoice();
+            invoice.generate();
+        }
     }
 }

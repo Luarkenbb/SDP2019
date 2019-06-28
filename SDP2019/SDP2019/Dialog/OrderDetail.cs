@@ -381,8 +381,8 @@ namespace SDP2019.Dialog
                 path = folderBrowserDialog.SelectedPath;
                 pdfGenerate.Invoice invoice = new pdfGenerate.Invoice(orderSerial,path);
                 invoice.generate();
-
-
+                path = invoice.getPath();
+                MessageBox.Show("Generated Pdf is saved at " + path);
             }
             
         }

@@ -82,7 +82,7 @@ namespace SDP2019.pdfGenerate
 
         private void generateLogo(Document doc)
         {
-            var imagepath = "photos/Logo.png";
+            var imagepath = "../../photos/Logo.png";
             using (FileStream fs = new FileStream(imagepath,FileMode.Open))
             {
                 var png = Image.GetInstance(System.Drawing.Image.FromStream(fs), ImageFormat.Png );
@@ -208,13 +208,26 @@ namespace SDP2019.pdfGenerate
             table.AddCell(new Paragraph("Price", fontTinyBold));
             table.AddCell(new Paragraph("Value", fontTinyBold));
 
+            int total = 0;
             foreach(DataRow row in orderSpare.Rows)
             {
                 for (int i = 0; i < 7; i++)
                 {
                     table.AddCell(new Paragraph(row[i].ToString(), fontNormal));
                 }
+                //get value and add to total;
+                total += Convert.ToInt32(row[6].ToString());
             }
+
+            var emptyCell = new PdfPCell(new Phrase(""))
+            {
+                Colspan = 5,
+            };
+            table.AddCell(emptyCell);
+
+            table.AddCell(new Paragraph("Total:",fontNormalBold));
+            table.AddCell(new Paragraph(total.ToString(), fontTinyBold));
+
             doc.Add(table);
         }
 

@@ -37,21 +37,21 @@ namespace SDP2019.pdfGenerate
         private Font fontTiny = FontFactory.GetFont("Arial", 7, Font.NORMAL, BaseColor.BLACK);
         public Invoice()
         {
-            this.path = "invoice/test.pdf";
+            this.path = "../../invoice/test.pdf";
             setDefaultInfomration();
         }
         public Invoice(int orderSerial)
         {
             
             this.orderSerial = orderSerial;
-            this.path = "invoice/" + orderSerial + ".pdf";
+            this.path = "../../invoice/" + orderSerial + ".pdf";
             setDefaultInfomration();
         }
         public Invoice(int orderSerial , string path)
         {
             
             this.orderSerial = orderSerial;
-            this.path = path;
+            this.path = path + "/" + orderSerial + ".pdf";
 
             setDefaultInfomration();
         }
@@ -272,6 +272,11 @@ namespace SDP2019.pdfGenerate
             orderSpare = conn.ExecuteSelectQuery(sql);
            
             conn.CloseConnection();
+        }
+        //getter setter
+        public string getPath()
+        {
+            return this.path;
         }
     }
 }

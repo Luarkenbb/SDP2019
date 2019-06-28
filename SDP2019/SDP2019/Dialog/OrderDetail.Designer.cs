@@ -73,8 +73,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtStoremanID = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnToFollow = new System.Windows.Forms.Button();
             this.btnPrintInvoice = new System.Windows.Forms.Button();
+            this.btnToFollow = new System.Windows.Forms.Button();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -403,16 +404,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Storeman Control";
             // 
-            // btnToFollow
-            // 
-            this.btnToFollow.Location = new System.Drawing.Point(626, 386);
-            this.btnToFollow.Name = "btnToFollow";
-            this.btnToFollow.Size = new System.Drawing.Size(156, 23);
-            this.btnToFollow.TabIndex = 40;
-            this.btnToFollow.Text = "Check To Follow Order";
-            this.btnToFollow.UseVisualStyleBackColor = true;
-            this.btnToFollow.Click += new System.EventHandler(this.btnToFollow_Click);
-            // 
             // btnPrintInvoice
             // 
             this.btnPrintInvoice.Location = new System.Drawing.Point(7, 75);
@@ -422,6 +413,16 @@
             this.btnPrintInvoice.Text = "Print Invoice";
             this.btnPrintInvoice.UseVisualStyleBackColor = true;
             this.btnPrintInvoice.Click += new System.EventHandler(this.btnPrintInvoice_Click);
+            // 
+            // btnToFollow
+            // 
+            this.btnToFollow.Location = new System.Drawing.Point(626, 386);
+            this.btnToFollow.Name = "btnToFollow";
+            this.btnToFollow.Size = new System.Drawing.Size(156, 23);
+            this.btnToFollow.TabIndex = 40;
+            this.btnToFollow.Text = "Check To Follow Order";
+            this.btnToFollow.UseVisualStyleBackColor = true;
+            this.btnToFollow.Click += new System.EventHandler(this.btnToFollow_Click);
             // 
             // OrderDetail
             // 
@@ -506,5 +507,6 @@
         private System.Windows.Forms.ColumnHeader o_ToDeliver;
         private System.Windows.Forms.Button btnToFollow;
         private System.Windows.Forms.Button btnPrintInvoice;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
     }
 }

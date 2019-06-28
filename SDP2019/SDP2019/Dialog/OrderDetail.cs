@@ -375,8 +375,16 @@ namespace SDP2019.Dialog
 
         private void btnPrintInvoice_Click(object sender, EventArgs e)
         {
-            pdfGenerate.Invoice invoice = new pdfGenerate.Invoice(orderSerial);
-            invoice.generate();
+            string path;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                path = folderBrowserDialog.SelectedPath;
+                pdfGenerate.Invoice invoice = new pdfGenerate.Invoice(orderSerial,path);
+                invoice.generate();
+
+
+            }
+            
         }
     }
 }

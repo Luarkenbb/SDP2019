@@ -375,6 +375,10 @@ namespace SDP2019.Dialog
 
         private void btnPrintInvoice_Click(object sender, EventArgs e)
         {
+            if (!isAllSparePackaged(orderSerial))
+            {
+                MessageBox.Show("This is not a completed Order! You can't print a invoice for it!");
+            }
             string path;
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
@@ -385,6 +389,12 @@ namespace SDP2019.Dialog
                 MessageBox.Show("Generated Pdf is saved at " + path);
             }
             
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

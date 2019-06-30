@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "5",
             "2",
@@ -45,25 +45,27 @@
             this.d_DealerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.d_Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.d_Phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnRefresh);
             this.groupBox3.Controls.Add(this.btnModDealer);
             this.groupBox3.Controls.Add(this.btnNewDealer);
             this.groupBox3.Controls.Add(this.btnSearch);
             this.groupBox3.Location = new System.Drawing.Point(574, 61);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(191, 113);
+            this.groupBox3.Size = new System.Drawing.Size(191, 189);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data control";
             // 
             // btnModDealer
             // 
-            this.btnModDealer.Location = new System.Drawing.Point(6, 78);
+            this.btnModDealer.Location = new System.Drawing.Point(5, 105);
             this.btnModDealer.Name = "btnModDealer";
             this.btnModDealer.Size = new System.Drawing.Size(178, 23);
             this.btnModDealer.TabIndex = 2;
@@ -73,7 +75,7 @@
             // 
             // btnNewDealer
             // 
-            this.btnNewDealer.Location = new System.Drawing.Point(7, 49);
+            this.btnNewDealer.Location = new System.Drawing.Point(6, 76);
             this.btnNewDealer.Name = "btnNewDealer";
             this.btnNewDealer.Size = new System.Drawing.Size(178, 23);
             this.btnNewDealer.TabIndex = 1;
@@ -83,7 +85,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(7, 19);
+            this.btnSearch.Location = new System.Drawing.Point(6, 46);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(178, 23);
             this.btnSearch.TabIndex = 0;
@@ -122,7 +124,7 @@
             this.lstDealer.GridLines = true;
             this.lstDealer.HideSelection = false;
             this.lstDealer.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.lstDealer.Location = new System.Drawing.Point(1, 0);
             this.lstDealer.MultiSelect = false;
             this.lstDealer.Name = "lstDealer";
@@ -150,6 +152,16 @@
             // 
             this.d_Phone.Text = "Phone";
             this.d_Phone.Width = 97;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(6, 17);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(178, 23);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // dealerTab
             // 
@@ -180,5 +192,6 @@
         private System.Windows.Forms.ColumnHeader d_DealerName;
         private System.Windows.Forms.ColumnHeader d_Address;
         private System.Windows.Forms.ColumnHeader d_Phone;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

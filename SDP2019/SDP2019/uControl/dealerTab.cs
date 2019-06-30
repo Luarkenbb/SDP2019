@@ -116,7 +116,9 @@ namespace SDP2019.uControl
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    
+                    string sql = dlg.getSqlSearch();
+                    lstDealerGetDealers(sql);
+
                 }
             }
         }
@@ -127,7 +129,7 @@ namespace SDP2019.uControl
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-
+                    lstDealerGetAllDealers();
                 }
             }
         }
@@ -150,6 +152,11 @@ namespace SDP2019.uControl
             }
 
             
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            lstDealerGetAllDealers();
         }
     }
 }

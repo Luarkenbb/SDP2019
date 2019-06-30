@@ -8,13 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SDP2019
+namespace SDP2019.Dialog
 {
-    public partial class DealerNewDealer : Form
+    public partial class DealerDetail : Form
     {
-        public DealerNewDealer()
+        public DealerDetail()
         {
             InitializeComponent();
         }
+
+        private void DealerDetail_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

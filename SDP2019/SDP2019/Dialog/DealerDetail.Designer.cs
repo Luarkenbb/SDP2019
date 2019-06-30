@@ -1,4 +1,4 @@
-﻿namespace SDP2019
+﻿namespace SDP2019.Dialog
 {
     partial class DealerDetail
     {

@@ -72,22 +72,22 @@
     </Compile>
     <Compile Include="Cryptography.cs" />
     <Compile Include="DBConnection.cs" />
-    <Compile Include="DealerDetail.cs">
+    <Compile Include="Dialog\DealerDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DealerDetail.Designer.cs">
+    <Compile Include="Dialog\DealerDetail.Designer.cs">
       <DependentUpon>DealerDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="DealerNewDealer.cs">
+    <Compile Include="Dialog\DealerNewDealer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DealerNewDealer.Designer.cs">
+    <Compile Include="Dialog\DealerNewDealer.Designer.cs">
       <DependentUpon>DealerNewDealer.cs</DependentUpon>
     </Compile>
-    <Compile Include="DealerSearch.cs">
+    <Compile Include="Dialog\DealerSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DealerSearch.Designer.cs">
+    <Compile Include="Dialog\DealerSearch.Designer.cs">
       <DependentUpon>DealerSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialog\EditSpareQuantity.cs">
@@ -237,13 +237,13 @@
     <Compile Include="uControl\toFollowOrderTab.Designer.cs">
       <DependentUpon>toFollowOrderTab.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DealerDetail.resx">
+    <EmbeddedResource Include="Dialog\DealerDetail.resx">
       <DependentUpon>DealerDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DealerNewDealer.resx">
+    <EmbeddedResource Include="Dialog\DealerNewDealer.resx">
       <DependentUpon>DealerNewDealer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DealerSearch.resx">
+    <EmbeddedResource Include="Dialog\DealerSearch.resx">
       <DependentUpon>DealerSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\EditSpareQuantity.resx">

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SDP2019
+namespace SDP2019.Dialog
 {
-    public partial class DealerSearch : Form
+    public partial class DealerNewDealer : Form
     {
-        public DealerSearch()
+        public DealerNewDealer()
         {
             InitializeComponent();
         }

@@ -30,13 +30,21 @@ namespace SDP2019.uControl
         {
             conn = new DBConnection();
             tab = (TabControl)this.Parent.Parent;
-            lstDealerGetDealers();
+            lstDealerGetAllDealers();
         }
-        private void lstDealerGetDealers()
+
+        private void lstDealerGetAllDealers()
+        {
+            string sql = "Select * from dealer";
+            lstDealerGetDealers(sql);
+
+        }
+
+        private void lstDealerGetDealers(string sql)
         {
             lstDealer.Items.Clear();
             conn.OpenConnection();
-            string sql = "Select * from dealer";
+            
             DataTable dt = conn.ExecuteSelectQuery(sql);
 
             foreach (DataRow row in dt.Rows)
@@ -51,6 +59,9 @@ namespace SDP2019.uControl
 
             conn.CloseConnection();
         }
+
+
+
 
         private void lstDealer_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -84,6 +95,37 @@ namespace SDP2019.uControl
             }
         }
 
-       
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            using (Dialog.DealerSearch dlg = new Dialog.DealerSearch())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    
+                }
+            }
+        }
+
+        private void btnNewDealer_Click(object sender, EventArgs e)
+        {
+            using (Dialog.DealerNewDealer dlg = new Dialog.DealerNewDealer())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private void btnModDealer_Click(object sender, EventArgs e)
+        {
+            using (Dialog.DealerDetail dlg = new Dialog.DealerDetail())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
     }
 }

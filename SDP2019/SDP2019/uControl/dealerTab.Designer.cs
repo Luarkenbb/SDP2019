@@ -35,9 +35,9 @@
             "3",
             "4"}, -1);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnModDealer = new System.Windows.Forms.Button();
+            this.btnNewDealer = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnDealerFrmAddToOrder = new System.Windows.Forms.Button();
             this.lstDealer = new System.Windows.Forms.ListView();
@@ -51,9 +51,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.button6);
-            this.groupBox3.Controls.Add(this.button7);
+            this.groupBox3.Controls.Add(this.btnModDealer);
+            this.groupBox3.Controls.Add(this.btnNewDealer);
+            this.groupBox3.Controls.Add(this.btnSearch);
             this.groupBox3.Location = new System.Drawing.Point(574, 61);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(191, 113);
@@ -61,32 +61,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data control";
             // 
-            // button5
+            // btnModDealer
             // 
-            this.button5.Location = new System.Drawing.Point(6, 78);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(178, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Dealer Modify / Detail";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnModDealer.Location = new System.Drawing.Point(6, 78);
+            this.btnModDealer.Name = "btnModDealer";
+            this.btnModDealer.Size = new System.Drawing.Size(178, 23);
+            this.btnModDealer.TabIndex = 2;
+            this.btnModDealer.Text = "Dealer Modify / Detail";
+            this.btnModDealer.UseVisualStyleBackColor = true;
+            this.btnModDealer.Click += new System.EventHandler(this.btnModDealer_Click);
             // 
-            // button6
+            // btnNewDealer
             // 
-            this.button6.Location = new System.Drawing.Point(7, 49);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(178, 23);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Add New Dealer";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnNewDealer.Location = new System.Drawing.Point(7, 49);
+            this.btnNewDealer.Name = "btnNewDealer";
+            this.btnNewDealer.Size = new System.Drawing.Size(178, 23);
+            this.btnNewDealer.TabIndex = 1;
+            this.btnNewDealer.Text = "Add New Dealer";
+            this.btnNewDealer.UseVisualStyleBackColor = true;
+            this.btnNewDealer.Click += new System.EventHandler(this.btnNewDealer_Click);
             // 
-            // button7
+            // btnSearch
             // 
-            this.button7.Location = new System.Drawing.Point(7, 19);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(178, 23);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Search";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(7, 19);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(178, 23);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox4
             // 
@@ -167,9 +170,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnModDealer;
+        private System.Windows.Forms.Button btnNewDealer;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnDealerFrmAddToOrder;
         private System.Windows.Forms.ListView lstDealer;

@@ -120,5 +120,11 @@ namespace SDP2019.uControl
                 }
             }
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            lstOrder.Items.Clear();
+            getAllOrders();
+        }
     }
 }

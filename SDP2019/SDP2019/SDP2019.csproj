@@ -78,17 +78,11 @@
     <Compile Include="Dialog\DealerDetail.Designer.cs">
       <DependentUpon>DealerDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\DealerNewDealer.cs">
+    <Compile Include="Dialog\DealerSearchAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\DealerNewDealer.Designer.cs">
-      <DependentUpon>DealerNewDealer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialog\DealerSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialog\DealerSearch.Designer.cs">
-      <DependentUpon>DealerSearch.cs</DependentUpon>
+    <Compile Include="Dialog\DealerSearchAdd.Designer.cs">
+      <DependentUpon>DealerSearchAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialog\EditSpareQuantity.cs">
       <SubType>Form</SubType>
@@ -240,11 +234,8 @@
     <EmbeddedResource Include="Dialog\DealerDetail.resx">
       <DependentUpon>DealerDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\DealerNewDealer.resx">
-      <DependentUpon>DealerNewDealer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\DealerSearch.resx">
-      <DependentUpon>DealerSearch.cs</DependentUpon>
+    <EmbeddedResource Include="Dialog\DealerSearchAdd.resx">
+      <DependentUpon>DealerSearchAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\EditSpareQuantity.resx">
       <DependentUpon>EditSpareQuantity.cs</DependentUpon>

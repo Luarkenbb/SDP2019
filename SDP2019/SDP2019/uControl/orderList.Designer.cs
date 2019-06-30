@@ -38,23 +38,25 @@
             this.oL_DealerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oL_OrderCompleteDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oL_SpareList = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.btnRefresh);
             this.groupBox7.Controls.Add(this.btnOrderDetail);
             this.groupBox7.Controls.Add(this.btnSearch);
             this.groupBox7.Location = new System.Drawing.Point(574, 6);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(191, 83);
+            this.groupBox7.Size = new System.Drawing.Size(191, 106);
             this.groupBox7.TabIndex = 20;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Data control";
             // 
             // btnOrderDetail
             // 
-            this.btnOrderDetail.Location = new System.Drawing.Point(7, 48);
+            this.btnOrderDetail.Location = new System.Drawing.Point(6, 75);
             this.btnOrderDetail.Name = "btnOrderDetail";
             this.btnOrderDetail.Size = new System.Drawing.Size(178, 23);
             this.btnOrderDetail.TabIndex = 2;
@@ -64,7 +66,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(7, 19);
+            this.btnSearch.Location = new System.Drawing.Point(6, 46);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(178, 23);
             this.btnSearch.TabIndex = 0;
@@ -119,6 +121,16 @@
             this.oL_SpareList.Text = "Spare List";
             this.oL_SpareList.Width = 724;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(7, 19);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(178, 23);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // orderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +140,7 @@
             this.Name = "orderList";
             this.Size = new System.Drawing.Size(767, 399);
             this.Load += new System.EventHandler(this.orderList_Load);
+            this.TabIndexChanged += new System.EventHandler(this.orderList_Load);
             this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -145,5 +158,6 @@
         private System.Windows.Forms.ColumnHeader oL_DealerID;
         private System.Windows.Forms.ColumnHeader oL_DealerName;
         private System.Windows.Forms.ColumnHeader oL_OrderCompleteDateTime;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

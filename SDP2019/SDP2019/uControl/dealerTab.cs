@@ -16,6 +16,8 @@ namespace SDP2019.uControl
         TabControl tab;
         string frmLogonID;
         int tabNewOrder;
+
+        
         public dealerTab()
         {
             InitializeComponent();
@@ -68,6 +70,23 @@ namespace SDP2019.uControl
 
         }
 
+        private ListViewItem getSelectedDealerID()
+        {
+            if (lstDealer.SelectedItems.Count == 1)
+            {
+                ListViewItem item = lstDealer.SelectedItems[0];
+                
+                return item;
+            }
+            else
+            {
+                MessageBox.Show("Please select a dealer!");
+                return null;
+            }
+        }
+        
+
+
         private void btnDealerFrmAddToOrder_Click(object sender, EventArgs e)
         {
             newOrderTab distPage;
@@ -77,27 +96,23 @@ namespace SDP2019.uControl
 
 
             string id;string name;string address;string phone;
-
-            if (lstDealer.SelectedItems.Count == 1)
+            if (getSelectedDealerID() != null)
             {
-                ListViewItem item = lstDealer.SelectedItems[0];
+                ListViewItem item = getSelectedDealerID();
                 id = item.SubItems[0].Text;
                 name = item.SubItems[1].Text;
                 address = item.SubItems[2].Text;
                 phone = item.SubItems[3].Text;
 
-                distPage.addDealer(id,name,address,phone);
+                distPage.addDealer(id, name, address, phone);
                 tab.SelectedIndex = tabNewOrder;
             }
-            else
-            {
-                MessageBox.Show("Please select a dealer!");
-            }
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            using (Dialog.DealerSearch dlg = new Dialog.DealerSearch())
+            using (Dialog.DealerSearchAdd dlg = new Dialog.DealerSearchAdd("search"))
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
@@ -108,7 +123,7 @@ namespace SDP2019.uControl
 
         private void btnNewDealer_Click(object sender, EventArgs e)
         {
-            using (Dialog.DealerNewDealer dlg = new Dialog.DealerNewDealer())
+            using (Dialog.DealerSearchAdd dlg = new Dialog.DealerSearchAdd("add"))
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
@@ -119,13 +134,22 @@ namespace SDP2019.uControl
 
         private void btnModDealer_Click(object sender, EventArgs e)
         {
-            using (Dialog.DealerDetail dlg = new Dialog.DealerDetail())
+            string id;
+            if (getSelectedDealerID() != null)
             {
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
+                ListViewItem item = getSelectedDealerID();
+                id = item.SubItems[0].Text;
 
+                using (Dialog.DealerDetail dlg = new Dialog.DealerDetail(id))
+                {
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        lstDealerGetAllDealers();
+                    }
                 }
             }
+
+            
         }
     }
 }

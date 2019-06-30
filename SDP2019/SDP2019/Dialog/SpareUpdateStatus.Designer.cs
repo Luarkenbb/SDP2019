@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpareUpdateStatus));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSpareID = new System.Windows.Forms.TextBox();
@@ -249,6 +250,7 @@
             this.Controls.Add(this.txtSpareID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SpareUpdateStatus";
             this.Text = "SpareUpdateStatus";
             this.Load += new System.EventHandler(this.SpareUpdateStatus_Load);

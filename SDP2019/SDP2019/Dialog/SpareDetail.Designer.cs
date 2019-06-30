@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpareDetail));
             this.rtxtDesc = new System.Windows.Forms.RichTextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtQuantitySafeLine = new System.Windows.Forms.TextBox();
@@ -42,8 +43,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnIncrease = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnReduce = new System.Windows.Forms.Button();
             this.numQuantity = new System.Windows.Forms.NumericUpDown();
+            this.btnReduce = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
             this.SuspendLayout();
@@ -172,6 +173,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quantity";
             // 
+            // numQuantity
+            // 
+            this.numQuantity.Location = new System.Drawing.Point(6, 19);
+            this.numQuantity.Name = "numQuantity";
+            this.numQuantity.Size = new System.Drawing.Size(75, 20);
+            this.numQuantity.TabIndex = 27;
+            // 
             // btnReduce
             // 
             this.btnReduce.Location = new System.Drawing.Point(6, 74);
@@ -181,13 +189,6 @@
             this.btnReduce.Text = "reduce";
             this.btnReduce.UseVisualStyleBackColor = true;
             this.btnReduce.Click += new System.EventHandler(this.btnReduce_Click);
-            // 
-            // numQuantity
-            // 
-            this.numQuantity.Location = new System.Drawing.Point(6, 19);
-            this.numQuantity.Name = "numQuantity";
-            this.numQuantity.Size = new System.Drawing.Size(75, 20);
-            this.numQuantity.TabIndex = 27;
             // 
             // SpareDetail
             // 
@@ -207,6 +208,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SpareDetail";
             this.Text = "SpareDetail";
             this.Load += new System.EventHandler(this.SpareDetail_Load);

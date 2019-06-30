@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReOrderStatus));
             this.label1 = new System.Windows.Forms.Label();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.bt_update = new System.Windows.Forms.Button();
@@ -96,6 +97,7 @@
             this.Controls.Add(this.bt_close);
             this.Controls.Add(this.cb_status);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReOrderStatus";
             this.Text = "ReOrderStatus";
             this.ResumeLayout(false);

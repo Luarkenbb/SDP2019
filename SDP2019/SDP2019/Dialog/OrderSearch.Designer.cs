@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderSearch));
             this.label1 = new System.Windows.Forms.Label();
             this.gbxDealer = new System.Windows.Forms.GroupBox();
-            this.rbtnDealerID = new System.Windows.Forms.RadioButton();
-            this.rbtnDealerName = new System.Windows.Forms.RadioButton();
-            this.txtDealerID = new System.Windows.Forms.TextBox();
             this.txtDealerName = new System.Windows.Forms.TextBox();
+            this.txtDealerID = new System.Windows.Forms.TextBox();
+            this.rbtnDealerName = new System.Windows.Forms.RadioButton();
+            this.rbtnDealerID = new System.Windows.Forms.RadioButton();
             this.dTimeSearchDate = new System.Windows.Forms.DateTimePicker();
             this.gbxDate = new System.Windows.Forms.GroupBox();
-            this.rbtnDateBefore = new System.Windows.Forms.RadioButton();
             this.rbtnDateAfter = new System.Windows.Forms.RadioButton();
+            this.rbtnDateBefore = new System.Windows.Forms.RadioButton();
             this.numOrderSerial = new System.Windows.Forms.NumericUpDown();
             this.gbxStatus = new System.Windows.Forms.GroupBox();
-            this.rbtnCompleted = new System.Windows.Forms.RadioButton();
             this.rbtnAwaiting = new System.Windows.Forms.RadioButton();
+            this.rbtnCompleted = new System.Windows.Forms.RadioButton();
             this.rbtnOrderSerial = new System.Windows.Forms.RadioButton();
             this.rbtnInformation = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.gbxInformation = new System.Windows.Forms.GroupBox();
-            this.cbxDealer = new System.Windows.Forms.CheckBox();
-            this.cbxDate = new System.Windows.Forms.CheckBox();
             this.cbxStatus = new System.Windows.Forms.CheckBox();
+            this.cbxDate = new System.Windows.Forms.CheckBox();
+            this.cbxDealer = new System.Windows.Forms.CheckBox();
             this.gbxDealer.SuspendLayout();
             this.gbxDate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderSerial)).BeginInit();
@@ -79,17 +80,19 @@
             this.gbxDealer.TabStop = false;
             this.gbxDealer.Text = "Dealer";
             // 
-            // rbtnDealerID
+            // txtDealerName
             // 
-            this.rbtnDealerID.AutoSize = true;
-            this.rbtnDealerID.Checked = true;
-            this.rbtnDealerID.Location = new System.Drawing.Point(6, 19);
-            this.rbtnDealerID.Name = "rbtnDealerID";
-            this.rbtnDealerID.Size = new System.Drawing.Size(70, 17);
-            this.rbtnDealerID.TabIndex = 0;
-            this.rbtnDealerID.TabStop = true;
-            this.rbtnDealerID.Text = "Dealer ID";
-            this.rbtnDealerID.UseVisualStyleBackColor = true;
+            this.txtDealerName.Location = new System.Drawing.Point(94, 42);
+            this.txtDealerName.Name = "txtDealerName";
+            this.txtDealerName.Size = new System.Drawing.Size(100, 20);
+            this.txtDealerName.TabIndex = 3;
+            // 
+            // txtDealerID
+            // 
+            this.txtDealerID.Location = new System.Drawing.Point(94, 16);
+            this.txtDealerID.Name = "txtDealerID";
+            this.txtDealerID.Size = new System.Drawing.Size(100, 20);
+            this.txtDealerID.TabIndex = 2;
             // 
             // rbtnDealerName
             // 
@@ -101,19 +104,17 @@
             this.rbtnDealerName.Text = "Dealer Name";
             this.rbtnDealerName.UseVisualStyleBackColor = true;
             // 
-            // txtDealerID
+            // rbtnDealerID
             // 
-            this.txtDealerID.Location = new System.Drawing.Point(94, 16);
-            this.txtDealerID.Name = "txtDealerID";
-            this.txtDealerID.Size = new System.Drawing.Size(100, 20);
-            this.txtDealerID.TabIndex = 2;
-            // 
-            // txtDealerName
-            // 
-            this.txtDealerName.Location = new System.Drawing.Point(94, 42);
-            this.txtDealerName.Name = "txtDealerName";
-            this.txtDealerName.Size = new System.Drawing.Size(100, 20);
-            this.txtDealerName.TabIndex = 3;
+            this.rbtnDealerID.AutoSize = true;
+            this.rbtnDealerID.Checked = true;
+            this.rbtnDealerID.Location = new System.Drawing.Point(6, 19);
+            this.rbtnDealerID.Name = "rbtnDealerID";
+            this.rbtnDealerID.Size = new System.Drawing.Size(70, 17);
+            this.rbtnDealerID.TabIndex = 0;
+            this.rbtnDealerID.TabStop = true;
+            this.rbtnDealerID.Text = "Dealer ID";
+            this.rbtnDealerID.UseVisualStyleBackColor = true;
             // 
             // dTimeSearchDate
             // 
@@ -134,6 +135,16 @@
             this.gbxDate.TabStop = false;
             this.gbxDate.Text = "CreateDate";
             // 
+            // rbtnDateAfter
+            // 
+            this.rbtnDateAfter.AutoSize = true;
+            this.rbtnDateAfter.Location = new System.Drawing.Point(160, 45);
+            this.rbtnDateAfter.Name = "rbtnDateAfter";
+            this.rbtnDateAfter.Size = new System.Drawing.Size(46, 17);
+            this.rbtnDateAfter.TabIndex = 4;
+            this.rbtnDateAfter.Text = "after";
+            this.rbtnDateAfter.UseVisualStyleBackColor = true;
+            // 
             // rbtnDateBefore
             // 
             this.rbtnDateBefore.AutoSize = true;
@@ -145,16 +156,6 @@
             this.rbtnDateBefore.TabStop = true;
             this.rbtnDateBefore.Text = "before";
             this.rbtnDateBefore.UseVisualStyleBackColor = true;
-            // 
-            // rbtnDateAfter
-            // 
-            this.rbtnDateAfter.AutoSize = true;
-            this.rbtnDateAfter.Location = new System.Drawing.Point(160, 45);
-            this.rbtnDateAfter.Name = "rbtnDateAfter";
-            this.rbtnDateAfter.Size = new System.Drawing.Size(46, 17);
-            this.rbtnDateAfter.TabIndex = 4;
-            this.rbtnDateAfter.Text = "after";
-            this.rbtnDateAfter.UseVisualStyleBackColor = true;
             // 
             // numOrderSerial
             // 
@@ -174,6 +175,16 @@
             this.gbxStatus.TabStop = false;
             this.gbxStatus.Text = "Status";
             // 
+            // rbtnAwaiting
+            // 
+            this.rbtnAwaiting.AutoSize = true;
+            this.rbtnAwaiting.Location = new System.Drawing.Point(142, 19);
+            this.rbtnAwaiting.Name = "rbtnAwaiting";
+            this.rbtnAwaiting.Size = new System.Drawing.Size(64, 17);
+            this.rbtnAwaiting.TabIndex = 1;
+            this.rbtnAwaiting.Text = "awaiting";
+            this.rbtnAwaiting.UseVisualStyleBackColor = true;
+            // 
             // rbtnCompleted
             // 
             this.rbtnCompleted.AutoSize = true;
@@ -185,16 +196,6 @@
             this.rbtnCompleted.TabStop = true;
             this.rbtnCompleted.Text = "completed";
             this.rbtnCompleted.UseVisualStyleBackColor = true;
-            // 
-            // rbtnAwaiting
-            // 
-            this.rbtnAwaiting.AutoSize = true;
-            this.rbtnAwaiting.Location = new System.Drawing.Point(142, 19);
-            this.rbtnAwaiting.Name = "rbtnAwaiting";
-            this.rbtnAwaiting.Size = new System.Drawing.Size(64, 17);
-            this.rbtnAwaiting.TabIndex = 1;
-            this.rbtnAwaiting.Text = "awaiting";
-            this.rbtnAwaiting.UseVisualStyleBackColor = true;
             // 
             // rbtnOrderSerial
             // 
@@ -254,14 +255,14 @@
             this.gbxInformation.TabStop = false;
             this.gbxInformation.Text = "Search Option";
             // 
-            // cbxDealer
+            // cbxStatus
             // 
-            this.cbxDealer.AutoSize = true;
-            this.cbxDealer.Location = new System.Drawing.Point(53, 19);
-            this.cbxDealer.Name = "cbxDealer";
-            this.cbxDealer.Size = new System.Drawing.Size(15, 14);
-            this.cbxDealer.TabIndex = 7;
-            this.cbxDealer.UseVisualStyleBackColor = true;
+            this.cbxStatus.AutoSize = true;
+            this.cbxStatus.Location = new System.Drawing.Point(53, 174);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(15, 14);
+            this.cbxStatus.TabIndex = 9;
+            this.cbxStatus.UseVisualStyleBackColor = true;
             // 
             // cbxDate
             // 
@@ -272,14 +273,14 @@
             this.cbxDate.TabIndex = 8;
             this.cbxDate.UseVisualStyleBackColor = true;
             // 
-            // cbxStatus
+            // cbxDealer
             // 
-            this.cbxStatus.AutoSize = true;
-            this.cbxStatus.Location = new System.Drawing.Point(53, 174);
-            this.cbxStatus.Name = "cbxStatus";
-            this.cbxStatus.Size = new System.Drawing.Size(15, 14);
-            this.cbxStatus.TabIndex = 9;
-            this.cbxStatus.UseVisualStyleBackColor = true;
+            this.cbxDealer.AutoSize = true;
+            this.cbxDealer.Location = new System.Drawing.Point(53, 19);
+            this.cbxDealer.Name = "cbxDealer";
+            this.cbxDealer.Size = new System.Drawing.Size(15, 14);
+            this.cbxDealer.TabIndex = 7;
+            this.cbxDealer.UseVisualStyleBackColor = true;
             // 
             // OrderSearch
             // 
@@ -293,6 +294,7 @@
             this.Controls.Add(this.rbtnOrderSerial);
             this.Controls.Add(this.numOrderSerial);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrderSearch";
             this.Text = "OrderSearch";
             this.Load += new System.EventHandler(this.OrderSearch_Load);

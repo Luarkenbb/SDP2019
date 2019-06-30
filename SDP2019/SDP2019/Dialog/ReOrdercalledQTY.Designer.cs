@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReOrdercalledQTY));
             this.lb_count = new System.Windows.Forms.Label();
             this.bt_update = new System.Windows.Forms.Button();
             this.bt_close = new System.Windows.Forms.Button();
@@ -91,6 +92,7 @@
             this.Controls.Add(this.bt_update);
             this.Controls.Add(this.bt_close);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReOrdercalledQTY";
             this.Text = "ReOrdercalledQTY";
             this.ResumeLayout(false);

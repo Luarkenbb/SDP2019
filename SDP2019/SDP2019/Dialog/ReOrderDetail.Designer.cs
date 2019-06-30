@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReOrderDetail));
             this.tb_desc = new System.Windows.Forms.RichTextBox();
             this.tb_price = new System.Windows.Forms.TextBox();
             this.tb_quantitySL = new System.Windows.Forms.TextBox();
@@ -214,6 +215,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReOrderDetail";
             this.Text = "ReOrderDetail";
             this.ResumeLayout(false);

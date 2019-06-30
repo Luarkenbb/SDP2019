@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpareNewItem));
             this.rtxtDesc = new System.Windows.Forms.RichTextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtSpareID = new System.Windows.Forms.TextBox();
@@ -108,6 +109,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SpareNewItem";
             this.Text = "SpareNewItem";
             this.Load += new System.EventHandler(this.SpareNewItem_Load);

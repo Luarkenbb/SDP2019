@@ -35,6 +35,7 @@
             "3",
             "4",
             "5"}, -1);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderDetail));
             this.rtxtDeliverAddress = new System.Windows.Forms.RichTextBox();
             this.rtxtInvoiceAddress = new System.Windows.Forms.RichTextBox();
             this.txtOrderStaff = new System.Windows.Forms.TextBox();
@@ -456,6 +457,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lstSpare);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrderDetail";
             this.Text = "s";
             this.Load += new System.EventHandler(this.OrderDetail_Load);

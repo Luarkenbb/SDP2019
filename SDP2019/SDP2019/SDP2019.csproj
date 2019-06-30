@@ -339,5 +339,11 @@
   <ItemGroup>
     <None Include="bin\Debug\photos\Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="photos\SquareLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="photos\companyname.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

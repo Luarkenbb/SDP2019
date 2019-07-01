@@ -54,6 +54,8 @@
             this.u_Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.u_Department = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.u_UserType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabControl2.SuspendLayout();
             this.Password.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -85,6 +87,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Controls.Add(this.label3);
             this.groupBox5.Controls.Add(this.button9);
             this.groupBox5.Controls.Add(this.textBox2);
             this.groupBox5.Controls.Add(this.label2);
@@ -239,6 +243,23 @@
             this.u_UserType.Text = "UserType";
             this.u_UserType.Width = 79;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(64, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Enter old password:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(188, 33);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
+            this.textBox3.Size = new System.Drawing.Size(125, 20);
+            this.textBox3.TabIndex = 6;
+            // 
             // settingTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,5 +298,7 @@
         private System.Windows.Forms.ColumnHeader u_Password;
         private System.Windows.Forms.ColumnHeader u_Department;
         private System.Windows.Forms.ColumnHeader u_UserType;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
     }
 }

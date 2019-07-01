@@ -38,7 +38,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.button21 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
-            this.listView6 = new System.Windows.Forms.ListView();
+            this.lstSpare = new System.Windows.Forms.ListView();
             this.r_SpareID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.r_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.r_pPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -76,25 +76,25 @@
             this.button23.Text = "Search";
             this.button23.UseVisualStyleBackColor = true;
             // 
-            // listView6
+            // lstSpare
             // 
-            this.listView6.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstSpare.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.r_SpareID,
             this.r_date,
             this.r_pPrice,
             this.r_tPrice,
             this.r_qty});
-            this.listView6.FullRowSelect = true;
-            this.listView6.GridLines = true;
-            this.listView6.HideSelection = false;
-            this.listView6.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            this.lstSpare.FullRowSelect = true;
+            this.lstSpare.GridLines = true;
+            this.lstSpare.HideSelection = false;
+            this.lstSpare.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listView6.Location = new System.Drawing.Point(1, 0);
-            this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(567, 399);
-            this.listView6.TabIndex = 26;
-            this.listView6.UseCompatibleStateImageBehavior = false;
-            this.listView6.View = System.Windows.Forms.View.Details;
+            this.lstSpare.Location = new System.Drawing.Point(1, 0);
+            this.lstSpare.Name = "lstSpare";
+            this.lstSpare.Size = new System.Drawing.Size(567, 399);
+            this.lstSpare.TabIndex = 26;
+            this.lstSpare.UseCompatibleStateImageBehavior = false;
+            this.lstSpare.View = System.Windows.Forms.View.Details;
             // 
             // r_SpareID
             // 
@@ -103,22 +103,22 @@
             // 
             // r_date
             // 
-            this.r_date.Text = "Date";
+            this.r_date.Text = "QTY";
             this.r_date.Width = 71;
             // 
             // r_pPrice
             // 
-            this.r_pPrice.Text = "Pre Item Price";
+            this.r_pPrice.Text = "Price Per Item";
             this.r_pPrice.Width = 92;
             // 
             // r_tPrice
             // 
-            this.r_tPrice.Text = "Total Price";
-            this.r_tPrice.Width = 79;
+            this.r_tPrice.Text = "QTY Safe Line";
+            this.r_tPrice.Width = 102;
             // 
             // r_qty
             // 
-            this.r_qty.Text = "Quantity";
+            this.r_qty.Text = "Description";
             this.r_qty.Width = 74;
             // 
             // reportTab
@@ -126,9 +126,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox10);
-            this.Controls.Add(this.listView6);
+            this.Controls.Add(this.lstSpare);
             this.Name = "reportTab";
             this.Size = new System.Drawing.Size(767, 399);
+            this.Load += new System.EventHandler(this.reportTab_Load);
             this.groupBox10.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -139,7 +140,7 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.ListView listView6;
+        private System.Windows.Forms.ListView lstSpare;
         private System.Windows.Forms.ColumnHeader r_SpareID;
         private System.Windows.Forms.ColumnHeader r_date;
         private System.Windows.Forms.ColumnHeader r_pPrice;

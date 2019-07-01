@@ -59,29 +59,30 @@
             // 
             // txtLogonID
             // 
-            this.txtLogonID.Location = new System.Drawing.Point(697, 0);
+            this.txtLogonID.Location = new System.Drawing.Point(722, 8);
             this.txtLogonID.Name = "txtLogonID";
             this.txtLogonID.ReadOnly = true;
-            this.txtLogonID.Size = new System.Drawing.Size(100, 20);
+            this.txtLogonID.Size = new System.Drawing.Size(91, 20);
             this.txtLogonID.TabIndex = 20;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(638, 1);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(663, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 16);
+            this.label7.Size = new System.Drawing.Size(62, 16);
             this.label7.TabIndex = 19;
             this.label7.Text = "Staff ID:";
             // 
             // tabTopBar
             // 
             this.tabTopBar.Controls.Add(this.Setting);
-            this.tabTopBar.Location = new System.Drawing.Point(13, 13);
+            this.tabTopBar.Location = new System.Drawing.Point(12, 12);
             this.tabTopBar.Name = "tabTopBar";
             this.tabTopBar.SelectedIndex = 0;
-            this.tabTopBar.Size = new System.Drawing.Size(775, 425);
+            this.tabTopBar.Size = new System.Drawing.Size(801, 450);
             this.tabTopBar.TabIndex = 0;
             this.tabTopBar.SelectedIndexChanged += new System.EventHandler(this.tabTopBar_SelectedIndexChanged);
             // 
@@ -90,7 +91,7 @@
             this.Setting.Controls.Add(this.tabControl2);
             this.Setting.Location = new System.Drawing.Point(4, 22);
             this.Setting.Name = "Setting";
-            this.Setting.Size = new System.Drawing.Size(767, 399);
+            this.Setting.Size = new System.Drawing.Size(793, 424);
             this.Setting.TabIndex = 4;
             this.Setting.Text = "Setting";
             this.Setting.UseVisualStyleBackColor = true;
@@ -256,7 +257,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ClientSize = new System.Drawing.Size(830, 476);
             this.Controls.Add(this.txtLogonID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tabTopBar);

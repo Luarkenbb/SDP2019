@@ -66,7 +66,7 @@ namespace SDP2019
                 {"Dealer", new uControl.dealerTab() },
                 {"Reorder", new uControl.ReOrder() },
                 {"Report", new uControl.reportTab() },
-                {"Setting", new uControl.settingTab() }
+                {"Setting", new uControl.settingTab(frmLogonID,frmUserType) }
             };
 
             for (int i = 0; i < uControl.GetLength(0); i++)

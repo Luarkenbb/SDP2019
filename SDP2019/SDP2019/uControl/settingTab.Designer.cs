@@ -35,15 +35,25 @@
             "3",
             "4",
             "5"}, -1);
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabTopBar = new System.Windows.Forms.TabControl();
             this.Password = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtOldPwd = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnUpdatePassword = new System.Windows.Forms.Button();
+            this.txtConfirmPwd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNewPwd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.UserInfo = new System.Windows.Forms.TabPage();
+            this.txtUserType = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtDepartmentName = new System.Windows.Forms.TextBox();
+            this.rtxtDepartmentDesc = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.button20 = new System.Windows.Forms.Button();
@@ -54,25 +64,25 @@
             this.u_Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.u_Department = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.u_UserType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.tabControl2.SuspendLayout();
+            this.btnUpdateInfo = new System.Windows.Forms.Button();
+            this.tabTopBar.SuspendLayout();
             this.Password.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.UserInfo.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl2
+            // tabTopBar
             // 
-            this.tabControl2.Controls.Add(this.Password);
-            this.tabControl2.Controls.Add(this.UserInfo);
-            this.tabControl2.Controls.Add(this.tabPage1);
-            this.tabControl2.Location = new System.Drawing.Point(3, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(761, 393);
-            this.tabControl2.TabIndex = 1;
+            this.tabTopBar.Controls.Add(this.Password);
+            this.tabTopBar.Controls.Add(this.UserInfo);
+            this.tabTopBar.Controls.Add(this.tabPage1);
+            this.tabTopBar.Location = new System.Drawing.Point(3, 3);
+            this.tabTopBar.Name = "tabTopBar";
+            this.tabTopBar.SelectedIndex = 0;
+            this.tabTopBar.Size = new System.Drawing.Size(761, 393);
+            this.tabTopBar.TabIndex = 1;
             // 
             // Password
             // 
@@ -87,12 +97,12 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Controls.Add(this.txtOldPwd);
             this.groupBox5.Controls.Add(this.label3);
-            this.groupBox5.Controls.Add(this.button9);
-            this.groupBox5.Controls.Add(this.textBox2);
+            this.groupBox5.Controls.Add(this.btnUpdatePassword);
+            this.groupBox5.Controls.Add(this.txtConfirmPwd);
             this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.txtNewPwd);
             this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Location = new System.Drawing.Point(205, 91);
             this.groupBox5.Name = "groupBox5";
@@ -101,21 +111,40 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Change Password";
             // 
-            // button9
+            // txtOldPwd
             // 
-            this.button9.Location = new System.Drawing.Point(261, 141);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "Update";
-            this.button9.UseVisualStyleBackColor = true;
+            this.txtOldPwd.Location = new System.Drawing.Point(188, 33);
+            this.txtOldPwd.Name = "txtOldPwd";
+            this.txtOldPwd.PasswordChar = '*';
+            this.txtOldPwd.Size = new System.Drawing.Size(125, 20);
+            this.txtOldPwd.TabIndex = 6;
             // 
-            // textBox2
+            // label3
             // 
-            this.textBox2.Location = new System.Drawing.Point(188, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 20);
-            this.textBox2.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(64, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Enter old password:";
+            // 
+            // btnUpdatePassword
+            // 
+            this.btnUpdatePassword.Location = new System.Drawing.Point(238, 142);
+            this.btnUpdatePassword.Name = "btnUpdatePassword";
+            this.btnUpdatePassword.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdatePassword.TabIndex = 4;
+            this.btnUpdatePassword.Text = "Update";
+            this.btnUpdatePassword.UseVisualStyleBackColor = true;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdatePassword_Click);
+            // 
+            // txtConfirmPwd
+            // 
+            this.txtConfirmPwd.Location = new System.Drawing.Point(188, 100);
+            this.txtConfirmPwd.Name = "txtConfirmPwd";
+            this.txtConfirmPwd.PasswordChar = '*';
+            this.txtConfirmPwd.Size = new System.Drawing.Size(125, 20);
+            this.txtConfirmPwd.TabIndex = 3;
             // 
             // label2
             // 
@@ -126,13 +155,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "enter new password again:";
             // 
-            // textBox1
+            // txtNewPwd
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(125, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNewPwd.Location = new System.Drawing.Point(188, 64);
+            this.txtNewPwd.Name = "txtNewPwd";
+            this.txtNewPwd.PasswordChar = '*';
+            this.txtNewPwd.Size = new System.Drawing.Size(125, 20);
+            this.txtNewPwd.TabIndex = 1;
             // 
             // label1
             // 
@@ -145,6 +174,15 @@
             // 
             // UserInfo
             // 
+            this.UserInfo.Controls.Add(this.btnUpdateInfo);
+            this.UserInfo.Controls.Add(this.txtUserType);
+            this.UserInfo.Controls.Add(this.txtUserName);
+            this.UserInfo.Controls.Add(this.txtDepartmentName);
+            this.UserInfo.Controls.Add(this.rtxtDepartmentDesc);
+            this.UserInfo.Controls.Add(this.label7);
+            this.UserInfo.Controls.Add(this.label6);
+            this.UserInfo.Controls.Add(this.label5);
+            this.UserInfo.Controls.Add(this.label4);
             this.UserInfo.Location = new System.Drawing.Point(4, 22);
             this.UserInfo.Name = "UserInfo";
             this.UserInfo.Padding = new System.Windows.Forms.Padding(3);
@@ -152,6 +190,78 @@
             this.UserInfo.TabIndex = 1;
             this.UserInfo.Text = "User Info";
             this.UserInfo.UseVisualStyleBackColor = true;
+            // 
+            // txtUserType
+            // 
+            this.txtUserType.Location = new System.Drawing.Point(95, 164);
+            this.txtUserType.Name = "txtUserType";
+            this.txtUserType.ReadOnly = true;
+            this.txtUserType.Size = new System.Drawing.Size(146, 20);
+            this.txtUserType.TabIndex = 7;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(95, 82);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(146, 20);
+            this.txtUserName.TabIndex = 6;
+            // 
+            // txtDepartmentName
+            // 
+            this.txtDepartmentName.Location = new System.Drawing.Point(337, 82);
+            this.txtDepartmentName.Name = "txtDepartmentName";
+            this.txtDepartmentName.ReadOnly = true;
+            this.txtDepartmentName.Size = new System.Drawing.Size(146, 20);
+            this.txtDepartmentName.TabIndex = 5;
+            // 
+            // rtxtDepartmentDesc
+            // 
+            this.rtxtDepartmentDesc.Location = new System.Drawing.Point(337, 164);
+            this.rtxtDepartmentDesc.Name = "rtxtDepartmentDesc";
+            this.rtxtDepartmentDesc.ReadOnly = true;
+            this.rtxtDepartmentDesc.Size = new System.Drawing.Size(146, 55);
+            this.rtxtDepartmentDesc.TabIndex = 4;
+            this.rtxtDepartmentDesc.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(334, 145);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(149, 16);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Department Description";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(334, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Department Name";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(92, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 16);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "User Type";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(92, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "User Name";
             // 
             // tabPage1
             // 
@@ -236,41 +346,37 @@
             // u_Department
             // 
             this.u_Department.Text = "Department";
-            this.u_Department.Width = 47;
+            this.u_Department.Width = 75;
             // 
             // u_UserType
             // 
             this.u_UserType.Text = "UserType";
             this.u_UserType.Width = 79;
             // 
-            // label3
+            // btnUpdateInfo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Enter old password:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(188, 33);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(125, 20);
-            this.textBox3.TabIndex = 6;
+            this.btnUpdateInfo.Location = new System.Drawing.Point(166, 108);
+            this.btnUpdateInfo.Name = "btnUpdateInfo";
+            this.btnUpdateInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateInfo.TabIndex = 8;
+            this.btnUpdateInfo.Text = "Update";
+            this.btnUpdateInfo.UseVisualStyleBackColor = true;
+            this.btnUpdateInfo.Click += new System.EventHandler(this.btnUpdateInfo_Click);
             // 
             // settingTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tabControl2);
+            this.Controls.Add(this.tabTopBar);
             this.Name = "settingTab";
             this.Size = new System.Drawing.Size(767, 399);
-            this.tabControl2.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.settingTab_Load);
+            this.tabTopBar.ResumeLayout(false);
             this.Password.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.UserInfo.ResumeLayout(false);
+            this.UserInfo.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -279,13 +385,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl tabTopBar;
         private System.Windows.Forms.TabPage Password;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnUpdatePassword;
+        private System.Windows.Forms.TextBox txtConfirmPwd;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNewPwd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage UserInfo;
         private System.Windows.Forms.TabPage tabPage1;
@@ -298,7 +404,16 @@
         private System.Windows.Forms.ColumnHeader u_Password;
         private System.Windows.Forms.ColumnHeader u_Department;
         private System.Windows.Forms.ColumnHeader u_UserType;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtOldPwd;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtUserType;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtDepartmentName;
+        private System.Windows.Forms.RichTextBox rtxtDepartmentDesc;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnUpdateInfo;
     }
 }

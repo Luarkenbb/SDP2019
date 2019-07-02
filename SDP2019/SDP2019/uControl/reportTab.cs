@@ -14,15 +14,21 @@ namespace SDP2019.uControl
     {
         DBConnection conn;
 
+
+
         public reportTab()
         {
             InitializeComponent();
         }
 
+
+
         private void reportTab_Load(object sender, EventArgs e)
         {
             conn = new DBConnection();
             lstSpareGetAllSpares();
+
+            
         }
 
         private void lstSpareGetAllSpares()

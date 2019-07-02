@@ -28,7 +28,7 @@ namespace SDP2019.uControl
             conn = new DBConnection();
             lstSpareGetAllSpares();
 
-            
+            lstSelectedSpare.Items.Clear();
         }
 
         private void lstSpareGetAllSpares()
@@ -57,5 +57,70 @@ namespace SDP2019.uControl
 
             conn.CloseConnection();
         }
+
+        private void lstSpare_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var senderList = (ListView)sender;
+            ListViewItem clickedItem = senderList.HitTest(e.Location).Item;
+
+            ListViewItem itemAdd = new ListViewItem(clickedItem.SubItems[0].Text);
+            if (clickedItem != null)
+            {
+                itemAdd.SubItems.Add(clickedItem.SubItems[1]);
+                itemAdd.SubItems.Add(clickedItem.SubItems[2]);
+                itemAdd.SubItems.Add(clickedItem.SubItems[3]);
+                itemAdd.SubItems.Add(clickedItem.SubItems[4]);
+            }
+
+            lstSelectedSpare.Items.Add(itemAdd);
+        }
+
+        private void lstSelectedSpare_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var senderList = (ListView)sender;
+            ListViewItem clickedItem = senderList.HitTest(e.Location).Item;
+
+            
+            if (clickedItem != null)
+            {
+                lstSelectedSpare.Items.Remove(clickedItem);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            LinkedList<string> spareIDs = getAllSelectedSpareID();
+            Boolean isShowPrevious = cboxPreviousMonth.Checked;
+            Boolean isQtyOrSales = rbtnQty.Checked;
+            int month = dtPickerMonthReport.Value.Month;
+
+            using (Dialog.ReportChart dlg = new Dialog.ReportChart(spareIDs, isShowPrevious, isQtyOrSales, month))
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    
+                }
+            }
+        }
+
+        private LinkedList<string> getAllSelectedSpareID()
+        {
+            LinkedList<string> list = new LinkedList<string>();
+
+            foreach(ListViewItem item in lstSelectedSpare.Items)
+            {
+                list.AddLast(item.SubItems[0].ToString());
+            }
+
+
+            return list;
+        }
+
+
     }
 }

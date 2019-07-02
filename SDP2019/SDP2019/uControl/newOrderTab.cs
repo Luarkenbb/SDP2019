@@ -121,7 +121,7 @@ namespace SDP2019.uControl
         private void lstOrderFrmSpares_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var senderList = (ListView)sender;
-            var clickedItem = senderList.HitTest(e.Location).Item;
+            ListViewItem clickedItem = senderList.HitTest(e.Location).Item;
             if (clickedItem != null)
             {
                 showEditSpareQuantity(clickedItem);

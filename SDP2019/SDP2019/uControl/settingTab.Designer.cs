@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "AA12345",
             "1",
             "2",
@@ -56,9 +56,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.btnUserDel = new System.Windows.Forms.Button();
+            this.btnUserPwdReset = new System.Windows.Forms.Button();
+            this.btnUserAdd = new System.Windows.Forms.Button();
             this.listView5 = new System.Windows.Forms.ListView();
             this.u_UserID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.u_Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -277,9 +277,9 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.button20);
-            this.groupBox8.Controls.Add(this.button19);
-            this.groupBox8.Controls.Add(this.button18);
+            this.groupBox8.Controls.Add(this.btnUserDel);
+            this.groupBox8.Controls.Add(this.btnUserPwdReset);
+            this.groupBox8.Controls.Add(this.btnUserAdd);
             this.groupBox8.Location = new System.Drawing.Point(573, 6);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(174, 110);
@@ -287,32 +287,32 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "User Contral";
             // 
-            // button20
+            // btnUserDel
             // 
-            this.button20.Location = new System.Drawing.Point(7, 77);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(161, 23);
-            this.button20.TabIndex = 3;
-            this.button20.Text = "Delete User";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnUserDel.Location = new System.Drawing.Point(7, 77);
+            this.btnUserDel.Name = "btnUserDel";
+            this.btnUserDel.Size = new System.Drawing.Size(161, 23);
+            this.btnUserDel.TabIndex = 3;
+            this.btnUserDel.Text = "Delete User";
+            this.btnUserDel.UseVisualStyleBackColor = true;
             // 
-            // button19
+            // btnUserPwdReset
             // 
-            this.button19.Location = new System.Drawing.Point(7, 48);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(161, 23);
-            this.button19.TabIndex = 2;
-            this.button19.Text = "Change Password";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btnUserPwdReset.Location = new System.Drawing.Point(7, 48);
+            this.btnUserPwdReset.Name = "btnUserPwdReset";
+            this.btnUserPwdReset.Size = new System.Drawing.Size(161, 23);
+            this.btnUserPwdReset.TabIndex = 2;
+            this.btnUserPwdReset.Text = "Reset Password";
+            this.btnUserPwdReset.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // btnUserAdd
             // 
-            this.button18.Location = new System.Drawing.Point(7, 19);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(161, 23);
-            this.button18.TabIndex = 1;
-            this.button18.Text = "Add User";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnUserAdd.Location = new System.Drawing.Point(7, 19);
+            this.btnUserAdd.Name = "btnUserAdd";
+            this.btnUserAdd.Size = new System.Drawing.Size(161, 23);
+            this.btnUserAdd.TabIndex = 1;
+            this.btnUserAdd.Text = "Add User";
+            this.btnUserAdd.UseVisualStyleBackColor = true;
             // 
             // listView5
             // 
@@ -325,8 +325,9 @@
             this.listView5.GridLines = true;
             this.listView5.HideSelection = false;
             this.listView5.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listView5.Location = new System.Drawing.Point(0, 0);
+            this.listView5.MultiSelect = false;
             this.listView5.Name = "listView5";
             this.listView5.Size = new System.Drawing.Size(567, 367);
             this.listView5.TabIndex = 1;
@@ -396,9 +397,9 @@
         private System.Windows.Forms.TabPage UserInfo;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button btnUserDel;
+        private System.Windows.Forms.Button btnUserPwdReset;
+        private System.Windows.Forms.Button btnUserAdd;
         private System.Windows.Forms.ListView listView5;
         private System.Windows.Forms.ColumnHeader u_UserID;
         private System.Windows.Forms.ColumnHeader u_Password;

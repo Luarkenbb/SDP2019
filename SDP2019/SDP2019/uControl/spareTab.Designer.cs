@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "AA12345",
             "1",
             "2",
@@ -39,7 +39,7 @@
             this.btnSpareModify = new System.Windows.Forms.Button();
             this.btnSpareAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gboxOrder = new System.Windows.Forms.GroupBox();
             this.btnSpareFrmAddToOrder = new System.Windows.Forms.Button();
             this.lstSpare = new System.Windows.Forms.ListView();
             this.s_SpareID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,8 +47,11 @@
             this.s_Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.s_QtySafeLine = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.s_Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.gboxReport = new System.Windows.Forms.GroupBox();
+            this.btnAddSpareToReport = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gboxOrder.SuspendLayout();
+            this.gboxReport.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -56,7 +59,7 @@
             this.groupBox2.Controls.Add(this.btnSpareModify);
             this.groupBox2.Controls.Add(this.btnSpareAdd);
             this.groupBox2.Controls.Add(this.btnSearch);
-            this.groupBox2.Location = new System.Drawing.Point(574, 61);
+            this.groupBox2.Location = new System.Drawing.Point(573, 61);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(191, 112);
             this.groupBox2.TabIndex = 6;
@@ -93,15 +96,15 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // groupBox1
+            // gboxOrder
             // 
-            this.groupBox1.Controls.Add(this.btnSpareFrmAddToOrder);
-            this.groupBox1.Location = new System.Drawing.Point(574, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(191, 52);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Order Contral";
+            this.gboxOrder.Controls.Add(this.btnSpareFrmAddToOrder);
+            this.gboxOrder.Location = new System.Drawing.Point(574, 3);
+            this.gboxOrder.Name = "gboxOrder";
+            this.gboxOrder.Size = new System.Drawing.Size(191, 52);
+            this.gboxOrder.TabIndex = 5;
+            this.gboxOrder.TabStop = false;
+            this.gboxOrder.Text = "Order Contral";
             // 
             // btnSpareFrmAddToOrder
             // 
@@ -125,7 +128,7 @@
             this.lstSpare.GridLines = true;
             this.lstSpare.HideSelection = false;
             this.lstSpare.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.lstSpare.Location = new System.Drawing.Point(1, 0);
             this.lstSpare.Name = "lstSpare";
             this.lstSpare.Size = new System.Drawing.Size(567, 399);
@@ -158,18 +161,40 @@
             this.s_Description.Text = "Description";
             this.s_Description.Width = 74;
             // 
+            // gboxReport
+            // 
+            this.gboxReport.Controls.Add(this.btnAddSpareToReport);
+            this.gboxReport.Location = new System.Drawing.Point(574, 179);
+            this.gboxReport.Name = "gboxReport";
+            this.gboxReport.Size = new System.Drawing.Size(190, 105);
+            this.gboxReport.TabIndex = 7;
+            this.gboxReport.TabStop = false;
+            this.gboxReport.Text = "Report";
+            // 
+            // btnAddSpareToReport
+            // 
+            this.btnAddSpareToReport.Location = new System.Drawing.Point(7, 19);
+            this.btnAddSpareToReport.Name = "btnAddSpareToReport";
+            this.btnAddSpareToReport.Size = new System.Drawing.Size(178, 23);
+            this.btnAddSpareToReport.TabIndex = 2;
+            this.btnAddSpareToReport.Text = "Add Spare to Report";
+            this.btnAddSpareToReport.UseVisualStyleBackColor = true;
+            this.btnAddSpareToReport.Click += new System.EventHandler(this.btnAddSpareToReport_Click);
+            // 
             // spareTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gboxReport);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gboxOrder);
             this.Controls.Add(this.lstSpare);
             this.Name = "spareTab";
             this.Size = new System.Drawing.Size(767, 399);
             this.Load += new System.EventHandler(this.spareTab_Load);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.gboxOrder.ResumeLayout(false);
+            this.gboxReport.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -180,7 +205,7 @@
         private System.Windows.Forms.Button btnSpareModify;
         private System.Windows.Forms.Button btnSpareAdd;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gboxOrder;
         private System.Windows.Forms.Button btnSpareFrmAddToOrder;
         private System.Windows.Forms.ListView lstSpare;
         private System.Windows.Forms.ColumnHeader s_SpareID;
@@ -188,5 +213,7 @@
         private System.Windows.Forms.ColumnHeader s_Price;
         private System.Windows.Forms.ColumnHeader s_QtySafeLine;
         private System.Windows.Forms.ColumnHeader s_Description;
+        private System.Windows.Forms.GroupBox gboxReport;
+        private System.Windows.Forms.Button btnAddSpareToReport;
     }
 }

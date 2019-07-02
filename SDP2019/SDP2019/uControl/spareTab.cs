@@ -16,6 +16,7 @@ namespace SDP2019.uControl
         TabControl tab;
         string frmLogonID;
         int tabNewOrder;
+        int tabReport;
         public spareTab()
         {
             InitializeComponent();
@@ -27,6 +28,14 @@ namespace SDP2019.uControl
             this.frmLogonID = frmLogonID;
             this.tabNewOrder = tabNewOrder;
         }
+        public spareTab(string frmLogonID, int tabNewOrder, int tabReport)
+        {
+            InitializeComponent();
+            this.frmLogonID = frmLogonID;
+            this.tabNewOrder = tabNewOrder;
+            this.tabReport = tabReport;
+        }
+
 
         private void spareTab_Load(object sender, EventArgs e)
         {
@@ -133,6 +142,32 @@ namespace SDP2019.uControl
             else
             {
                 MessageBox.Show("Please select 1 spare only!");
+            }
+        }
+
+        private void btnAddSpareToReport_Click(object sender, EventArgs e)
+        {
+            reportTab distPage;
+            object selectPage = tab.TabPages[tabReport].Controls[0];
+
+            distPage = (reportTab)selectPage;
+
+
+            if (lstSpare.SelectedItems.Count > 0)
+            {
+                foreach (ListViewItem item in lstSpare.SelectedItems)
+                {
+                    ListViewItem clone = (ListViewItem)item.Clone();
+                    distPage.addSpare(clone);
+
+                }
+
+
+                tab.SelectedIndex = tabReport;
+            }
+            else
+            {
+                MessageBox.Show("Please select spare(s)!");
             }
         }
     }

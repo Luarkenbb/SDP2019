@@ -46,6 +46,7 @@
             this.txtNewPwd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.UserInfo = new System.Windows.Forms.TabPage();
+            this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.txtUserType = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtDepartmentName = new System.Windows.Forms.TextBox();
@@ -59,12 +60,11 @@
             this.btnUserDel = new System.Windows.Forms.Button();
             this.btnUserPwdReset = new System.Windows.Forms.Button();
             this.btnUserAdd = new System.Windows.Forms.Button();
-            this.listView5 = new System.Windows.Forms.ListView();
+            this.lstUsers = new System.Windows.Forms.ListView();
             this.u_UserID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.u_Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.u_Department = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.u_UserType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.tabTopBar.SuspendLayout();
             this.Password.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -191,6 +191,16 @@
             this.UserInfo.Text = "User Info";
             this.UserInfo.UseVisualStyleBackColor = true;
             // 
+            // btnUpdateInfo
+            // 
+            this.btnUpdateInfo.Location = new System.Drawing.Point(166, 108);
+            this.btnUpdateInfo.Name = "btnUpdateInfo";
+            this.btnUpdateInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateInfo.TabIndex = 8;
+            this.btnUpdateInfo.Text = "Update";
+            this.btnUpdateInfo.UseVisualStyleBackColor = true;
+            this.btnUpdateInfo.Click += new System.EventHandler(this.btnUpdateInfo_Click);
+            // 
             // txtUserType
             // 
             this.txtUserType.Location = new System.Drawing.Point(95, 164);
@@ -266,7 +276,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox8);
-            this.tabPage1.Controls.Add(this.listView5);
+            this.tabPage1.Controls.Add(this.lstUsers);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -313,26 +323,27 @@
             this.btnUserAdd.TabIndex = 1;
             this.btnUserAdd.Text = "Add User";
             this.btnUserAdd.UseVisualStyleBackColor = true;
+            this.btnUserAdd.Click += new System.EventHandler(this.btnUserAdd_Click);
             // 
-            // listView5
+            // lstUsers
             // 
-            this.listView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstUsers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.u_UserID,
             this.u_Password,
             this.u_Department,
             this.u_UserType});
-            this.listView5.FullRowSelect = true;
-            this.listView5.GridLines = true;
-            this.listView5.HideSelection = false;
-            this.listView5.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            this.lstUsers.FullRowSelect = true;
+            this.lstUsers.GridLines = true;
+            this.lstUsers.HideSelection = false;
+            this.lstUsers.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem2});
-            this.listView5.Location = new System.Drawing.Point(0, 0);
-            this.listView5.MultiSelect = false;
-            this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(567, 367);
-            this.listView5.TabIndex = 1;
-            this.listView5.UseCompatibleStateImageBehavior = false;
-            this.listView5.View = System.Windows.Forms.View.Details;
+            this.lstUsers.Location = new System.Drawing.Point(0, 0);
+            this.lstUsers.MultiSelect = false;
+            this.lstUsers.Name = "lstUsers";
+            this.lstUsers.Size = new System.Drawing.Size(567, 367);
+            this.lstUsers.TabIndex = 1;
+            this.lstUsers.UseCompatibleStateImageBehavior = false;
+            this.lstUsers.View = System.Windows.Forms.View.Details;
             // 
             // u_UserID
             // 
@@ -341,7 +352,7 @@
             // 
             // u_Password
             // 
-            this.u_Password.Text = "Password";
+            this.u_Password.Text = "UserType";
             this.u_Password.Width = 71;
             // 
             // u_Department
@@ -351,18 +362,8 @@
             // 
             // u_UserType
             // 
-            this.u_UserType.Text = "UserType";
-            this.u_UserType.Width = 79;
-            // 
-            // btnUpdateInfo
-            // 
-            this.btnUpdateInfo.Location = new System.Drawing.Point(166, 108);
-            this.btnUpdateInfo.Name = "btnUpdateInfo";
-            this.btnUpdateInfo.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateInfo.TabIndex = 8;
-            this.btnUpdateInfo.Text = "Update";
-            this.btnUpdateInfo.UseVisualStyleBackColor = true;
-            this.btnUpdateInfo.Click += new System.EventHandler(this.btnUpdateInfo_Click);
+            this.u_UserType.Text = "Department Desc";
+            this.u_UserType.Width = 101;
             // 
             // settingTab
             // 
@@ -400,7 +401,7 @@
         private System.Windows.Forms.Button btnUserDel;
         private System.Windows.Forms.Button btnUserPwdReset;
         private System.Windows.Forms.Button btnUserAdd;
-        private System.Windows.Forms.ListView listView5;
+        private System.Windows.Forms.ListView lstUsers;
         private System.Windows.Forms.ColumnHeader u_UserID;
         private System.Windows.Forms.ColumnHeader u_Password;
         private System.Windows.Forms.ColumnHeader u_Department;

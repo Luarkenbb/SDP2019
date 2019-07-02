@@ -139,6 +139,12 @@
     <Compile Include="Dialog\SpareUpdateStatus.Designer.cs">
       <DependentUpon>SpareUpdateStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\UserAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\UserAdd.Designer.cs">
+      <DependentUpon>UserAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\SpareUpdateStatus.resx">
       <DependentUpon>SpareUpdateStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\UserAdd.resx">
+      <DependentUpon>UserAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

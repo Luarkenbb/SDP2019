@@ -32,6 +32,7 @@ namespace SDP2019.uControl
             permissionHandle(frmUserType);
 
             getUserInfo();
+            
         }
 
 
@@ -40,6 +41,10 @@ namespace SDP2019.uControl
             if (!userType.Equals("admin"))
             {
                 tabTopBar.TabPages.Remove(tabTopBar.TabPages[2]);
+            }
+            else
+            {
+                getAllUser();
             }
         }
 
@@ -60,6 +65,34 @@ namespace SDP2019.uControl
 
             conn.CloseConnection();
         }
+        private void getAllUser()
+        {
+            string sql = "SELECT user.logonID, user.userType, department.departmentName, department.description ";
+            sql += "FROM user, department ";
+            sql += "WHERE user.departmentID = department.departmentID ";
+            getUserList(sql);
+        }
+
+        private void getUserList(string sql)
+        {
+            lstUsers.Items.Clear();
+
+            conn.OpenConnection();
+            DataTable dt = conn.ExecuteSelectQuery(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                ListViewItem item = new ListViewItem(row[0].ToString());
+                for (int i = 1; i < dt.Columns.Count; i++)
+                {
+                    item.SubItems.Add(row[i].ToString());
+                }
+                lstUsers.Items.Add(item);   
+            }
+
+
+            conn.CloseConnection();
+        }
+
 
         private void btnUpdatePassword_Click(object sender, EventArgs e)
         {
@@ -118,6 +151,17 @@ namespace SDP2019.uControl
             conn.CloseConnection();
             MessageBox.Show("Successful Updated Your Name!");
 
+        }
+
+        private void btnUserAdd_Click(object sender, EventArgs e)
+        {
+            using (Dialog.UserAdd dlg = new Dialog.UserAdd())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    getAllUser();
+                }
+            }
         }
     }
 }

@@ -13,78 +13,39 @@ namespace SDP2019.uControl
     public partial class reportTab : UserControl
     {
         DBConnection conn;
-
-
+        TabControl tab;
+        string frmLogonID;
+        int tabSpare;
 
         public reportTab()
         {
             InitializeComponent();
         }
-
+        public reportTab(string frmLogonID, int tabSpare)
+        {
+            InitializeComponent();
+            this.frmLogonID = frmLogonID;
+            this.tabSpare = tabSpare;
+        }
 
 
         private void reportTab_Load(object sender, EventArgs e)
         {
             conn = new DBConnection();
-            lstSpareGetAllSpares();
-
+            tab = (TabControl)this.Parent.Parent;
             lstSelectedSpare.Items.Clear();
+
+            
         }
 
-        private void lstSpareGetAllSpares()
+        public void addSpare(ListViewItem item)
         {
-            string sql = "Select SpareID, quantity, price, quantitySafeLine, description from spare";
-            lstSpareGetSpares(sql);
-        }
-
-        private void lstSpareGetSpares(string sql)
-        {
-            lstSpare.Items.Clear();
-            conn.OpenConnection();
-
-
-            DataTable dt = conn.ExecuteSelectQuery(sql);
-
-            foreach (DataRow row in dt.Rows)
-            {
-                ListViewItem item = new ListViewItem(row[0].ToString());
-                for (int i = 1; i < dt.Columns.Count; i++)
-                {
-                    item.SubItems.Add(row[i].ToString());
-                }
-                lstSpare.Items.Add(item);
-            }
-
-            conn.CloseConnection();
+            lstSelectedSpare.Items.Add(item);
         }
 
         private void lstSpare_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var senderList = (ListView)sender;
-            ListViewItem clickedItem = senderList.HitTest(e.Location).Item;
 
-            ListViewItem itemAdd = new ListViewItem(clickedItem.SubItems[0].Text);
-            if (clickedItem != null)
-            {
-                itemAdd.SubItems.Add(clickedItem.SubItems[1]);
-                itemAdd.SubItems.Add(clickedItem.SubItems[2]);
-                itemAdd.SubItems.Add(clickedItem.SubItems[3]);
-                itemAdd.SubItems.Add(clickedItem.SubItems[4]);
-            }
-
-            lstSelectedSpare.Items.Add(itemAdd);
-        }
-
-        private void lstSelectedSpare_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            var senderList = (ListView)sender;
-            ListViewItem clickedItem = senderList.HitTest(e.Location).Item;
-
-            
-            if (clickedItem != null)
-            {
-                lstSelectedSpare.Items.Remove(clickedItem);
-            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -121,6 +82,16 @@ namespace SDP2019.uControl
             return list;
         }
 
+        private void btnSpareSelect_Click(object sender, EventArgs e)
+        {
+            tab.SelectedIndex = tabSpare;
+        }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            lstSelectedSpare.Items.Clear();
+        }
+
+       
     }
 }

@@ -62,10 +62,10 @@ namespace SDP2019
                 {"New Order", new uControl.newOrderTab(frmLogonID,tabSpare,tabDealer) },
                 {"Order List", new uControl.orderList(frmLogonID) },
                 {"ToFollow List", new uControl.toFollowOrderTab() },
-                {"Spare", new uControl.spareTab(frmLogonID,tabNewOrder) },
-                {"Dealer", new uControl.dealerTab() },
+                {"Spare", new uControl.spareTab(frmLogonID,tabNewOrder,tabReport) },
+                {"Dealer", new uControl.dealerTab(frmLogonID,tabNewOrder) },
                 {"Reorder", new uControl.ReOrder() },
-                {"Report", new uControl.reportTab() },
+                {"Report", new uControl.reportTab(frmLogonID,tabSpare) },
                 {"Setting", new uControl.settingTab(frmLogonID,frmUserType) }
             };
 

@@ -97,7 +97,7 @@ namespace SDP2019.uControl
             LinkedList<string> spareIDs = getAllSelectedSpareID();
             Boolean isShowPrevious = cboxPreviousMonth.Checked;
             Boolean isQtyOrSales = rbtnQty.Checked;
-            int month = dtPickerMonthReport.Value.Month;
+            DateTime month = dtPickerMonthReport.Value;
 
             using (Dialog.ReportChart dlg = new Dialog.ReportChart(spareIDs, isShowPrevious, isQtyOrSales, month))
             {
@@ -114,7 +114,7 @@ namespace SDP2019.uControl
 
             foreach(ListViewItem item in lstSelectedSpare.Items)
             {
-                list.AddLast(item.SubItems[0].ToString());
+                list.AddLast(item.SubItems[0].Text);
             }
 
 

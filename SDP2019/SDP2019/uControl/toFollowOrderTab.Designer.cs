@@ -34,13 +34,13 @@
             this.lstFollowOrder = new System.Windows.Forms.ListView();
             this.t_followOrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.t_orderSpareID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.t_spareID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.t_quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.t_status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.t_FollowBy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.t_dealer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.t_dealerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.t_dateCreate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.t_FollowBy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.t_spareID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.groupBox9.Controls.Add(this.button26);
             this.groupBox9.Location = new System.Drawing.Point(656, 6);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(109, 100);
+            this.groupBox9.Size = new System.Drawing.Size(109, 87);
             this.groupBox9.TabIndex = 26;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Data control";
@@ -104,6 +104,10 @@
             this.t_orderSpareID.Text = "order SpareID";
             this.t_orderSpareID.Width = 81;
             // 
+            // t_spareID
+            // 
+            this.t_spareID.Text = "SpareID";
+            // 
             // t_quantity
             // 
             this.t_quantity.Text = "quantity";
@@ -111,6 +115,10 @@
             // t_status
             // 
             this.t_status.Text = "status";
+            // 
+            // t_FollowBy
+            // 
+            this.t_FollowBy.Text = "FollowBy";
             // 
             // t_dealer
             // 
@@ -125,14 +133,6 @@
             // 
             this.t_dateCreate.Text = "Date Created";
             this.t_dateCreate.Width = 134;
-            // 
-            // t_FollowBy
-            // 
-            this.t_FollowBy.Text = "FollowBy";
-            // 
-            // t_spareID
-            // 
-            this.t_spareID.Text = "SpareID";
             // 
             // toFollowOrderTab
             // 

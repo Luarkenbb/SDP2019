@@ -28,6 +28,22 @@ namespace SDP2019.uControl
             this.frmLogonID = frmLogonID;
             this.tabNewOrder = tabNewOrder;
         }
+        public dealerTab(string frmLogonID, int tabNewOrder, string frmUserType)
+        {
+            InitializeComponent();
+            this.frmLogonID = frmLogonID;
+            this.tabNewOrder = tabNewOrder;
+
+            permissionHandle(frmUserType);
+        }
+        private void permissionHandle(string type)
+        {
+            if (!(type.Equals("staff") | type.Equals("admin")))
+            {
+                gboxOrder.Hide();
+            }
+        }
+
         private void dealerTab_Load(object sender, EventArgs e)
         {
             conn = new DBConnection();

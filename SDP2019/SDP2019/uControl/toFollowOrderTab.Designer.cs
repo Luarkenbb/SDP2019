@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.lstFollowOrder = new System.Windows.Forms.ListView();
             this.t_followOrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.t_orderSpareID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,32 +47,45 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.button25);
-            this.groupBox9.Controls.Add(this.button26);
+            this.groupBox9.Controls.Add(this.btnRefresh);
+            this.groupBox9.Controls.Add(this.btnDelete);
+            this.groupBox9.Controls.Add(this.btnSearch);
             this.groupBox9.Location = new System.Drawing.Point(656, 6);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(109, 87);
+            this.groupBox9.Size = new System.Drawing.Size(109, 117);
             this.groupBox9.TabIndex = 26;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Data control";
             // 
-            // button25
+            // btnRefresh
             // 
-            this.button25.Location = new System.Drawing.Point(6, 48);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(94, 28);
-            this.button25.TabIndex = 1;
-            this.button25.Text = "Delete";
-            this.button25.UseVisualStyleBackColor = true;
+            this.btnRefresh.Location = new System.Drawing.Point(6, 82);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(94, 28);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // button26
+            // btnDelete
             // 
-            this.button26.Location = new System.Drawing.Point(6, 19);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(94, 28);
-            this.button26.TabIndex = 0;
-            this.button26.Text = "Search";
-            this.button26.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(6, 48);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(94, 28);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(6, 19);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(94, 28);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lstFollowOrder
             // 
@@ -85,8 +99,10 @@
             this.t_dealer,
             this.t_dealerName,
             this.t_dateCreate});
+            this.lstFollowOrder.FullRowSelect = true;
             this.lstFollowOrder.HideSelection = false;
             this.lstFollowOrder.Location = new System.Drawing.Point(1, 0);
+            this.lstFollowOrder.MultiSelect = false;
             this.lstFollowOrder.Name = "lstFollowOrder";
             this.lstFollowOrder.Size = new System.Drawing.Size(655, 399);
             this.lstFollowOrder.TabIndex = 25;
@@ -151,8 +167,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ListView lstFollowOrder;
         private System.Windows.Forms.ColumnHeader t_followOrderID;
         private System.Windows.Forms.ColumnHeader t_orderSpareID;
@@ -163,5 +179,6 @@
         private System.Windows.Forms.ColumnHeader t_dateCreate;
         private System.Windows.Forms.ColumnHeader t_FollowBy;
         private System.Windows.Forms.ColumnHeader t_spareID;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

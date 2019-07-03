@@ -14,6 +14,7 @@ namespace SDP2019.uControl
     {
         DBConnection conn;
         string frmLogonID;
+        string frmUserType;
         public orderList()
         {
             InitializeComponent();
@@ -23,6 +24,13 @@ namespace SDP2019.uControl
             InitializeComponent();
             this.frmLogonID = frmLogonID;
         }
+        public orderList(string frmLogonID,string frmUserType)
+        {
+            InitializeComponent();
+            this.frmLogonID = frmLogonID;
+            this.frmUserType = frmUserType;
+        }
+
 
         private void orderList_Load(object sender, EventArgs e)
         {
@@ -111,7 +119,16 @@ namespace SDP2019.uControl
 
             orderSerial = Convert.ToInt32(lstOrder.SelectedItems[0].SubItems[0].Text);
 
-            using (Dialog.OrderDetail dlg = new Dialog.OrderDetail(orderSerial,frmLogonID))
+            Dialog.OrderDetail dlg;
+            if (frmUserType == null)
+            {
+                dlg = new Dialog.OrderDetail(orderSerial, frmLogonID);
+            }
+            else
+            {
+                dlg = new Dialog.OrderDetail(orderSerial, frmLogonID,frmUserType);
+            }
+            using (dlg)
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

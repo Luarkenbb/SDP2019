@@ -35,19 +35,19 @@
             "3",
             "4"}, -1);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnModDealer = new System.Windows.Forms.Button();
             this.btnNewDealer = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gboxOrder = new System.Windows.Forms.GroupBox();
             this.btnDealerFrmAddToOrder = new System.Windows.Forms.Button();
             this.lstDealer = new System.Windows.Forms.ListView();
             this.d_DealerID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.d_DealerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.d_Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.d_Phone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gboxOrder.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -62,6 +62,16 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data control";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(6, 17);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(178, 23);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnModDealer
             // 
@@ -93,15 +103,15 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // groupBox4
+            // gboxOrder
             // 
-            this.groupBox4.Controls.Add(this.btnDealerFrmAddToOrder);
-            this.groupBox4.Location = new System.Drawing.Point(574, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(191, 52);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Dealer Contral";
+            this.gboxOrder.Controls.Add(this.btnDealerFrmAddToOrder);
+            this.gboxOrder.Location = new System.Drawing.Point(574, 3);
+            this.gboxOrder.Name = "gboxOrder";
+            this.gboxOrder.Size = new System.Drawing.Size(191, 52);
+            this.gboxOrder.TabIndex = 7;
+            this.gboxOrder.TabStop = false;
+            this.gboxOrder.Text = "Dealer Contral";
             // 
             // btnDealerFrmAddToOrder
             // 
@@ -153,28 +163,18 @@
             this.d_Phone.Text = "Phone";
             this.d_Phone.Width = 97;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(6, 17);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(178, 23);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // dealerTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.gboxOrder);
             this.Controls.Add(this.lstDealer);
             this.Name = "dealerTab";
             this.Size = new System.Drawing.Size(767, 399);
             this.Load += new System.EventHandler(this.dealerTab_Load);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
+            this.gboxOrder.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -185,7 +185,7 @@
         private System.Windows.Forms.Button btnModDealer;
         private System.Windows.Forms.Button btnNewDealer;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gboxOrder;
         private System.Windows.Forms.Button btnDealerFrmAddToOrder;
         private System.Windows.Forms.ListView lstDealer;
         private System.Windows.Forms.ColumnHeader d_DealerID;

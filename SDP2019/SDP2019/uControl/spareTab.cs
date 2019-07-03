@@ -35,6 +35,31 @@ namespace SDP2019.uControl
             this.tabNewOrder = tabNewOrder;
             this.tabReport = tabReport;
         }
+        public spareTab(string frmLogonID, int tabNewOrder, int tabReport, string type)
+        {
+            InitializeComponent();
+            this.frmLogonID = frmLogonID;
+            this.tabNewOrder = tabNewOrder;
+            this.tabReport = tabReport;
+
+            permissionHandle(type);
+
+        }
+        private void permissionHandle(string type)
+        {
+            if (type.Equals("staff"))
+            {
+                gboxReport.Hide();
+            }
+            else if (type.Equals("storeman"))
+            {
+                gboxOrder.Hide();
+                gboxReport.Hide();
+            }else if (type.Equals("reporter"))
+            {
+                gboxOrder.Hide();
+            }
+        }
 
 
         private void spareTab_Load(object sender, EventArgs e)

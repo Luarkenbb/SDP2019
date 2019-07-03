@@ -56,6 +56,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.btnSpareModify);
             this.groupBox2.Controls.Add(this.btnSpareAdd);
             this.groupBox2.Controls.Add(this.btnSearch);

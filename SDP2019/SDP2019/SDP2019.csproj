@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
@@ -190,10 +193,10 @@
     <Compile Include="Dialog\SpareSearch.Designer.cs">
       <DependentUpon>SpareSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToFollowSearch.cs">
+    <Compile Include="Dialog\ToFollowSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToFollowSearch.Designer.cs">
+    <Compile Include="Dialog\ToFollowSearch.Designer.cs">
       <DependentUpon>ToFollowSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="uControl\dealerTab.cs">
@@ -311,7 +314,7 @@
     <EmbeddedResource Include="Dialog\SpareSearch.resx">
       <DependentUpon>SpareSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToFollowSearch.resx">
+    <EmbeddedResource Include="Dialog\ToFollowSearch.resx">
       <DependentUpon>ToFollowSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uControl\dealerTab.resx">

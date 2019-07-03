@@ -44,7 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtDealerID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.gboxStaff = new System.Windows.Forms.GroupBox();
             this.btnAddSpare = new System.Windows.Forms.Button();
             this.btnSetQuantity = new System.Windows.Forms.Button();
             this.btnDelSpare = new System.Windows.Forms.Button();
@@ -73,12 +73,12 @@
             this.txtDealerPhone = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtStoremanID = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gboxStoreman = new System.Windows.Forms.GroupBox();
             this.btnPrintInvoice = new System.Windows.Forms.Button();
             this.btnToFollow = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.groupBox6.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gboxStaff.SuspendLayout();
+            this.gboxStoreman.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtxtDeliverAddress
@@ -149,17 +149,17 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "DealerID:";
             // 
-            // groupBox6
+            // gboxStaff
             // 
-            this.groupBox6.Controls.Add(this.btnAddSpare);
-            this.groupBox6.Controls.Add(this.btnSetQuantity);
-            this.groupBox6.Controls.Add(this.btnDelSpare);
-            this.groupBox6.Location = new System.Drawing.Point(600, 155);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(188, 115);
-            this.groupBox6.TabIndex = 18;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Order control";
+            this.gboxStaff.Controls.Add(this.btnAddSpare);
+            this.gboxStaff.Controls.Add(this.btnSetQuantity);
+            this.gboxStaff.Controls.Add(this.btnDelSpare);
+            this.gboxStaff.Location = new System.Drawing.Point(600, 155);
+            this.gboxStaff.Name = "gboxStaff";
+            this.gboxStaff.Size = new System.Drawing.Size(188, 115);
+            this.gboxStaff.TabIndex = 18;
+            this.gboxStaff.TabStop = false;
+            this.gboxStaff.Text = "Order control";
             // 
             // btnAddSpare
             // 
@@ -394,17 +394,17 @@
             this.txtStoremanID.Size = new System.Drawing.Size(100, 20);
             this.txtStoremanID.TabIndex = 38;
             // 
-            // groupBox1
+            // gboxStoreman
             // 
-            this.groupBox1.Controls.Add(this.btnPrintInvoice);
-            this.groupBox1.Controls.Add(this.btnUpdateSpareStatus);
-            this.groupBox1.Controls.Add(this.btnUpdateOrderStatus);
-            this.groupBox1.Location = new System.Drawing.Point(600, 276);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(188, 104);
-            this.groupBox1.TabIndex = 39;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Storeman Control";
+            this.gboxStoreman.Controls.Add(this.btnPrintInvoice);
+            this.gboxStoreman.Controls.Add(this.btnUpdateSpareStatus);
+            this.gboxStoreman.Controls.Add(this.btnUpdateOrderStatus);
+            this.gboxStoreman.Location = new System.Drawing.Point(600, 276);
+            this.gboxStoreman.Name = "gboxStoreman";
+            this.gboxStoreman.Size = new System.Drawing.Size(188, 104);
+            this.gboxStoreman.TabIndex = 39;
+            this.gboxStoreman.TabStop = false;
+            this.gboxStoreman.Text = "Storeman Control";
             // 
             // btnPrintInvoice
             // 
@@ -432,7 +432,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 482);
             this.Controls.Add(this.btnToFollow);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gboxStoreman);
             this.Controls.Add(this.txtStoremanID);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDealerPhone);
@@ -453,7 +453,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDealerID);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.gboxStaff);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lstSpare);
@@ -461,8 +461,8 @@
             this.Name = "OrderDetail";
             this.Text = "s";
             this.Load += new System.EventHandler(this.OrderDetail_Load);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.gboxStaff.ResumeLayout(false);
+            this.gboxStoreman.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,7 +478,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDealerID;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox gboxStaff;
         private System.Windows.Forms.Button btnAddSpare;
         private System.Windows.Forms.Button btnSetQuantity;
         private System.Windows.Forms.Button btnDelSpare;
@@ -506,7 +506,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtStoremanID;
         private System.Windows.Forms.ColumnHeader o_SpareStock;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gboxStoreman;
         private System.Windows.Forms.ColumnHeader o_ToDeliver;
         private System.Windows.Forms.Button btnToFollow;
         private System.Windows.Forms.Button btnPrintInvoice;

@@ -43,7 +43,7 @@ namespace SDP2019.uControl
         private void getToFollowOrderList(string sql)
         {
             conn.OpenConnection();
-
+            lstFollowOrder.Items.Clear();
             DataTable dt = conn.ExecuteSelectQuery(sql);
             foreach (DataRow row in dt.Rows)
             {
@@ -55,6 +55,44 @@ namespace SDP2019.uControl
                 lstFollowOrder.Items.Add(item);
             }
             conn.CloseConnection();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            using (Dialog.ToFollowSearch dlg = new Dialog.ToFollowSearch())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    getToFollowOrderList(dlg.getSql());
+                }
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            getAllToFollowOrder();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lstFollowOrder.SelectedItems.Count > 0)
+            {
+                ListViewItem item = lstFollowOrder.SelectedItems[0];
+                string followOrderID = item.SubItems[0].Text;
+                string status = item.SubItems[4].Text;
+                if (status.Equals("awaiting")) {
+                    string sql = "DELETE FROM tofolloworderspare WHERE followOrderID = " + followOrderID;
+                    conn.OpenConnection();
+                    conn.ExecuteUpdateQuery(sql);
+
+                    conn.CloseConnection();
+                    getAllToFollowOrder();
+                }
+                else
+                {
+                    MessageBox.Show("You can't delete a followed order!");
+                }
+            }
         }
     }
 }

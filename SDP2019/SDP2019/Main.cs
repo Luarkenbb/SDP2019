@@ -45,16 +45,92 @@ namespace SDP2019
         {
             conn = new DBConnection();
             //this.tabTopBar.TabPages.Remove(tabTopBar.TabPages[0]);
-            
-
         }
 
         private void userLogon()
         {
             txtLogonID.Text = frmLogonID;
         }
-
         private void tabGenerate()
+        {
+            if (this.frmUserType.Equals("admin"))
+            {
+                tabGenerateDefault();
+            }
+            else if (this.frmUserType.Equals("staff"))
+            {
+                tabGenerateStaff();
+            }else if (this.frmUserType.Equals("storeman"))
+            {
+                tabGenerateStoreman();
+            }else if (this.frmUserType.Equals("reporter"))
+            {
+                tabGenerateReporter();
+            }
+
+
+        }
+        private void tabGenerateReporter()
+        {
+            tabTopBar.TabPages.Clear();
+            tabReport = 2;
+            tabSpare = 0;
+
+            Object[,] uControl = {
+                {"Spare", new uControl.spareTab(frmLogonID,tabNewOrder,tabReport,frmUserType) },
+                {"Dealer", new uControl.dealerTab(frmLogonID,tabNewOrder,frmUserType) },
+                {"Report", new uControl.reportTab(frmLogonID,tabSpare) },
+                {"Setting", new uControl.settingTab(frmLogonID,frmUserType) }
+            };
+
+            for (int i = 0; i < uControl.GetLength(0); i++)
+            {
+                newTab((String)uControl[i, 0], (UserControl)uControl[i, 1], tabTopBar);
+            }
+        }
+
+        private void tabGenerateStoreman()
+        {
+            tabTopBar.TabPages.Clear();
+
+            Object[,] uControl = {
+                
+                {"Order List", new uControl.orderList(frmLogonID,frmUserType) },
+               
+                {"Spare", new uControl.spareTab(frmLogonID,tabNewOrder,tabReport,frmUserType) },
+                {"Dealer", new uControl.dealerTab(frmLogonID,tabNewOrder,frmUserType) },
+                {"Reorder", new uControl.ReOrder() },
+                
+                {"Setting", new uControl.settingTab(frmLogonID,frmUserType) }
+            };
+
+            for (int i = 0; i < uControl.GetLength(0); i++)
+            {
+                newTab((String)uControl[i, 0], (UserControl)uControl[i, 1], tabTopBar);
+            }
+        }
+
+        private void tabGenerateStaff()
+        {
+            tabTopBar.TabPages.Clear();
+
+            Object[,] uControl = {
+                {"New Order", new uControl.newOrderTab(frmLogonID,tabSpare,tabDealer) },
+                {"Order List", new uControl.orderList(frmLogonID,frmUserType) },
+                {"ToFollow List", new uControl.toFollowOrderTab() },
+                {"Spare", new uControl.spareTab(frmLogonID,tabNewOrder,tabReport,frmUserType) },
+                {"Dealer", new uControl.dealerTab(frmLogonID,tabNewOrder,frmUserType) },
+                {"Setting", new uControl.settingTab(frmLogonID,frmUserType) }
+            };
+
+            for (int i = 0; i < uControl.GetLength(0); i++)
+            {
+                newTab((String)uControl[i, 0], (UserControl)uControl[i, 1], tabTopBar);
+            }
+
+        }
+
+        private void tabGenerateDefault()
         {
             tabTopBar.TabPages.Clear();
 

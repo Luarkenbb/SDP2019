@@ -126,5 +126,11 @@ namespace SDP2019.Dialog
             }
             return sql;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

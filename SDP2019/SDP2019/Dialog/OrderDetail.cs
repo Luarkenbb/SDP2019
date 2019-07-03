@@ -28,7 +28,26 @@ namespace SDP2019.Dialog
             this.orderSerial = orderSerial;
             this.frmLogonID = frmLogonID;
         }
+        public OrderDetail(int orderSerial, string frmLogonID,string frmUserType)
+        {
+            InitializeComponent();
+            this.orderSerial = orderSerial;
+            this.frmLogonID = frmLogonID;
 
+            permissionHandle(frmUserType);
+        }
+
+        private void permissionHandle(string type)
+        {
+            if (type.Equals("staff"))
+            {
+                gboxStoreman.Hide();
+            }
+            else
+            {
+                gboxStaff.Hide();
+            }
+        }
 
         private void OrderDetail_Load(object sender, EventArgs e)
         {

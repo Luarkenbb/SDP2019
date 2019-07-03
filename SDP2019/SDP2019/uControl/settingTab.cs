@@ -163,5 +163,47 @@ namespace SDP2019.uControl
                 }
             }
         }
+
+        private void btnUserPwdReset_Click(object sender, EventArgs e)
+        {
+            if (lstUsers.SelectedItems.Count > 0)
+            {
+                ListViewItem item = lstUsers.SelectedItems[0];
+                string userID = item.SubItems[0].Text;
+                userResetPassword(userID,"123456");
+
+                MessageBox.Show("user " + userID + " :password reset to 123456");
+                getAllUser();
+            }
+        }
+
+        private void btnUserDel_Click(object sender, EventArgs e)
+        {
+            if (lstUsers.SelectedItems.Count > 0)
+            {
+                ListViewItem item = lstUsers.SelectedItems[0];
+                string userID = item.SubItems[0].Text;
+                userDel(userID);
+
+                MessageBox.Show("You have successfully delete this ac");
+                getAllUser();
+            }
+        }
+
+        private void userDel(string userID)
+        {
+            conn.OpenConnection();
+            string sql = "DELETE FROM user WHERE logonID = " + userID;
+            conn.ExecuteUpdateQuery(sql);
+
+            conn.CloseConnection();
+        }
+        private void userResetPassword(string userID,string password)
+        {
+            conn.OpenConnection();
+            string sql = "UPDATE user set logonPassword = '" + Cryptography.Encrypt(password) + "' WHERE logonID = " + userID;
+            conn.ExecuteUpdateQuery(sql);
+            conn.CloseConnection();
+        }
     }
 }

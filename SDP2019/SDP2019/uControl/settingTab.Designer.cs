@@ -305,6 +305,7 @@
             this.btnUserDel.TabIndex = 3;
             this.btnUserDel.Text = "Delete User";
             this.btnUserDel.UseVisualStyleBackColor = true;
+            this.btnUserDel.Click += new System.EventHandler(this.btnUserDel_Click);
             // 
             // btnUserPwdReset
             // 
@@ -314,6 +315,7 @@
             this.btnUserPwdReset.TabIndex = 2;
             this.btnUserPwdReset.Text = "Reset Password";
             this.btnUserPwdReset.UseVisualStyleBackColor = true;
+            this.btnUserPwdReset.Click += new System.EventHandler(this.btnUserPwdReset_Click);
             // 
             // btnUserAdd
             // 
